@@ -7,10 +7,10 @@ import StatePackagesSection from '../../components/common/StatePackagesSection'
 import api from '../../services/api'
 
 const HERO_SLIDES = [
-  { image: 'https://images.unsplash.com/photo-1590050752117-29885e590d8e?w=1400&h=600&fit=crop', title: 'Explore Timeless Gujarat', subtitle: 'Heritage • Spirituality • Natural Wonders' },
-  { image: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1400&h=600&fit=crop', title: 'Statue of Unity', subtitle: 'The world\'s tallest statue — a marvel of engineering' },
-  { image: 'https://images.unsplash.com/photo-1506461883276-594a12b11cf3?w=1400&h=600&fit=crop', title: 'Rann of Kutch', subtitle: 'The mesmerizing white desert — a natural wonder' },
-  { image: 'https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=1400&h=600&fit=crop', title: 'Gir National Park', subtitle: 'Home to the majestic Asiatic Lions' },
+  { image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1788949329/ChatGPT_Image_Sep_9_2026_03_51_53_PM.png', title: 'Explore Timeless Gujarat', subtitle: 'Heritage • Spirituality • Natural Wonders' },
+  { image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1788949169/Statue_of_Unity.png', title: 'Statue of Unity', subtitle: 'The world\'s tallest statue — a marvel of engineering' },
+  { image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1788948983/vedant-agrawal-T9Q8nDKZnLo-unsplash.jpg', title: 'Rann of Kutch', subtitle: 'The mesmerizing white desert — a natural wonder' },
+  { image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1788949125/Queen_Family.jpg', title: 'Gir National Park', subtitle: 'Home to the majestic Asiatic Lions' },
 ]
 
 const WHY_GUJARAT = [
@@ -23,14 +23,14 @@ const WHY_GUJARAT = [
 ]
 
 const GALLERY_IMAGES = [
-  { url: 'https://images.unsplash.com/photo-1590050752117-29885e590d8e?w=400&h=300&fit=crop', alt: 'Statue of Unity', location: 'Kevadia' },
-  { url: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=400&h=300&fit=crop', alt: 'Somnath Temple', location: 'Somnath' },
-  { url: 'https://images.unsplash.com/photo-1506461883276-594a12b11cf3?w=400&h=300&fit=crop', alt: 'Rann of Kutch', location: 'Kutch' },
-  { url: 'https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=400&h=300&fit=crop', alt: 'Gir Lions', location: 'Gir Forest' },
-  { url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop', alt: 'Dwarka', location: 'Dwarka' },
-  { url: 'https://images.unsplash.com/photo-1548013146-72479768bada?w=400&h=300&fit=crop', alt: 'Sabarmati Ashram', location: 'Ahmedabad' },
-  { url: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=400&h=300&fit=crop', alt: 'Diu Beach', location: 'Diu' },
-  { url: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?w=400&h=300&fit=crop', alt: 'Gujarat Crafts', location: 'Bhuj' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1788949169/Statue_of_Unity.png', alt: 'Statue of Unity', location: 'Kevadia' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1788949643/ChatGPT_Image_Sep_9_2026_03_57_01_PM.png', alt: 'Somnath Temple', location: 'Somnath' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1788948983/vedant-agrawal-T9Q8nDKZnLo-unsplash.jpg', alt: 'Rann of Kutch', location: 'Kutch' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1788949125/Queen_Family.jpg', alt: 'Gir Lions', location: 'Gir Forest' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1788949810/ChatGPT_Image_Sep_9_2026_03_59_43_PM.png', alt: 'Dwarka', location: 'Dwarka' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1788949893/ChatGPT_Image_Sep_9_2026_04_01_14_PM.png', alt: 'Sabarmati Ashram', location: 'Ahmedabad' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1788950005/ChatGPT_Image_Sep_9_2026_04_03_08_PM.png', alt: 'Diu Beach', location: 'Diu' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1788950090/Gujarat_Crafts.png', alt: 'Gujarat Crafts', location: 'Bhuj' },
 ]
 
 export default function GujaratPage() {

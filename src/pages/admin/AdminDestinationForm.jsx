@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { ArrowLeft, Save, Plus, Trash2, GripVertical, Upload, Eye, FileText } from 'lucide-react'
 import api from '../../services/api'
 import ImageUpload from '../../components/admin/ImageUpload'
+import { parseImageList } from '../../utils/imageUtils'
 
 const TABS = [
   { key: 'basic', label: 'Basic Info' },
@@ -74,9 +75,11 @@ export default function AdminDestinationForm() {
         const f = { ...form }
         Object.keys(d).forEach(k => { if (d[k] !== null && d[k] !== undefined && f.hasOwnProperty(k)) f[k] = d[k] })
         setForm(f)
-        // Parse hero images from comma-separated string into ImageUpload format
+        // Parse hero images (comma-separated / single URL / JSON array) into ImageUpload format
         if (d.heroImages) {
-          const urls = d.heroImages.split(',').map(u => u.trim()).filter(Boolean)
+          console.log('[DestinationForm] heroImages from API:', d.heroImages)
+          const urls = parseImageList(d.heroImages)
+          console.log('[DestinationForm] Parsed hero image URLs:', urls)
           setHeroImagesList(urls.map(url => ({ url, isUploaded: true })))
         }
         setAttractionsList(parseJson(d.attractions))
@@ -118,9 +121,12 @@ export default function AdminDestinationForm() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setSaving(true); setError('')
+    const payload = { ...form }
+    console.log('[DestinationForm] Destination images before save:', heroImagesList)
+    console.log('[DestinationForm] Save payload heroImages:', payload.heroImages)
     try {
-      if (isEdit) await api.put(`/destinations/${id}`, form)
-      else await api.post('/destinations', form)
+      if (isEdit) await api.put(`/destinations/${id}`, payload)
+      else await api.post('/destinations', payload)
       navigate('/admin/destinations')
     } catch (err) { setError(err.response?.data?.error || 'Failed to save') }
     finally { setSaving(false) }

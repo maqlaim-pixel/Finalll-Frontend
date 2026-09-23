@@ -39,11 +39,10 @@ export default function ProfilePage() {
     try {
       const formData = new FormData()
       formData.append('file', file)
-      const res = await fetch('http://localhost:8080/api/images/upload', {
-        method: 'POST',
-        body: formData
+      const res = await api.post('/images/upload', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
       })
-      const data = await res.json()
+      const data = res.data
       if (data.url) {
         setForm(prev => ({ ...prev, profileImage: data.url }))
       }

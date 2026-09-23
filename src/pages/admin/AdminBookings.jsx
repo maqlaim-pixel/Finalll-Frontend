@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Search, Eye, BookMarked, X, ChevronDown } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
+import { Search, Eye, BookMarked, X, ChevronDown, FileText } from 'lucide-react'
 import api from '../../services/api'
 
 const STATUS_COLORS = {
@@ -23,6 +24,7 @@ export default function AdminBookings() {
   const [loading, setLoading] = useState(true)
   const [selectedBooking, setSelectedBooking] = useState(null)
   const [updatingId, setUpdatingId] = useState(null)
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetchBookings()
@@ -168,6 +170,7 @@ export default function AdminBookings() {
               <button onClick={() => setSelectedBooking(null)} className="p-1 hover:bg-gray-100 rounded"><X size={18} /></button>
             </div>
             <div className="space-y-3 text-sm">
+              <button onClick={async () => { try { const response = await api.post(`/invoices/generate/${selectedBooking.id}`, {}); navigate(`/admin/invoices/${response.data.id}`) } catch (e) { alert(e.response?.data?.error || 'Unable to generate invoice') } }} className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 bg-sky-600 text-white rounded-lg"><FileText size={16}/> Generate / View Invoice</button>
               <div className="flex justify-between"><span className="text-navy-500">Ref</span><span className="font-mono font-medium">{selectedBooking.bookingRef || `#${selectedBooking.id}`}</span></div>
               <div className="flex justify-between"><span className="text-navy-500">Customer</span><span className="font-medium">{selectedBooking.customerName}</span></div>
               <div className="flex justify-between"><span className="text-navy-500">Email</span><span>{selectedBooking.customerEmail}</span></div>

@@ -1,6 +1,6 @@
 import { Outlet, Link, useLocation } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
-import { LayoutDashboard, BookMarked, Heart, Star, LogOut, MessageCircle, UserCircle } from 'lucide-react'
+import { LayoutDashboard, BookMarked, Heart, Star, LogOut, MessageCircle, UserCircle, FileText } from 'lucide-react'
 import PublicHeader from '../components/layout/PublicHeader'
 
 const SIDEBAR_LINKS = [
@@ -10,6 +10,7 @@ const SIDEBAR_LINKS = [
   { label: 'Wishlist', href: '/account/wishlist', icon: Heart },
   { label: 'My Reviews', href: '/account/reviews', icon: Star },
   { label: 'My Enquiries', href: '/account/enquiries', icon: MessageCircle },
+  { label: 'Invoices', href: '/account/invoices', icon: FileText },
 ]
 
 export default function CustomerLayout() {

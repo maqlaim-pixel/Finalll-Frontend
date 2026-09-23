@@ -28,6 +28,7 @@ const SIDEBAR_SECTIONS = [
     title: 'Operations',
     items: [
       { label: 'Bookings', href: '/admin/bookings', icon: BookMarked },
+      { label: 'Invoices', href: '/admin/invoices', icon: FileText },
       { label: 'Leads & Enquiries', href: '/admin/leads', icon: MessageSquare },
       { label: 'Client Interests', href: '/admin/client-interests', icon: Heart },
       { label: 'Reviews', href: '/admin/reviews', icon: Star },

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Plus, Search, Edit2, Trash2 } from 'lucide-react'
+import { Plus, Search, Edit2, Trash2, Image as ImageIcon } from 'lucide-react'
 import api from '../../services/api'
+import { parseImageList, resolveImageUrl } from '../../utils/imageUtils'
 
 export default function AdminDestinations() {
   const [destinations, setDestinations] = useState([])
@@ -48,10 +49,17 @@ export default function AdminDestinations() {
               <th className="text-right px-5 py-3 text-xs font-semibold text-navy-500 uppercase">Actions</th>
             </tr></thead>
             <tbody>
-              {filtered.map(d => (
+              {filtered.map(d => {
+                // Prefer the hero image (first uploaded Cloudinary URL) and fall back to the legacy image field
+                const thumb = parseImageList(d.heroImages)[0] || resolveImageUrl(d.image) || ''
+                return (
                 <tr key={d.id} className="border-b last:border-0 hover:bg-gray-50">
                   <td className="px-5 py-4 flex items-center gap-3">
-                    {d.image && <img src={d.image} alt="" className="w-10 h-10 rounded-lg object-cover" />}
+                    {thumb ? (
+                      <img src={thumb} alt="" className="w-10 h-10 rounded-lg object-cover" onError={(e) => { e.currentTarget.style.display = 'none' }} />
+                    ) : (
+                      <div className="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-gray-300"><ImageIcon size={16} /></div>
+                    )}
                     <div><p className="font-medium text-navy-900 text-sm">{d.name}</p><p className="text-xs text-navy-500">{d.tagline}</p></div>
                   </td>
                   <td className="px-5 py-4 text-sm text-navy-600">{d.country}</td>
@@ -64,7 +72,8 @@ export default function AdminDestinations() {
                     </div>
                   </td>
                 </tr>
-              ))}
+                )
+              })}
             </tbody>
           </table>
           {filtered.length === 0 && <p className="p-8 text-center text-navy-500">No destinations found</p>}

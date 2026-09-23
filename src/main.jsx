@@ -6,6 +6,18 @@ import { AuthProvider } from './context/AuthContext'
 import App from './App'
 import './index.css'
 
+if (import.meta.env.DEV) {
+  console.log('[TravelVista LOCAL RUNTIME]')
+  console.log('Project: atlas-and-route/travelfrontend')
+  console.log('API base: /api')
+  console.log('Expected proxy target: Railway')
+  console.log('Build marker: LOCAL-RUNTIME-VERIFY-2026')
+  window.__TRAVELVISTA_RUNTIME__ = {
+    apiBase: '/api',
+    marker: 'LOCAL-RUNTIME-VERIFY-2026',
+  }
+}
+
 // Suppress browser extension errors only (share-modal.js, Facebook Pixel, etc.)
 window.addEventListener('error', (e) => {
   const src = e.filename || e.srcElement?.src || ''

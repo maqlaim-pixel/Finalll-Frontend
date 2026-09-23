@@ -2,6 +2,9 @@ import { useState, useEffect, useRef } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Search, Star, Clock, MapPin, ChevronLeft, ChevronRight, Phone, Mail, Send, ArrowRight, Heart, Shield, Award, Calendar, Thermometer, Plane, Train, Languages, Camera, Music, Mountain, Sparkles, Car, Globe, Navigation } from 'lucide-react'
 import api from '../../services/api'
+import { parseImageList, resolveImageUrl } from '../../utils/imageUtils'
+
+const DEFAULT_HERO_IMAGE = 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1400&h=600&fit=crop'
 
 const ICON_MAP = {
   calendar: Calendar, clock: Clock, thermometer: Thermometer, plane: Plane, train: Train,
@@ -18,6 +21,8 @@ export default function DestinationDetail() {
   const [loading, setLoading] = useState(true)
   const [activeSlide, setActiveSlide] = useState(0)
   const [activeTab, setActiveTab] = useState('about')
+  const [brokenHeroSlides, setBrokenHeroSlides] = useState({})
+  const [brokenFallbackImage, setBrokenFallbackImage] = useState(false)
   const timerRef = useRef(null)
   const sectionRefs = {
     about: useRef(null), attractions: useRef(null), experiences: useRef(null),
@@ -26,8 +31,12 @@ export default function DestinationDetail() {
 
   useEffect(() => {
     setLoading(true)
+    setBrokenHeroSlides({})
+    setBrokenFallbackImage(false)
     api.get(`/destinations/slug/${slug}`)
       .then(res => {
+        console.log('[Destination] Public API response destination:', res.data?.destination || res.data)
+        console.log('[Destination] heroImages from API:', res.data?.destination?.heroImages)
         setDest(res.data.destination)
         setPackages(res.data.packages || [])
       })
@@ -38,7 +47,7 @@ export default function DestinationDetail() {
   // Hero carousel auto-advance
   useEffect(() => {
     if (!dest) return
-    const images = parseJson(dest.heroImages)
+    const images = parseImageList(dest.heroImages)
     if (images.length <= 1) return
     timerRef.current = setInterval(() => setActiveSlide(s => (s + 1) % images.length), 5000)
     return () => clearInterval(timerRef.current)
@@ -62,7 +71,9 @@ export default function DestinationDetail() {
     </div>
   )
 
-  const heroImages = parseJson(dest.heroImages)
+  const heroImages = parseImageList(dest.heroImages)
+  console.log('[Destination] Final public hero image URL(s):', heroImages)
+  const fallbackHeroImage = resolveImageUrl(dest.image) || DEFAULT_HERO_IMAGE
   const attractions = parseJson(dest.attractions).filter(a => a.isActive !== false)
   const experiences = parseJson(dest.experiences).filter(e => e.isActive !== false)
   const highlights = parseJson(dest.destinationHighlights).filter(h => h.isActive !== false)
@@ -91,12 +102,23 @@ export default function DestinationDetail() {
       <section className="relative h-[400px] md:h-[500px] overflow-hidden bg-navy-900">
         {heroImages.length > 0 ? heroImages.map((img, i) => (
           <div key={i} className={`absolute inset-0 transition-opacity duration-1000 ${i === activeSlide ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-            <img src={img} alt={dest.heroTitle || dest.name} className="w-full h-full object-cover" />
+            {/* If a hero entry fails to load (e.g. legacy /api/images/… record that 404s), swap in the safe default instead of showing a broken image */}
+            <img
+              src={brokenHeroSlides[i] ? DEFAULT_HERO_IMAGE : img}
+              alt={dest.heroTitle || dest.name}
+              className="w-full h-full object-cover"
+              onError={() => !brokenHeroSlides[i] && setBrokenHeroSlides(prev => ({ ...prev, [i]: true }))}
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
           </div>
         )) : (
           <div className="absolute inset-0">
-            <img src={dest.image || 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1400&h=600&fit=crop'} alt={dest.name} className="w-full h-full object-cover" />
+            <img
+              src={brokenFallbackImage ? DEFAULT_HERO_IMAGE : fallbackHeroImage}
+              alt={dest.name}
+              className="w-full h-full object-cover"
+              onError={() => setBrokenFallbackImage(true)}
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
           </div>
         )}
