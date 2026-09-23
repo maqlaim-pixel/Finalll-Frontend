@@ -1,0 +1,15 @@
+[2m1:55:45 pm[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/admin/me[39m
+Error: connect ETIMEDOUT 69.46.46.117:443
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1864:16)
+[2m2:26:42 pm[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/admin/me[39m
+Error: getaddrinfo ENOTFOUND final-backend-production-7276.up.railway.app
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[2m2:26:42 pm[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/admin/me[39m
+Error: getaddrinfo ENOTFOUND final-backend-production-7276.up.railway.app
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[2m2:26:44 pm[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/customer/dashboard[39m
+Error: getaddrinfo ENOTFOUND final-backend-production-7276.up.railway.app
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[2m2:26:44 pm[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/customer/dashboard[39m
+Error: getaddrinfo ENOTFOUND final-backend-production-7276.up.railway.app
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
