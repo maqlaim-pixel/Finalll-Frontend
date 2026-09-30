@@ -3,11 +3,12 @@ import { Link, useLocation } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import { Search, Menu, X, ChevronDown, User, Phone, Mail } from 'lucide-react'
 import { MAIN_NAV, SECONDARY_NAV, MEGA_MENU_MAP } from '../../data/megaMenuData'
-import MegaMenu from '../mega/MegaMenu'
+import MegaMenu, { LocalTravelServiceIcon } from '../mega/MegaMenu'
 
 export default function PublicHeader() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileMega, setMobileMega] = useState(null)
+  const [mobileLocalTravelGuidesOpen, setMobileLocalTravelGuidesOpen] = useState(false)
   const [activeMega, setActiveMega] = useState(null)
   const [scrolled, setScrolled] = useState(false)
   const headerRef = useRef(null)
@@ -18,6 +19,7 @@ export default function PublicHeader() {
   useEffect(() => {
     setMobileOpen(false)
     setMobileMega(null)
+    setMobileLocalTravelGuidesOpen(false)
     setActiveMega(null)
   }, [location])
 
@@ -79,14 +81,14 @@ export default function PublicHeader() {
 
       {/* Main header */}
       <header className={`bg-white transition-shadow duration-300 ${scrolled ? 'shadow-lg' : 'shadow-sm'}`}>
-        <div className="container-wide flex items-center justify-between h-16 lg:h-[68px]">
+        <div className="container-wide flex items-center justify-between h-16 min-[1600px]:h-[68px] min-[1600px]:max-w-[1600px]">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 shrink-0" onClick={closeMega}>
             <img src="https://www.maqlaimtours.com/uploads/0000/1/2023/09/12/logo-tour-1.png" alt="TravelVista" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Nav — click-based mega menu toggle */}
-          <nav className="hidden lg:flex items-center gap-0">
+          <nav className="hidden min-[1280px]:flex items-center gap-0">
             {MAIN_NAV.map(item => {
               const isActive = activeMega === item.megaKey
               return (
@@ -107,8 +109,10 @@ export default function PublicHeader() {
                         closeMega()
                       }
                     }}
-                    className={`flex items-center gap-1 px-3 py-2 text-[13px] font-semibold transition-colors whitespace-nowrap cursor-pointer ${
-                      (location.pathname.startsWith(item.href) && item.href !== '/') || isActive
+                    className={`flex items-center gap-1 px-1 py-2 text-[13px] font-semibold transition-colors whitespace-nowrap cursor-pointer ${
+                      (location.pathname.startsWith(item.href) && item.href !== '/') ||
+                      item.activePaths?.some(path => location.pathname.startsWith(path)) ||
+                      isActive
                         ? 'text-sky-600'
                         : 'text-navy-700 hover:text-sky-600'
                     }`}
@@ -157,7 +161,7 @@ export default function PublicHeader() {
 
             <button
               onClick={() => { setMobileOpen(!mobileOpen); closeMega() }}
-              className="lg:hidden p-2 rounded-lg hover:bg-navy-50"
+              className="min-[1280px]:hidden p-2 rounded-lg hover:bg-navy-50"
             >
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -165,7 +169,7 @@ export default function PublicHeader() {
         </div>
 
         {/* Secondary nav */}
-        <div className="hidden lg:block border-t border-gray-100">
+        <div className="hidden min-[1280px]:block border-t border-gray-100">
           <div className="container-wide flex items-center gap-6 h-10">
             {SECONDARY_NAV.map(item => (
               <Link
@@ -197,7 +201,7 @@ export default function PublicHeader() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[108px] bottom-0 z-40 bg-white overflow-y-auto mobile-mega-panel">
+        <div className="min-[1280px]:hidden fixed inset-x-0 top-16 md:top-24 bottom-0 z-40 bg-white overflow-y-auto mobile-mega-panel">
           <nav className="py-4 space-y-1">
             {MAIN_NAV.map(item => (
               <div key={item.label}>
@@ -205,7 +209,14 @@ export default function PublicHeader() {
                   <Link
                     to={item.href}
                     className="flex-1 px-4 py-3 rounded-lg text-navy-700 hover:bg-navy-50 font-semibold text-sm"
-                    onClick={() => { if (!item.hasMega) setMobileOpen(false); else toggleMobileMega(item.megaKey) }}
+                    onClick={event => {
+                      if (!item.hasMega) {
+                        setMobileOpen(false)
+                      } else {
+                        if (item.megaKey === 'localTravel') event.preventDefault()
+                        toggleMobileMega(item.megaKey)
+                      }
+                    }}
                   >
                     {item.label}
                   </Link>
@@ -219,25 +230,58 @@ export default function PublicHeader() {
                   )}
                 </div>
                 {item.hasMega && mobileMega === item.megaKey && MEGA_MENU_MAP[item.megaKey] && (
-                  <div className="px-6 pb-3 space-y-3">
-                    {MEGA_MENU_MAP[item.megaKey].columns.map((col, i) => (
-                      <div key={i}>
-                        <div className="text-[11px] font-bold text-sky-600 uppercase tracking-wider mb-1">{col.title}</div>
-                        {col.items.slice(0, 6).map((link, j) => (
-                          <Link key={j} to={link.href} className="block py-1.5 text-sm text-navy-600 hover:text-sky-600"
-                            onClick={() => setMobileOpen(false)}>
-                            {link.label}
-                          </Link>
-                        ))}
-                        {col.viewAll && (
-                          <Link to={col.viewAll.href} className="block py-1.5 text-xs font-bold text-sky-600"
-                            onClick={() => setMobileOpen(false)}>
-                            {col.viewAll.label} →
-                          </Link>
-                        )}
-                      </div>
-                    ))}
-                  </div>
+                  item.megaKey === 'localTravel' ? (
+                    <div className="px-6 pb-3">
+                      {MEGA_MENU_MAP[item.megaKey].columns.filter(col => col.type === 'localServices').map(col => (
+                        <div key={col.title} className="mb-3">
+                          <div className="text-[11px] font-bold text-sky-600 uppercase tracking-wider mb-1">{col.title}</div>
+                          {col.items.map(link => (
+                            <Link key={link.href} to={link.href} className="flex items-center gap-2 py-1.5 text-sm text-navy-600 hover:text-sky-600"
+                              onClick={() => setMobileOpen(false)}>
+                              <LocalTravelServiceIcon name={link.icon} size={16} className="shrink-0 text-sky-700" />
+                              <span className="flex-1">{link.label}</span>
+                              <ChevronDown size={14} className="-rotate-90 text-sky-600" />
+                            </Link>
+                          ))}
+                        </div>
+                      ))}
+                      {MEGA_MENU_MAP[item.megaKey].columns.filter(col => col.type === 'localGuides').map(col => (
+                        <div key={col.title} className="border-t border-gray-100 pt-2">
+                          <button type="button" onClick={() => setMobileLocalTravelGuidesOpen(open => !open)}
+                            className="flex w-full items-center justify-between py-2 text-left text-[11px] font-bold uppercase tracking-wider text-sky-600">
+                            {col.title}
+                            <ChevronDown size={16} className={`transition-transform ${mobileLocalTravelGuidesOpen ? 'rotate-180' : ''}`} />
+                          </button>
+                          {mobileLocalTravelGuidesOpen && col.items.map(link => (
+                            <Link key={link.href} to={link.href} className="block py-1.5 pl-3 text-sm text-navy-600 hover:text-sky-600"
+                              onClick={() => setMobileOpen(false)}>
+                              {link.label}
+                            </Link>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="px-6 pb-3 space-y-3">
+                      {MEGA_MENU_MAP[item.megaKey].columns.map((col, i) => (
+                        <div key={i}>
+                          <div className="text-[11px] font-bold text-sky-600 uppercase tracking-wider mb-1">{col.title}</div>
+                          {col.items.slice(0, 6).map((link, j) => (
+                            <Link key={j} to={link.href} className="block py-1.5 text-sm text-navy-600 hover:text-sky-600"
+                              onClick={() => setMobileOpen(false)}>
+                              {link.label}
+                            </Link>
+                          ))}
+                          {col.viewAll && (
+                            <Link to={col.viewAll.href} className="block py-1.5 text-xs font-bold text-sky-600"
+                              onClick={() => setMobileOpen(false)}>
+                              {col.viewAll.label} →
+                            </Link>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )
                 )}
               </div>
             ))}

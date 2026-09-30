@@ -51,14 +51,15 @@ export const INDIA_MENU = {
       title: 'DESTINATIONS',
       icon: 'destination',
       items: [
-        { label: 'Popular Destinations', href: '/india/destinations' },
-        { label: 'Heritage Destinations', href: '/india/destinations/heritage' },
-        { label: 'Religious Destinations', href: '/india/destinations/religious' },
-        { label: 'Hill Stations', href: '/india/destinations/hill-stations' },
-        { label: 'Beaches', href: '/india/destinations/beaches' },
-        { label: 'Wildlife Destinations', href: '/india/destinations/wildlife' },
-        { label: 'Weekend Getaways', href: '/india/destinations/weekend' },
-        { label: 'Offbeat Destinations', href: '/india/destinations/offbeat' },
+        { label: 'Popular Destinations', href: '/india/popular-destinations' },
+        { label: 'Heritage Destinations', href: '/india/heritage-destinations' },
+        { label: 'Religious Destinations', href: '/india/religious-destinations' },
+        { label: 'Hill Stations', href: '/india/hill-stations' },
+        { label: 'Beaches', href: '/india/beaches' },
+        { label: 'Wildlife Destinations', href: '/india/wildlife-destinations' },
+        { label: 'Weekend Getaways', href: '/india/weekend-getaways' },
+        { label: 'Offbeat Destinations', href: '/india/offbeat-destinations' },
+        { label: 'Famous Destinations', href: '/india/famous-destinations' },
         { label: 'Famous Attractions', href: '/india/destinations/attractions' },
       ],
       viewAll: { label: 'VIEW ALL DESTINATIONS', href: '/india/destinations' },
@@ -71,7 +72,7 @@ export const INDIA_MENU = {
         { label: 'Heritage Sites', href: '/india/places/heritage' },
         { label: 'Temples & Religious', href: '/india/places/temples' },
         { label: 'Beaches', href: '/india/places/beaches' },
-        { label: 'National Parks', href: '/india/places/national-parks' },
+        { label: 'National Parks', href: '/india/national-parks' },
         { label: 'Lakes & Waterfalls', href: '/india/places/lakes' },
         { label: 'Hill Stations', href: '/india/places/hill-stations' },
         { label: 'Museums', href: '/india/places/museums' },
@@ -115,32 +116,60 @@ export const INDIA_MENU = {
       title: 'NATIONAL PARKS',
       icon: 'park',
       items: [
-        { label: 'Gir National Park', href: '/india/national-parks/gir' },
-        { label: 'Jim Corbett National Park', href: '/india/national-parks/jim-corbett' },
-        { label: 'Ranthambore National Park', href: '/india/national-parks/ranthambore' },
+        { label: 'Gir National Park', href: '/india/national-parks/gir-national-park' },
+        { label: 'Jim Corbett National Park', href: '/india/national-parks/jim-corbett-national-park' },
+        { label: 'Ranthambore National Park', href: '/india/national-parks/ranthambore-national-park' },
         { label: 'Kaziranga National Park', href: '/india/national-parks/kaziranga' },
-        { label: 'Bandhavgarh National Park', href: '/india/national-parks/bandhavgarh' },
-        { label: 'Sundarbans National Park', href: '/india/national-parks/sundarbans' },
-        { label: 'Pench National Park', href: '/india/national-parks/pench' },
+        { label: 'Bandhavgarh National Park', href: '/india/national-parks/bandhavgarh-national-park' },
+        { label: 'Sundarbans National Park', href: '/india/national-parks/sundarbans-national-park' },
+        { label: 'Pench National Park', href: '/india/national-parks/pench-national-park' },
         { label: 'All National Parks', href: '/india/national-parks' },
-      ],
-    },
-    {
-      title: 'TRAVEL GUIDES',
-      icon: 'guide',
-      items: [
-        { label: 'Travel Tips', href: '/guides/travel-tips' },
-        { label: 'Best Time to Visit', href: '/guides/best-time' },
-        { label: 'How to Reach', href: '/guides/how-to-reach' },
-        { label: 'Travel Cost', href: '/guides/travel-cost' },
-        { label: 'Itineraries', href: '/guides/itineraries' },
-        { label: 'Visa Information', href: '/guides/visa' },
-        { label: 'Packing Guide', href: '/guides/packing' },
-        { label: 'All Travel Guides', href: '/guides' },
       ],
     },
   ],
   bannerText: 'From majestic mountains to serene beaches, discover the incredible diversity of India.',
+}
+
+export const LOCAL_TRAVEL_SERVICES = [
+  { label: 'Airport Transfer', href: '/local-travel/airport-transfer', icon: 'airport' },
+  { label: 'Railway Station Transfer', href: '/local-travel/railway-station-transfer', icon: 'railway' },
+  { label: 'Local Taxi / Cab', href: '/local-travel/local-taxi-cab', icon: 'taxi' },
+  { label: 'Full Day City Tour', href: '/local-travel/full-day-city-tour', icon: 'city' },
+  { label: 'Half Day City Tour', href: '/local-travel/half-day-city-tour', icon: 'halfDay' },
+  { label: 'Outstation Cab', href: '/local-travel/outstation-cab', icon: 'outstation' },
+  { label: 'Car Rental', href: '/local-travel/car-rental', icon: 'rental' },
+  { label: 'Bus / Tempo Traveller', href: '/local-travel/bus-tempo-traveller', icon: 'bus' },
+  { label: 'Corporate Transportation', href: '/local-travel/corporate-transportation', icon: 'corporate' },
+  { label: 'Custom Local Travel', href: '/local-travel/custom-local-travel', icon: 'custom' },
+]
+
+const LOCAL_TRAVEL_MENU = {
+  title: 'LOCAL TRAVEL',
+  variant: 'localTravel',
+  description: 'Book reliable local transportation and travel services for airport transfers, railway transfers, city tours, cab rentals, outstation journeys and customized local travel requirements.',
+  columns: [
+    {
+      title: 'LOCAL TRAVEL SERVICES',
+      icon: 'travel',
+      type: 'localServices',
+      items: LOCAL_TRAVEL_SERVICES,
+    },
+    {
+      title: 'TRAVEL GUIDES',
+      icon: 'guide',
+      type: 'localGuides',
+      items: [
+        { label: 'Travel Tips', href: '/guides/travel-tips' },
+        { label: 'Best Time to Visit', href: '/travel-guide/best-time-to-visit' },
+        { label: 'How to Reach', href: '/guides/how-to-reach' },
+        { label: 'Travel Cost', href: '/travel-guide/travel-cost' },
+        { label: 'Itineraries', href: '/packages' },
+        { label: 'Packing Guides', href: '/travel-guide/packing-guides' },
+        { label: 'Visa Information', href: '/travel-guide/visa-information' },
+        { label: 'All Travel Guides', href: '/travel-guide/all-guides' },
+      ],
+    },
+  ],
 }
 
 export const INTERNATIONAL_MENU = {
@@ -338,7 +367,7 @@ export const PACKAGES_MENU = {
       title: 'ADVENTURE PACKAGES',
       icon: 'adventure',
       items: [
-        { label: 'Trekking Packages', href: '/packages/adventure/trekking' },
+        { label: 'Trekking Packages', href: '/adventure/trekking-packages' },
         { label: 'Camping Packages', href: '/packages/adventure/camping' },
         { label: 'Wildlife Packages', href: '/packages/adventure/wildlife' },
         { label: 'Water Adventure', href: '/packages/adventure/water' },
@@ -777,13 +806,13 @@ export const MAIN_NAV = [
   { label: 'HOLIDAYS', href: '/holidays', hasMega: true, megaKey: 'holidays' },
   { label: 'MICE', href: '/mice', hasMega: true, megaKey: 'mice' },
   { label: 'DESTINATION WEDDINGS', href: '/destination-weddings', hasMega: true, megaKey: 'weddings' },
+  { label: 'LOCAL TRAVEL', href: '/local-travel/airport-transfer', hasMega: true, megaKey: 'localTravel', activePaths: ['/local-travel/', '/travel-guide/', '/guides/'] },
   { label: 'MEDICAL TOURISM', href: '/medical-tourism', hasMega: false },
 ]
 
 // Secondary nav items (shown below main nav)
 export const SECONDARY_NAV = [
   { label: 'EXPERIENCES', href: '/experiences' },
-  { label: 'TRAVEL GUIDES', href: '/guides' },
   { label: 'TRIP PLANNER', href: '/plan-trip' },
   { label: 'BLOG', href: '/blog' },
 ]
@@ -795,5 +824,6 @@ export const MEGA_MENU_MAP = {
   holidays: HOLIDAYS_MENU,
   mice: MICE_MENU,
   weddings: WEDDINGS_MENU,
+  localTravel: LOCAL_TRAVEL_MENU,
   medical: MEDICAL_MENU,
 }

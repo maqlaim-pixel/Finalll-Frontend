@@ -127,7 +127,7 @@ export default function HomePage() {
             ))}
           </div>
           <div className="text-center mt-8">
-            <Link to="/destinations" className="btn-secondary">
+            <Link to="/india/destinations" className="btn-secondary">
               View All Destinations <ArrowRight size={16} className="ml-2" />
             </Link>
           </div>

@@ -67,6 +67,7 @@ export default function PackagesPage() {
   const [searchParams] = useSearchParams()
   const navigate = useNavigate()
   const destFilter = searchParams.get('destination') || ''
+  const normalizedDestFilter = destFilter.trim().toLowerCase()
 
   const [packages, setPackages] = useState([])
   const [loading, setLoading] = useState(true)
@@ -144,6 +145,25 @@ export default function PackagesPage() {
   const filtered = useMemo(() => {
     let result = [...packages]
 
+    // Optional destination query filter (used by India landing pages).
+    if (normalizedDestFilter) {
+      result = result.filter(pkg => {
+        const country = String(pkg.country || '').trim().toLowerCase()
+        const category = String(pkg.category || '').trim().toLowerCase()
+        const destination = String(pkg.destination || '').trim().toLowerCase()
+        const state = String(pkg.state || '').trim().toLowerCase()
+
+        if (normalizedDestFilter === 'india') {
+          return country === 'india' || category === 'domestic'
+        }
+        if (normalizedDestFilter === 'international') {
+          return category === 'international' || (country && country !== 'india')
+        }
+
+        return destination === normalizedDestFilter || state === normalizedDestFilter
+      })
+    }
+
     // Text search
     if (search) {
       const q = search.toLowerCase()
@@ -197,7 +217,7 @@ export default function PackagesPage() {
     }
 
     return result
-  }, [packages, search, selectedTypes, selectedDests, priceFilter, priceSliderRange, sortBy])
+  }, [packages, search, selectedTypes, selectedDests, priceFilter, priceSliderRange, sortBy, normalizedDestFilter])
 
   const formatPrice = (p) => p ? `₹${Number(p).toLocaleString('en-IN')}` : ''
   const fallbackImg = 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600'

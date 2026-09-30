@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
-import { useParams, useLocation, Link } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
+import { ComingSoonPage, NotFoundPage } from '../common/ComingSoonPage'
+import { getKnownMenuRouteName, isKnownMenuRoute } from '../../utils/menuRouteIndex'
 import api from '../../services/api'
 import SEOHead from '../../components/common/SEOHead'
 import Breadcrumb from '../../components/common/Breadcrumb'
 import DestinationCard from '../../components/common/DestinationCard'
 import PackageCard from '../../components/common/PackageCard'
-import { Loader2, AlertCircle, ArrowRight, MapPin } from 'lucide-react'
+import { Loader2, ArrowRight, MapPin } from 'lucide-react'
 
 export default function MenuLandingPage() {
   const location = useLocation()
@@ -31,13 +33,12 @@ export default function MenuLandingPage() {
     </div>
   )
 
-  if (error || !menu) return (
-    <div className="text-center py-20">
-      <AlertCircle className="mx-auto text-red-400 mb-3" size={40} />
-      <p className="text-red-600 font-medium">{error || 'Page not found'}</p>
-      <Link to="/" className="mt-3 inline-block text-sky-600 hover:underline text-sm">Go Home</Link>
-    </div>
-  )
+  if (error || !menu) {
+    return isKnownMenuRoute(location.pathname)
+      ? <ComingSoonPage pageName={getKnownMenuRouteName(location.pathname)} />
+      : <NotFoundPage />
+  }
+
 
   const destinations = menu.destinations || []
   const topPackages = menu.topPackages || []

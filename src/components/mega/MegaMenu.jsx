@@ -8,6 +8,7 @@ import {
   Ship, Plane, Heart, Users, Baby, Tent, Waves, Church, Sparkles,
   BadgeCheck, Phone, Mail, Clock, ChevronRight, Star, Shield,
   PlaneTakeoff, HandHelping, Mic2, PartyPopper, Stethoscope,
+  TrainFront, CarFront, Sun, Route, KeyRound, BusFront, UsersRound, ClipboardList,
   CircleDot, ArrowRight,
 } from 'lucide-react'
 
@@ -62,6 +63,24 @@ function MenuIcon({ name, size = 18 }) {
   return ICON_MAP[name] || <CircleDot size={size} />
 }
 
+const LOCAL_TRAVEL_SERVICE_ICONS = {
+  airport: Plane,
+  railway: TrainFront,
+  taxi: CarFront,
+  city: Building2,
+  halfDay: Sun,
+  outstation: Route,
+  rental: KeyRound,
+  bus: BusFront,
+  corporate: UsersRound,
+  custom: ClipboardList,
+}
+
+export function LocalTravelServiceIcon({ name, size = 16, className = '' }) {
+  const Icon = LOCAL_TRAVEL_SERVICE_ICONS[name] || CircleDot
+  return <Icon size={size} className={className} aria-hidden="true" />
+}
+
 export default function MegaMenu({ data, isOpen, onClose }) {
   const ref = useRef(null)
 
@@ -104,8 +123,18 @@ export default function MegaMenu({ data, isOpen, onClose }) {
                   {col.items.map((item, j) => (
                     <li key={j}>
                       <Link to={item.href} onClick={onClose} className="mega-menu-link">
-                        <ChevronRight size={12} className="mega-menu-chevron" />
-                        {item.label}
+                        {data.variant === 'localTravel' && col.type === 'localServices' ? (
+                          <>
+                            <LocalTravelServiceIcon name={item.icon} className="shrink-0 text-sky-700" />
+                            <span>{item.label}</span>
+                            <ChevronRight size={14} className="mega-menu-chevron ml-auto" />
+                          </>
+                        ) : (
+                          <>
+                            <ChevronRight size={12} className="mega-menu-chevron" />
+                            {item.label}
+                          </>
+                        )}
                       </Link>
                     </li>
                   ))}

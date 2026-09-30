@@ -46,7 +46,7 @@ export default function AdminDestinationForm() {
     name: '', slug: '', country: 'India', state: '', type: 'domestic',
     description: '', shortDescription: '', image: '', tagline: '',
     bestTime: '', avgTemp: '', languages: '', highlights: '',
-    packageCount: 0, status: 'draft', featured: false, sortOrder: 0,
+    packageCount: 0, status: 'draft', featured: false, isFamous: false, sortOrder: 0,
     // Hero
     heroImages: '', heroTitle: '', heroSubtitle: '', heroCtaText: 'Explore Packages', heroCtaUrl: '',
     // About
@@ -187,9 +187,10 @@ export default function AdminDestinationForm() {
               </div>
               <div><label className={labelClass}>Short Description</label><textarea className={inputClass + " resize-none"} rows={2} value={form.shortDescription} onChange={e => set('shortDescription', e.target.value)} /></div>
               <div><label className={labelClass}>Description</label><textarea className={inputClass + " resize-none"} rows={4} value={form.description} onChange={e => set('description', e.target.value)} /></div>
-              <div className="flex items-center gap-6">
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
                 <div><label className={labelClass}>Status</label><select className={inputClass + " w-40"} value={form.status} onChange={e => set('status', e.target.value)}><option value="draft">Draft</option><option value="published">Published</option></select></div>
                 <label className="flex items-center gap-2 text-sm mt-5"><input type="checkbox" checked={form.featured} onChange={e => set('featured', e.target.checked)} className="rounded" /> Featured</label>
+                <label className="flex items-center gap-2 text-sm mt-5"><input type="checkbox" checked={form.isFamous} onChange={e => set('isFamous', e.target.checked)} className="rounded" /> Famous destination</label>
               </div>
             </div>
           )}

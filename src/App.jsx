@@ -1,5 +1,5 @@
 import VerifyOtpPage from './pages/auth/VerifyOtpPage'
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { useAuth } from './context/AuthContext'
 
 // Layouts
@@ -13,18 +13,44 @@ import DestinationsPage from './pages/destinations/DestinationsPage'
 import DestinationDetail from './pages/destinations/DestinationDetail'
 import PackagesPage from './pages/packages/PackagesPage'
 import PackageDetail from './pages/packages/PackageDetail'
+import TrekkingPackagesPage from './pages/adventure/TrekkingPackagesPage'
 import HotelsPage from './pages/hotels/HotelsPage'
 import HotelDetail from './pages/hotels/HotelDetail'
 import ActivitiesPage from './pages/activities/ActivitiesPage'
 import ActivityDetail from './pages/activities/ActivityDetail'
 import BlogPage from './pages/blog/BlogPage'
 import BlogDetail from './pages/blog/BlogDetail'
+import TravelTipsPage from './pages/TravelTipsPage'
+import BestTimeToVisitPage from './pages/BestTimeToVisitPage'
+import TravelCostPage from './pages/TravelCostPage'
+import VisaInformationPage from './pages/VisaInformationPage'
 import OffersPage from './pages/offers/OffersPage'
 import AboutPage from './pages/about/AboutPage'
 import ContactPage from './pages/contact/ContactPage'
 import PlanTripPage from './pages/home/PlanTripPage'
 import MenuLandingPage from './pages/menu/MenuLandingPage'
 import IndiaPage from './pages/india/IndiaPage'
+import PopularDestinationsPage from './pages/india/PopularDestinationsPage'
+import HeritageDestinationsPage from './pages/india/HeritageDestinationsPage'
+import ReligiousDestinationsPage from './pages/india/ReligiousDestinationsPage'
+import HillStationsPage from './pages/india/HillStationsPage'
+import BeachesPage from './pages/india/BeachesPage'
+import WildlifeDestinationsPage from './pages/india/WildlifeDestinationsPage'
+import NationalParksPage from './pages/india/NationalParksPage'
+import WeekendGetawaysPage from './pages/india/WeekendGetawaysPage'
+import OffbeatDestinationsPage from './pages/india/OffbeatDestinationsPage'
+import FamousDestinationsPage from './pages/india/FamousDestinationsPage'
+import AllIndiaDestinationsPage from './pages/india/AllIndiaDestinationsPage'
+import IndiaExperiencesPage from './pages/india/IndiaExperiencesPage'
+import GirNationalParkPage from './pages/india/GirNationalParkPage'
+import RanthamboreNationalParkPage from './pages/india/RanthamboreNationalParkPage'
+import BandhavgarhNationalParkPage from './pages/india/BandhavgarhNationalParkPage'
+import PenchNationalParkPage from './pages/india/PenchNationalParkPage'
+import JimCorbettNationalParkPage from './pages/india/JimCorbettNationalParkPage'
+import SundarbansNationalParkPage from './pages/india/SundarbansNationalParkPage'
+import KazirangaNationalParkPage from './pages/india/KazirangaNationalParkPage'
+import HowToReachPage from './pages/india/HowToReachPage'
+import PackingGuidesPage from './pages/PackingGuidesPage'
 import InternationalPage from './pages/international/InternationalPage'
 import CountryPage from './pages/international/CountryPage'
 import InternationalDestPage from './pages/international/InternationalDestPage'
@@ -66,6 +92,18 @@ import NorthEastPage from './pages/north-east/NorthEastPage'
 import CityDetail from './pages/cities/CityDetail'
 import InternationalCityDetail from './pages/cities/InternationalCityDetail'
 import InternationalPackagesPage from './pages/international/InternationalPackagesPage'
+import LocalTravelServicePage from './pages/LocalTravelServicePage'
+import AirportTransferPage from './pages/AirportTransferPage'
+import RailwayStationTransferPage from './pages/RailwayStationTransferPage'
+import FullDayCityTourPage from './pages/FullDayCityTourPage'
+import HalfDayCityTourPage from './pages/HalfDayCityTourPage'
+import OutstationCabPage from './pages/OutstationCabPage'
+import CarRentalPage from './pages/CarRentalPage'
+import LocalTaxiCabPage from './pages/LocalTaxiCabPage'
+import CorporateTransportationPage from './pages/CorporateTransportationPage'
+import AllTravelGuidesPage from './pages/AllTravelGuidesPage'
+import { ComingSoonPage, NotFoundPage } from './pages/common/ComingSoonPage'
+import { isKnownMenuRoute } from './utils/menuRouteIndex'
 
 // Auth Pages
 import LoginPage from './pages/auth/LoginPage'
@@ -112,6 +150,11 @@ function ProtectedRoute({ children, requireAdmin = false }) {
   return children
 }
 
+function PublicRouteFallback() {
+  const { pathname } = useLocation()
+  return isKnownMenuRoute(pathname) ? <ComingSoonPage /> : <NotFoundPage />
+}
+
 export default function App() {
   return (
     <Routes future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
@@ -122,18 +165,80 @@ export default function App() {
         <Route path="/destinations/:slug" element={<DestinationDetail />} />
         <Route path="/packages" element={<PackagesPage />} />
         <Route path="/packages/:slug" element={<PackageDetail />} />
+        <Route path="/adventure/trekking-packages" element={<TrekkingPackagesPage />} />
+        <Route path="/packages/adventure/trekking" element={<Navigate to="/adventure/trekking-packages" replace />} />
         <Route path="/hotels" element={<HotelsPage />} />
         <Route path="/hotels/:slug" element={<HotelDetail />} />
         <Route path="/activities" element={<ActivitiesPage />} />
         <Route path="/activities/:slug" element={<ActivityDetail />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogDetail />} />
+        <Route path="/guides/travel-tips" element={<TravelTipsPage />} />
+        <Route path="/travel-guide/all-guides" element={<AllTravelGuidesPage />} />
+        <Route path="/travel-guide/travel-cost" element={<TravelCostPage />} />
+        <Route path="/travel-guide/travel-cost/:destinationSlug" element={<TravelCostPage />} />
+        <Route path="/travel-guide/visa-information" element={<VisaInformationPage />} />
+        <Route path="/travel-guide/visa-information/:countrySlug" element={<VisaInformationPage />} />
+        <Route path="/travel-guide/best-time-to-visit" element={<BestTimeToVisitPage />} />
+        <Route path="/travel-guide/best-time-to-visit/:season" element={<BestTimeToVisitPage />} />
+        <Route path="/guides/best-time" element={<BestTimeToVisitPage />} />
+        <Route path="/guides/how-to-reach" element={<HowToReachPage />} />
+        <Route path="/local-travel/airport-transfer" element={<AirportTransferPage />} />
+        <Route path="/local-travel/railway-station-transfer" element={<RailwayStationTransferPage />} />
+        <Route path="/local-travel/full-day-city-tour" element={<FullDayCityTourPage />} />
+        <Route path="/local-travel/half-day-city-tour" element={<HalfDayCityTourPage />} />
+        <Route path="/local-travel/outstation-cab" element={<OutstationCabPage />} />
+        <Route path="/local-travel/car-rental" element={<CarRentalPage />} />
+        <Route path="/local-travel/local-taxi-cab" element={<LocalTaxiCabPage />} />
+        <Route path="/local-travel/corporate-transportation" element={<CorporateTransportationPage />} />
+        <Route path="/local-travel/:service" element={<LocalTravelServicePage />} />
+        <Route path="/travel-guide/packing-guides" element={<PackingGuidesPage />} />
+        <Route path="/travel-guide/packing-guides/:slug" element={<PackingGuidesPage />} />
+        <Route path="/india/national-parks/:destinationSlug/how-to-reach" element={<HowToReachPage />} />
         <Route path="/offers" element={<OffersPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/plan-trip" element={<PlanTripPage />} />
         {/* Dynamic menu landing pages — data from /api/menus/{slug} */}
         <Route path="/india" element={<IndiaPage />} />
+        <Route path="/india/cities" element={<PublicRouteFallback />} />
+        <Route path="/india/places" element={<PublicRouteFallback />} />
+        <Route path="/india/places/heritage" element={<PublicRouteFallback />} />
+        <Route path="/india/places/temples" element={<PublicRouteFallback />} />
+        <Route path="/india/places/beaches" element={<PublicRouteFallback />} />
+        <Route path="/india/places/lakes" element={<PublicRouteFallback />} />
+        <Route path="/india/places/hill-stations" element={<PublicRouteFallback />} />
+        <Route path="/india/places/museums" element={<PublicRouteFallback />} />
+        <Route path="/india/places/historical" element={<PublicRouteFallback />} />
+        <Route path="/india/destinations/attractions" element={<PublicRouteFallback />} />
+        <Route path="/india/popular-destinations" element={<PopularDestinationsPage />} />
+        <Route path="/india/heritage-destinations" element={<HeritageDestinationsPage />} />
+        <Route path="/india/religious-destinations" element={<ReligiousDestinationsPage />} />
+        <Route path="/india/hill-stations" element={<HillStationsPage />} />
+        <Route path="/india/beaches" element={<BeachesPage />} />
+        <Route path="/india/wildlife-destinations" element={<WildlifeDestinationsPage />} />
+        <Route path="/india/national-parks" element={<NationalParksPage />} />
+        <Route path="/india/weekend-getaways" element={<WeekendGetawaysPage />} />
+        <Route path="/india/offbeat-destinations" element={<OffbeatDestinationsPage />} />
+        <Route path="/india/destinations" element={<AllIndiaDestinationsPage />} />
+        <Route path="/india/famous-destinations" element={<FamousDestinationsPage />} />
+        <Route path="/india/national-parks/gir-national-park" element={<GirNationalParkPage />} />
+        <Route path="/india/national-parks/ranthambore-national-park" element={<RanthamboreNationalParkPage />} />
+        <Route path="/india/national-parks/bandhavgarh-national-park" element={<BandhavgarhNationalParkPage />} />
+        <Route path="/india/national-parks/pench-national-park" element={<PenchNationalParkPage />} />
+        <Route path="/india/national-parks/jim-corbett-national-park" element={<JimCorbettNationalParkPage />} />
+        <Route path="/india/national-parks/sundarbans-national-park" element={<SundarbansNationalParkPage />} />
+        <Route path="/india/national-parks/kaziranga-national-park" element={<KazirangaNationalParkPage />} />
+        <Route path="/india/national-parks/kaziranga" element={<Navigate to="/india/national-parks/kaziranga-national-park" replace />} />
+        <Route path="/india/national-parks/sundarbans" element={<Navigate to="/india/national-parks/sundarbans-national-park" replace />} />
+        <Route path="/india/national-parks/ranthambore" element={<Navigate to="/india/national-parks/ranthambore-national-park" replace />} />
+        <Route path="/india/national-parks/bandhavgarh" element={<Navigate to="/india/national-parks/bandhavgarh-national-park" replace />} />
+        <Route path="/india/national-parks/pench" element={<Navigate to="/india/national-parks/pench-national-park" replace />} />
+        <Route path="/india/national-parks/jim-corbett" element={<Navigate to="/india/national-parks/jim-corbett-national-park" replace />} />
+        <Route path="/india/experiences" element={<IndiaExperiencesPage />} />
+        <Route path="/india/experiences/:categorySlug" element={<IndiaExperiencesPage />} />
+        <Route path="/india/things-to-do" element={<IndiaExperiencesPage />} />
+        <Route path="/india/things-to-do/:categorySlug" element={<IndiaExperiencesPage />} />
         <Route path="/india/:destSlug" element={<MenuLandingPage />} />
         <Route path="/international" element={<InternationalPage />} />
         <Route path="/international/destinations" element={<InternationalDestPage />} />
@@ -206,6 +311,7 @@ export default function App() {
         <Route path="/account/enquiries" element={<MyEnquiries />} />
         <Route path="/account/invoices" element={<MyInvoices />} />
         <Route path="/account/invoices/:id" element={<InvoiceDetail />} />
+        <Route path="/account/*" element={<Navigate to="/account" replace />} />
       </Route>
 
       {/* ── Admin Routes ───────────────────────────────────────── */}
@@ -236,6 +342,12 @@ export default function App() {
         <Route path="invoices/new" element={<InvoiceForm />} />
         <Route path="invoices/:id" element={<InvoiceDetail admin />} />
         <Route path="invoices/:id/edit" element={<InvoiceForm />} />
+        <Route path="*" element={<Navigate to="/admin" replace />} />
+      </Route>
+      <Route path="/admin/*" element={<Navigate to="/admin" replace />} />
+      <Route path="/account/*" element={<Navigate to="/account" replace />} />
+      <Route path="*" element={<PublicLayout />}>
+        <Route index element={<PublicRouteFallback />} />
       </Route>
     </Routes>
   )

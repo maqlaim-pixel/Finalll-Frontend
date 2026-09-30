@@ -1,0 +1,22 @@
+// Extend this directory as TravelVista confirms additional railway-station service coverage.
+export const RAILWAY_TRANSFER_STATIONS = [
+  { city: 'Ahmedabad', name: 'Ahmedabad Junction', code: 'ADI' },
+  { city: 'Mumbai', name: 'Mumbai Central', code: 'MMCT' },
+  { city: 'Mumbai', name: 'Chhatrapati Shivaji Terminus', code: 'CSMT' },
+  { city: 'New Delhi', name: 'New Delhi Railway Station', code: 'NDLS' },
+  { city: 'New Delhi', name: 'Hazrat Nizamuddin', code: 'NZM' },
+  { city: 'Jaipur', name: 'Jaipur Junction', code: 'JP' },
+  { city: 'Surat', name: 'Surat Railway Station', code: 'ST' },
+  { city: 'Vadodara', name: 'Vadodara Junction', code: 'BRC' },
+  { city: 'Rajkot', name: 'Rajkot Junction', code: 'RJT' },
+  { city: 'Pune', name: 'Pune Junction', code: 'PUNE' },
+  { city: 'Bengaluru', name: 'Bengaluru City Junction', code: 'SBC' },
+  { city: 'Chennai', name: 'Chennai Central', code: 'MAS' },
+  { city: 'Howrah', name: 'Howrah Junction', code: 'HWH' },
+  { city: 'Kolkata', name: 'Kolkata Railway Station', code: 'KOAA' },
+  { city: 'Hyderabad', name: 'Hyderabad Deccan', code: 'HYB' },
+  { city: 'Secunderabad', name: 'Secunderabad Junction', code: 'SC' },
+  { city: 'Kochi', name: 'Ernakulam Junction', code: 'ERS' },
+  { city: 'Udaipur', name: 'Udaipur City Railway Station', code: 'UDZ' },
+  { city: 'Jodhpur', name: 'Jodhpur Junction', code: 'JU' },
+]

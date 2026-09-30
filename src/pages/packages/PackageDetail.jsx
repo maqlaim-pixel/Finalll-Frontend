@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
+import { ComingSoonPage, NotFoundPage } from '../common/ComingSoonPage'
+import { getKnownMenuRouteName, isKnownMenuRoute } from '../../utils/menuRouteIndex'
 import { MapPin, Star, Check, X as XIcon, Clock, ChevronDown, ChevronUp, Loader2, Heart, Phone, Edit2, Trash2, Camera, X } from 'lucide-react'
 import api from '../../services/api'
 import { useAuth } from '../../context/AuthContext'
@@ -226,6 +228,13 @@ export default function PackageDetail() {
         </div>
       </div>
     )
+  }
+
+  if (error === 'Package not found') {
+    const packagePath = `/packages/${slug}`
+    return isKnownMenuRoute(packagePath)
+      ? <ComingSoonPage pageName={getKnownMenuRouteName(packagePath)} />
+      : <NotFoundPage />
   }
 
   if (error || !pkg) {

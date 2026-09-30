@@ -7,7 +7,7 @@
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "node --test src/utils/authSession.test.js"
+    "test": "node --test src/utils/authSession.test.js src/utils/heritageDestinations.test.js src/utils/indiaExperiences.test.js"
   },
   "dependencies": {
     "react": "^18.2.0",
