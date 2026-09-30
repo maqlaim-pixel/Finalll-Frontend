@@ -31,8 +31,8 @@ const DESTINATIONS = [
 ]
 
 const TESTIMONIALS = [
-  { text: "From appointment to post-treatment follow-up, TravelVista made my medical journey smooth and stress-free. Highly recommended!", name: 'Rajesh Sharma', country: 'USA', avatar: 'https://randomuser.me/api/portraits/men/32.jpg' },
-  { text: "The best decision I made was choosing TravelVista for my heart surgery in India. Saved 70% compared to UK costs with same quality care.", name: 'Sarah Johnson', country: 'UK', avatar: 'https://randomuser.me/api/portraits/women/44.jpg' },
+  { text: "From appointment to post-treatment follow-up, MAQLAIM TOURS made my medical journey smooth and stress-free. Highly recommended!", name: 'Rajesh Sharma', country: 'USA', avatar: 'https://randomuser.me/api/portraits/men/32.jpg' },
+  { text: "The best decision I made was choosing MAQLAIM TOURS for my heart surgery in India. Saved 70% compared to UK costs with same quality care.", name: 'Sarah Johnson', country: 'UK', avatar: 'https://randomuser.me/api/portraits/women/44.jpg' },
   { text: "Excellent coordination from visa to hospital stay. The team was professional and caring throughout my treatment journey.", name: 'Mohammed Al-Rashid', country: 'UAE', avatar: 'https://randomuser.me/api/portraits/men/52.jpg' },
 ]
 

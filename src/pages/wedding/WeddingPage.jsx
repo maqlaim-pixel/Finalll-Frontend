@@ -22,9 +22,9 @@ const DESTINATIONS = [
 ]
 
 const TESTIMONIALS = [
-  { text: "TravelVista made our dream wedding a reality! Every detail was perfect and stress-free. Truly unforgettable.", name: 'Riya & Arjun', location: 'Udaipur Wedding', avatar: 'https://randomuser.me/api/portraits/women/44.jpg' },
+  { text: "MAQLAIM TOURS made our dream wedding a reality! Every detail was perfect and stress-free. Truly unforgettable.", name: 'Riya & Arjun', location: 'Udaipur Wedding', avatar: 'https://randomuser.me/api/portraits/women/44.jpg' },
   { text: "The team handled everything from venue to décor to catering. We just enjoyed our special day without any worries.", name: 'Priya & Rahul', location: 'Goa Beach Wedding', avatar: 'https://randomuser.me/api/portraits/men/32.jpg' },
-  { text: "Our destination wedding in Bali was beyond our dreams. TravelVista's planning was impeccable.", name: 'Anita & Vikram', location: 'Bali Wedding', avatar: 'https://randomuser.me/api/portraits/women/68.jpg' },
+  { text: "Our destination wedding in Bali was beyond our dreams. MAQLAIM TOURS's planning was impeccable.", name: 'Anita & Vikram', location: 'Bali Wedding', avatar: 'https://randomuser.me/api/portraits/women/68.jpg' },
 ]
 
 export default function WeddingPage() {
@@ -177,7 +177,7 @@ export default function WeddingPage() {
               {/* Why Choose */}
               <div className="flex gap-8 items-start">
                 <div className="flex-1">
-                  <h2 className="text-xl font-bold text-navy-900 mb-4">Why Choose TravelVista Weddings?</h2>
+                  <h2 className="text-xl font-bold text-navy-900 mb-4">Why Choose MAQLAIM TOURS Weddings?</h2>
                   <ul className="space-y-3">
                     {[
                       'Handpicked luxury venues across the world',
@@ -279,7 +279,7 @@ export default function WeddingPage() {
               { icon: '💰', title: 'Best Price Guarantee', desc: 'We offer the best prices for your dream wedding' },
               { icon: '📞', title: '24/7 Assistance', desc: 'Our experts are with you at every step' },
               { icon: '🎁', title: 'Custom Packages', desc: 'Tailored packages to suit your style and budget' },
-              { icon: '❤️', title: 'Trusted by Thousands', desc: 'Thousands of couples trust TravelVista for their big day' },
+              { icon: '❤️', title: 'Trusted by Thousands', desc: 'Thousands of couples trust MAQLAIM TOURS for their big day' },
             ].map(t => (
               <div key={t.title} className="flex items-start gap-3">
                 <span className="text-2xl">{t.icon}</span>

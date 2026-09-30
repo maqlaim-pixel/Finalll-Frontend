@@ -176,7 +176,7 @@ export default function HolidayPage() {
       {/* WHY CHOOSE US */}
       <section className="section-padding bg-gradient-to-br from-emerald-900 to-teal-900 text-white">
         <div className="container-wide">
-          <div className="text-center mb-12"><span className="text-teal-300 font-semibold text-sm uppercase tracking-wider">Why TravelVista</span><h2 className="text-3xl md:text-4xl font-display font-bold mt-2">Why Choose Us for Holidays?</h2></div>
+          <div className="text-center mb-12"><span className="text-teal-300 font-semibold text-sm uppercase tracking-wider">Why MAQLAIM TOURS</span><h2 className="text-3xl md:text-4xl font-display font-bold mt-2">Why Choose Us for Holidays?</h2></div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: '🎯', title: 'Customized Itineraries', desc: 'Every holiday is tailored to your interests, budget, and travel style' },

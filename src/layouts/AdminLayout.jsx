@@ -151,7 +151,7 @@ export default function AdminLayout() {
         </header>
 
         {/* Content */}
-        <main className="flex-1 p-4 lg:p-6 overflow-auto">
+        <main className="flex-1 p-4 lg:p-6 overflow-auto" data-route-scroll-container>
           <Outlet />
         </main>
       </div>

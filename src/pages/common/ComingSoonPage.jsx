@@ -215,7 +215,7 @@ const PAGE_NAMES = {
 function formatPageName(pathname) {
   const knownName = PAGE_NAMES[pathname] || getKnownMenuRouteName(pathname)
   if (knownName) return knownName
-  return pathname.split('/').filter(Boolean).pop()?.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') || 'TravelVista'
+  return pathname.split('/').filter(Boolean).pop()?.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') || 'MAQLAIM TOURS'
 }
 
 function TravelIllustration() {
@@ -245,11 +245,11 @@ function TravelIllustration() {
 export function ComingSoonPage({ pageName: suppliedPageName }) {
   const location = useLocation()
   const pageName = suppliedPageName || formatPageName(location.pathname)
-  const heading = `${pageName} - Coming Soon | TravelVista`
+  const heading = `${pageName} - Coming Soon | MAQLAIM TOURS`
   const description = 'This travel experience is currently being prepared. We’re working to bring you complete information, packages and travel details soon.'
 
   return <>
-    <SEOHead title={heading} description={`${pageName} is being prepared. Explore available TravelVista packages or contact our team.`} />
+    <SEOHead title={heading} description={`${pageName} is being prepared. Explore available MAQLAIM TOURS packages or contact our team.`} />
     <section className="relative isolate flex min-h-[calc(100vh-9rem)] items-center overflow-hidden bg-[#eaf7ff] px-4 py-12 sm:px-8 lg:py-16" aria-labelledby="coming-soon-heading">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.92),rgba(223,244,255,0.62)_55%,rgba(255,255,255,0.12))]" aria-hidden="true" />
       <div className="relative mx-auto grid w-full max-w-7xl items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
@@ -273,7 +273,7 @@ export function ComingSoonPage({ pageName: suppliedPageName }) {
 
 export function NotFoundPage() {
   return <>
-    <SEOHead title="Page Not Found | TravelVista" description="The page you’re looking for doesn’t exist. Explore TravelVista destinations and packages." />
+    <SEOHead title="Page Not Found | MAQLAIM TOURS" description="The page you’re looking for doesn’t exist. Explore MAQLAIM TOURS destinations and packages." />
     <section className="flex min-h-[calc(100vh-9rem)] items-center justify-center bg-slate-50 px-4 py-16" aria-labelledby="not-found-heading">
       <div className="w-full max-w-xl rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm sm:p-12">
         <p className="font-display text-7xl font-bold text-orange-500">404</p>

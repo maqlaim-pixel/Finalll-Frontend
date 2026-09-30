@@ -273,7 +273,7 @@ export default function IndiaPage() {
       <section className="section-padding bg-gradient-to-br from-navy-900 to-sky-900 text-white">
         <div className="container-wide">
           <div className="text-center mb-12">
-            <span className="text-sky-300 font-semibold text-sm uppercase tracking-wider">Why TravelVista</span>
+            <span className="text-sky-300 font-semibold text-sm uppercase tracking-wider">Why MAQLAIM TOURS</span>
             <h2 className="text-3xl md:text-4xl font-display font-bold mt-2">Why Choose Us for India Travel?</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

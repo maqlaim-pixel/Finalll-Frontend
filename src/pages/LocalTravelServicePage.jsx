@@ -24,8 +24,8 @@ export default function LocalTravelServicePage() {
   return (
     <div className="bg-white">
       <SEOHead
-        title={`${selectedService.label} | TravelVista Local Travel`}
-        description={`Request ${selectedService.label.toLowerCase()} with TravelVista. Contact our team to plan reliable local transportation and travel services.`}
+        title={`${selectedService.label} | MAQLAIM TOURS Local Travel`}
+        description={`Request ${selectedService.label.toLowerCase()} with MAQLAIM TOURS. Contact our team to plan reliable local transportation and travel services.`}
       />
       <section className="relative bg-gradient-to-br from-navy-900 to-sky-900 py-16 text-white">
         <div className="container-wide">
@@ -39,7 +39,7 @@ export default function LocalTravelServicePage() {
             <h1 className="font-display text-3xl font-bold sm:text-4xl">{selectedService.label}</h1>
           </div>
           <p className="mt-5 max-w-3xl text-sky-100">
-            Book reliable local transportation and travel services with TravelVista. Contact our team to plan a service that suits your journey.
+            Book reliable local transportation and travel services with MAQLAIM TOURS. Contact our team to plan a service that suits your journey.
           </p>
           <Link to="/contact" className="mt-7 inline-flex items-center gap-2 rounded-lg bg-gold-500 px-5 py-3 font-bold text-navy-900 transition-colors hover:bg-gold-600">
             Enquire Now <ArrowRight size={17} />

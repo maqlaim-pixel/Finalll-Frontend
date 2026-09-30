@@ -41,11 +41,7 @@ export default function RajasthanWeddingPage() {
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
           <div className="flex items-center gap-8">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-rose-600 rounded-xl flex items-center justify-center text-white font-bold text-lg">TV</div>
-              <div>
-                <span className="font-bold text-navy-900 text-lg leading-tight block">TravelVista</span>
-                <span className="text-[10px] text-rose-600 tracking-wider uppercase">Explore the World</span>
-              </div>
+              <img src="/maqlaim-tours-logo.jpeg" alt="MAQLAIM TOURS — Explore The Purity of New Destinations" className="h-10 w-[60px] object-contain" />
             </Link>
             <nav className="hidden lg:flex items-center gap-1">
               <Link to="/" className="px-3 py-2 text-sm font-medium text-navy-700 hover:text-rose-600 transition-colors">Home</Link>
@@ -241,7 +237,7 @@ export default function RajasthanWeddingPage() {
               { icon: '🎨', title: '100% Customizable', desc: 'Tailor-made weddings as per your needs' },
               { icon: '📞', title: '24/7 Expert Support', desc: 'Our wedding experts are always here' },
               { icon: '🔒', title: 'Safe & Secure', desc: 'Secure payments & confidential process' },
-              { icon: '❤️', title: 'Trusted by Thousands', desc: '1000+ couples trust TravelVista' },
+              { icon: '❤️', title: 'Trusted by Thousands', desc: '1000+ couples trust MAQLAIM TOURS' },
             ].map(t => (
               <div key={t.title} className="flex items-start gap-2 text-center md:text-left">
                 <span className="text-2xl">{t.icon}</span>

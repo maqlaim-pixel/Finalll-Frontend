@@ -34,7 +34,7 @@ export default function LoginPage({ admin = false }) {
   return <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-12">
     <div className="w-full max-w-md bg-white rounded-xl border p-8">
       <h1 className="text-2xl font-bold text-navy-900 mb-2">{admin ? 'Admin Sign In' : 'Welcome Back'}</h1>
-      <p className="text-sm text-navy-500 mb-6">{admin ? 'Sign in to manage TravelVista.' : 'Sign in with your password, then verify the code sent to your email.'}</p>
+      <p className="text-sm text-navy-500 mb-6">{admin ? 'Sign in to manage MAQLAIM TOURS.' : 'Sign in with your password, then verify the code sent to your email.'}</p>
       {error && <p role="alert" className="bg-red-50 text-red-600 p-3 rounded-lg mb-4">{error}</p>}
       <form onSubmit={submit} className="space-y-5">
         <label className="block">Email<input type="email" autoComplete="email" required value={email} onChange={e => setEmail(e.target.value)} className="block w-full border rounded-lg p-3 mt-1" /></label>

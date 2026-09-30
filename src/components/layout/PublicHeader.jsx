@@ -84,7 +84,7 @@ export default function PublicHeader() {
         <div className="container-wide flex items-center justify-between h-16 min-[1600px]:h-[68px] min-[1600px]:max-w-[1600px]">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 shrink-0" onClick={closeMega}>
-            <img src="https://www.maqlaimtours.com/uploads/0000/1/2023/09/12/logo-tour-1.png" alt="TravelVista" className="h-10 w-auto" />
+            <img src="/maqlaim-tours-logo.jpeg" alt="MAQLAIM TOURS — Explore The Purity of New Destinations" className="h-[60px] w-[90px] object-contain sm:h-16 sm:w-24" />
           </Link>
 
           {/* Desktop Nav — click-based mega menu toggle */}

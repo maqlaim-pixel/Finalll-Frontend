@@ -317,7 +317,7 @@ export default function CorporateTravelPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Ready to Transform Your {category.title}?</h2>
-              <p className="text-gray-300 text-lg mb-8">Join 500+ companies that trust TravelVista for their corporate travel needs. Get a free consultation and custom proposal.</p>
+              <p className="text-gray-300 text-lg mb-8">Join 500+ companies that trust MAQLAIM TOURS for their corporate travel needs. Get a free consultation and custom proposal.</p>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <CheckCircle size={18} className="text-sky-400" />

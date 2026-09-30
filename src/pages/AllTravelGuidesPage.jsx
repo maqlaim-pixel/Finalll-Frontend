@@ -123,7 +123,7 @@ function buildDestinationGuideEntries(destinations, packages) {
     if (costPackages.length) {
       records.push({
         id: `cost-${slug}`, title: `${name} Travel Cost Guide`, category: 'Travel Cost',
-        description: `Published TravelVista package pricing and trip durations are available for ${name}; see the existing destination cost guide for an indicative estimate.`,
+        description: `Published MAQLAIM TOURS package pricing and trip durations are available for ${name}; see the existing destination cost guide for an indicative estimate.`,
         image: cover, alt: `${name} destination`, path: `/travel-guide/travel-cost/${encodeURIComponent(slug)}`,
         date: '', featured: false,
         searchText: `${searchText} travel cost budget ${costPackages.map(pkg => `${pkg.title || ''} ${pkg.destination || ''} ${pkg.startingPrice} ${pkg.currency || 'INR'} ${pkg.durationDays} days`).join(' ')}`,
@@ -247,7 +247,7 @@ export default function AllTravelGuidesPage() {
     const imageUrl = resolveImageUrl(pkg.coverImage || pkg.image)
     return [{
       id: `itinerary-${id}`, title: `${title} Itinerary`, category: 'Itineraries', featured: Boolean(pkg.featured),
-      description: `${itinerary.length}-day itinerary${destination ? ` for ${destination}` : ''} from a published TravelVista package.`,
+      description: `${itinerary.length}-day itinerary${destination ? ` for ${destination}` : ''} from a published MAQLAIM TOURS package.`,
       image: imageUrl, alt: `${title} travel package`, path: pkg.slug ? `/packages/${encodeURIComponent(pkg.slug)}` : `/packages?destination=${encodeURIComponent(destination)}`,
       date: pkg.publishedAt || pkg.createdAt || '', searchText: `${title} ${destination} ${pkg.state || ''} ${pkg.shortDescription || ''} ${pkg.description || ''} ${itinerary.map(day => `${day.title || ''} ${day.desc || ''}`).join(' ')}`,
     }]
@@ -286,7 +286,7 @@ export default function AllTravelGuidesPage() {
   const clearSearch = () => setSearch('')
 
   return <div className="min-w-0 overflow-x-hidden bg-white text-navy-900">
-    <SEOHead title="All Travel Guides | Travel Tips & Planning Resources | TravelVista" description="Explore TravelVista travel guides including travel tips, itineraries, packing guides, destination information, travel costs, visa guidance and more." />
+    <SEOHead title="All Travel Guides | Travel Tips & Planning Resources | MAQLAIM TOURS" description="Explore MAQLAIM TOURS travel guides including travel tips, itineraries, packing guides, destination information, travel costs, visa guidance and more." />
     <section className="relative isolate min-h-[205px] overflow-hidden bg-navy-950 text-white sm:min-h-[215px] lg:min-h-[220px]" aria-labelledby="all-guides-title">
       <img src={image('photo-1719952739528-e801d3904bfa', 2200, 850)} alt="A backpacker overlooking a mountain valley and lake at sunrise" fetchPriority="high" className="absolute inset-0 h-full w-full object-cover object-[58%_52%]" />
       <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/76 to-navy-950/10" aria-hidden="true" />
@@ -311,7 +311,7 @@ export default function AllTravelGuidesPage() {
         {contentLoading ? <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 min-[1440px]:grid-cols-4" role="status" aria-label="Loading travel guide content">{Array.from({ length: 8 }, (_, index) => <div key={index} className="h-72 animate-pulse rounded-xl bg-slate-100" />)}</div> : noResults ? <div className="rounded-xl border border-dashed border-slate-300 bg-slate-50 px-5 py-10 text-center" role="status"><CircleHelp size={32} className="mx-auto text-sky-700" /><h3 className="mt-3 font-display text-xl font-bold text-navy-950">No Travel Guides Found</h3><p className="mt-2 text-sm text-navy-700">Try another search or clear the current filters.</p><button type="button" onClick={clearSearch} className="mt-4 min-h-10 rounded-full bg-orange-500 px-5 font-semibold text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">Clear Search</button><Link to="/travel-guide/all-guides" onClick={clearSearch} className="ml-3 inline-flex min-h-10 items-center gap-2 rounded-full border border-sky-700 px-4 text-sm font-semibold text-sky-800 hover:bg-sky-50">View All Guides <ArrowRight size={15} /></Link></div> : <>
           {query && matchingEntries.length > 0 && <section className="mb-5" aria-labelledby="matching-content-title"><h3 id="matching-content-title" className="mb-3 font-display text-xl font-bold text-navy-950">Matching Available Guides <span className="font-sans text-sm font-normal text-navy-600">({matchingEntries.length} records)</span></h3><div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">{matchingEntries.map(entry => <GuideEntryCard key={entry.id} entry={entry} />)}</div></section>}
           {matchingCategories.length > 0 && <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 min-[1440px]:grid-cols-4">{matchingCategories.map(category => <CategoryCard key={category.id} category={category} count={categoryRecords[category.title]} />)}</div>}
-          {(!query || (searchHasResults && matchingEntries.length === 0)) && <section className="mt-7" aria-labelledby="all-available-guides-title"><div className="mb-3 flex flex-wrap items-end justify-between gap-2"><div><h3 id="all-available-guides-title" className="font-display text-xl font-bold text-navy-950">All Available Guides</h3><p className="mt-1 text-sm text-navy-600">Browse the available guide records and package itineraries currently on TravelVista.</p></div><span className="text-xs text-navy-500">{displayedEntries.length} available records</span></div><div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">{displayedEntries.map(entry => <GuideEntryCard key={entry.id} entry={entry} />)}</div></section>}
+          {(!query || (searchHasResults && matchingEntries.length === 0)) && <section className="mt-7" aria-labelledby="all-available-guides-title"><div className="mb-3 flex flex-wrap items-end justify-between gap-2"><div><h3 id="all-available-guides-title" className="font-display text-xl font-bold text-navy-950">All Available Guides</h3><p className="mt-1 text-sm text-navy-600">Browse the available guide records and package itineraries currently on MAQLAIM TOURS.</p></div><span className="text-xs text-navy-500">{displayedEntries.length} available records</span></div><div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">{displayedEntries.map(entry => <GuideEntryCard key={entry.id} entry={entry} />)}</div></section>}
           {contentError && <div role="alert" className="mt-4 rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900"><h3 className="font-semibold">Unable to Load Travel Guides</h3><p className="mt-1">Some published package or destination guides couldn’t be loaded. Other available guides are still shown.</p><button type="button" onClick={loadGuideContent} className="mt-2 inline-flex min-h-9 items-center gap-2 font-semibold underline">{retried ? 'Retry' : 'Please try again'} <ArrowRight size={14} /></button></div>}
         </>}
       </section>

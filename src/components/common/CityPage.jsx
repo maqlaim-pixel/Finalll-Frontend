@@ -309,7 +309,7 @@ export default function CityPage({ city }) {
         <div className="absolute inset-0 bg-navy-900/80 flex items-center">
           <div className="container-wide flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-white">
-              <h2 className="text-2xl md:text-3xl font-display font-bold">Plan Your {city.name} Trip with TravelVista</h2>
+              <h2 className="text-2xl md:text-3xl font-display font-bold">Plan Your {city.name} Trip with MAQLAIM TOURS</h2>
               <p className="text-gray-300 mt-1">Customizable packages {'\u2022'} Best prices {'\u2022'} 24x7 support</p>
             </div>
             <Link to="/contact" className="bg-gold-500 hover:bg-gold-600 text-navy-900 px-8 py-3 rounded-xl font-bold transition-colors whitespace-nowrap">Enquire Now</Link>

@@ -125,7 +125,7 @@ function TourDetailsModal({ tour, onClose, onSelect }) {
       <button ref={closeRef} type="button" aria-label="Close tour details" onClick={onClose} className="absolute right-3 top-3 z-10 rounded-full bg-white/95 p-2 text-navy-700 shadow hover:bg-white focus:outline-none focus:ring-2 focus:ring-sky-500"><X size={19} /></button>
       <img src={tour.image} alt={tour.alt} className="h-48 w-full object-cover sm:h-60" />
       <div className="space-y-4 p-5 sm:p-6">
-        <div><p className="text-xs font-semibold uppercase tracking-wide text-orange-600">{tour.isFallback ? 'Suggested city itinerary' : 'Available TravelVista package'}</p><h2 id="tour-modal-title" className="mt-1 font-display text-2xl font-bold text-navy-900">{tour.name}</h2><p className="mt-1 flex items-center gap-2 text-sm text-navy-600"><MapPin size={15} />{tour.city}<span aria-hidden="true">·</span><Clock3 size={15} />{tour.duration}</p></div>
+        <div><p className="text-xs font-semibold uppercase tracking-wide text-orange-600">{tour.isFallback ? 'Suggested city itinerary' : 'Available MAQLAIM TOURS package'}</p><h2 id="tour-modal-title" className="mt-1 font-display text-2xl font-bold text-navy-900">{tour.name}</h2><p className="mt-1 flex items-center gap-2 text-sm text-navy-600"><MapPin size={15} />{tour.city}<span aria-hidden="true">·</span><Clock3 size={15} />{tour.duration}</p></div>
         <div><h3 className="font-semibold text-navy-900">Tour Overview</h3><p className="mt-1 text-sm leading-relaxed text-navy-700">{tour.overview}</p></div>
         <div><h3 className="font-semibold text-navy-900">Attractions Covered</h3><ul className="mt-1 grid gap-1 text-sm text-navy-700 sm:grid-cols-2">{tour.attractions.map(item => <li key={item} className="flex items-start gap-2"><MapPin size={14} className="mt-0.5 shrink-0 text-orange-500" />{item}</li>)}</ul></div>
         <div className="grid gap-4 sm:grid-cols-2"><div><h3 className="font-semibold text-navy-900">Pickup Information</h3><p className="mt-1 text-sm text-navy-700">Pickup point and time will be coordinated with you after your request.</p></div><div><h3 className="font-semibold text-navy-900">Vehicle Options</h3><p className="mt-1 text-sm text-navy-700">{VEHICLES.map(vehicle => vehicle.name).join(', ')} — final availability is confirmed by our travel team.</p></div></div>
@@ -280,7 +280,7 @@ export default function FullDayCityTourPage() {
   }
 
   return <div className="min-w-0 overflow-x-hidden bg-white text-navy-900">
-    <SEOHead title="Full Day City Tours in India | TravelVista" description="Explore popular Indian cities with TravelVista full day city tours. Enjoy comfortable transportation, curated sightseeing itineraries and flexible vehicle options." />
+    <SEOHead title="Full Day City Tours in India | MAQLAIM TOURS" description="Explore popular Indian cities with MAQLAIM TOURS full day city tours. Enjoy comfortable transportation, curated sightseeing itineraries and flexible vehicle options." />
 
     <section className="relative isolate min-h-[215px] overflow-hidden bg-navy-950 text-white sm:min-h-[235px] lg:min-h-[250px]" aria-labelledby="city-tour-title">
       <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=2200&q=88" alt="Indian heritage palace in warm golden-hour light with travelers exploring" fetchpriority="high" className="absolute inset-0 h-full w-full object-cover object-[50%_52%]" />

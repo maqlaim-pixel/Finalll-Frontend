@@ -3,7 +3,7 @@ import { Settings, Save, Globe, Phone, Mail, MapPin, Image } from 'lucide-react'
 
 export default function AdminSettings() {
   const [settings, setSettings] = useState({
-    brand_name: 'TravelVista',
+    brand_name: 'MAQLAIM TOURS',
     tagline: 'Explore the World with Confidence',
     phone: '+91 98765 43210',
     whatsapp: '+91 98765 43210',
@@ -14,7 +14,7 @@ export default function AdminSettings() {
     instagram: 'https://instagram.com/travelvista',
     youtube: 'https://youtube.com/travelvista',
     twitter: 'https://twitter.com/travelvista',
-    seo_title: 'TravelVista - Premium Travel Packages & Destinations',
+    seo_title: 'MAQLAIM TOURS - Premium Travel Packages & Destinations',
     seo_description: 'Discover handcrafted travel experiences across India and beyond.',
   })
 

@@ -6,6 +6,9 @@
   html {
     scroll-behavior: smooth;
   }
+  html.route-changing {
+    scroll-behavior: auto !important;
+  }
   body {
     @apply text-navy-900 bg-white;
   }
@@ -651,4 +654,26 @@
 @keyframes confettiFall {
   0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
   100% { opacity: 0; transform: translate(var(--x, 50px), var(--y, -150px)) rotate(var(--r, 360deg)) scale(0.5); }
+}
+
+/* Homepage review carousel: one card on mobile, two on tablet, three on desktop. */
+.home-review-track {
+  scrollbar-width: none;
+  touch-action: pan-x;
+}
+.home-review-track::-webkit-scrollbar {
+  display: none;
+}
+.home-review-card {
+  flex: 0 0 100%;
+}
+@media (min-width: 640px) {
+  .home-review-card {
+    flex-basis: calc((100% - 1rem) / 2);
+  }
+}
+@media (min-width: 1024px) {
+  .home-review-card {
+    flex-basis: calc((100% - 2rem) / 3);
+  }
 }

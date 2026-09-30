@@ -19,7 +19,7 @@ export default function AboutPage() {
     <div>
       <section className="relative bg-gradient-to-br from-navy-900 to-sky-900 text-white py-20">
         <div className="container-wide text-center">
-          <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">About TravelVista</h1>
+          <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">About MAQLAIM TOURS</h1>
           <p className="text-navy-200 max-w-2xl mx-auto">Crafting unforgettable journeys across India and the world since 2009</p>
         </div>
       </section>
@@ -45,7 +45,7 @@ export default function AboutPage() {
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-display font-bold text-navy-900 mb-4">Our Story</h2>
-            <p className="text-navy-600 leading-relaxed">TravelVista was born from a simple belief: everyone deserves a perfectly planned journey. What started as a small team of travel enthusiasts in Mumbai has grown into one of India's most trusted travel platforms, serving over 50,000 happy travelers across 100+ destinations.</p>
+            <p className="text-navy-600 leading-relaxed">MAQLAIM TOURS was born from a simple belief: everyone deserves a perfectly planned journey. What started as a small team of travel enthusiasts in Mumbai has grown into one of India's most trusted travel platforms, serving over 50,000 happy travelers across 100+ destinations.</p>
             <p className="text-navy-600 leading-relaxed mt-4">We combine local expertise with modern technology to curate experiences that go beyond typical tourism — from hidden gems in Rajasthan to luxury resorts in the Maldives.</p>
           </div>
 

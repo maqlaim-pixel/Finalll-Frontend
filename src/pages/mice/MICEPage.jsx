@@ -94,7 +94,7 @@ export default function MICEPage() {
       {/* WHY CHOOSE US */}
       <section className="section-padding bg-gradient-to-br from-slate-800 to-indigo-900 text-white">
         <div className="container-wide">
-          <div className="text-center mb-12"><span className="text-indigo-300 font-semibold text-sm uppercase tracking-wider">Why TravelVista</span><h2 className="text-3xl md:text-4xl font-display font-bold mt-2">Why Choose Us for MICE?</h2></div>
+          <div className="text-center mb-12"><span className="text-indigo-300 font-semibold text-sm uppercase tracking-wider">Why MAQLAIM TOURS</span><h2 className="text-3xl md:text-4xl font-display font-bold mt-2">Why Choose Us for MICE?</h2></div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[{ icon: '📋', title: 'End-to-End Management', desc: 'We handle everything — venues, logistics, branding, AV, and on-ground execution' }, { icon: '🏨', title: 'Premium Venues', desc: 'Access to 500+ verified conference and event venues across India' }, { icon: '👥', title: 'Group Travel', desc: 'Seamless group transportation, accommodation, and coordination for 10 to 10,000+ attendees' }, { icon: '📊', title: 'Budget Optimization', desc: 'Maximize your event ROI with transparent pricing and smart cost management' }].map((item, i) => (
               <div key={i} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-white/20 transition-colors"><div className="text-4xl mb-4">{item.icon}</div><h3 className="font-bold text-lg mb-2">{item.title}</h3><p className="text-gray-300 text-sm">{item.desc}</p></div>

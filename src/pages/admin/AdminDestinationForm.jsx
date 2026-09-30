@@ -400,7 +400,7 @@ export default function AdminDestinationForm() {
             <div className={sectionClass + ' !bg-transparent !p-0 !border-0'}>
               <h2 className="font-bold text-navy-900 text-lg mb-4">SEO Settings</h2>
               <div className="space-y-4">
-                <div><label className={labelClass}>SEO Title</label><input className={inputClass} value={form.seoTitle || ''} onChange={e => set('seoTitle', e.target.value)} placeholder="Rann of Kutch | TravelVista" /></div>
+                <div><label className={labelClass}>SEO Title</label><input className={inputClass} value={form.seoTitle || ''} onChange={e => set('seoTitle', e.target.value)} placeholder="Rann of Kutch | MAQLAIM TOURS" /></div>
                 <div><label className={labelClass}>Meta Description</label><textarea className={inputClass + " resize-none"} rows={2} value={form.seoDescription || ''} onChange={e => set('seoDescription', e.target.value)} /></div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div><label className={labelClass}>OG Title</label><input className={inputClass} value={form.ogTitle || ''} onChange={e => set('ogTitle', e.target.value)} /></div>

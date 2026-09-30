@@ -57,7 +57,7 @@ export default function ComingSoon({
           <Phone size={14} className="text-sky-500" /> +91 98765 43210
         </span>
         <span className="flex items-center gap-2">
-          <Mail size={14} className="text-sky-500" /> info@travelvista.com
+          <Mail size={14} className="text-sky-500" /> info@maqlaimtours.com
         </span>
         <span className="flex items-center gap-2">
           <Clock size={14} className="text-sky-500" /> 24x7 Support

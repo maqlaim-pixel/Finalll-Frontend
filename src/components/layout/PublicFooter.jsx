@@ -49,10 +49,7 @@ export default function PublicFooter() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 bg-gradient-to-br from-sky-400 to-sky-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">TV</span>
-              </div>
-              <span className="text-lg font-display font-bold">TravelVista</span>
+              <img src="/maqlaim-tours-logo.jpeg" alt="MAQLAIM TOURS — Explore The Purity of New Destinations" className="h-10 w-auto object-contain" />
             </div>
             <p className="text-navy-300 text-sm leading-relaxed mb-4">Your trusted travel partner for curated destinations, premium packages, and unforgettable experiences across India and the world.</p>
             <div className="space-y-2 text-sm text-navy-400">
@@ -80,7 +77,7 @@ export default function PublicFooter() {
       {/* Bottom */}
       <div className="border-t border-navy-700">
         <div className="container-wide py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-navy-400">
-          <p>&copy; {new Date().getFullYear()} TravelVista. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} MAQLAIM TOURS. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <a href="#" className="hover:text-gold-400 transition-colors">Facebook</a>
             <a href="#" className="hover:text-gold-400 transition-colors">Instagram</a>

@@ -160,7 +160,7 @@ export default function App() {
     <Routes future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       {/* ── Public Routes ──────────────────────────────────────── */}
       <Route element={<PublicLayout />}>
-        <Route path="/" element={<HomePage />} />
+        <Route index element={<HomePage />} />
         <Route path="/destinations" element={<DestinationsPage />} />
         <Route path="/destinations/:slug" element={<DestinationDetail />} />
         <Route path="/packages" element={<PackagesPage />} />
