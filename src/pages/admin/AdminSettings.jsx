@@ -5,9 +5,9 @@ export default function AdminSettings() {
   const [settings, setSettings] = useState({
     brand_name: 'MAQLAIM TOURS',
     tagline: 'Explore the World with Confidence',
-    phone: '+91 98765 43210',
-    whatsapp: '+91 98765 43210',
-    email: 'hello@travelvista.com',
+    phone: '+91 93137 10465',
+    whatsapp: '+91 93137 10465',
+    email: 'sales@maqlaimtours.com',
     address: '42, Marine Drive, Mumbai, Maharashtra 400001',
     business_hours: 'Mon-Sat: 9:00 AM - 8:00 PM IST',
     facebook: 'https://facebook.com/travelvista',

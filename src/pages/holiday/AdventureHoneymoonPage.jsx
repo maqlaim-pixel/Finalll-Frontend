@@ -258,7 +258,7 @@ export default function AdventureHoneymoonPage() {
               <h2 className="text-3xl font-display font-bold mb-4">Plan Your Dream Adventure Honeymoon</h2>
               <p className="text-orange-200 mb-8">Our adventure experts will craft the perfect thrill-filled honeymoon for you.</p>
               <div className="space-y-4">
-                <div className="flex items-center gap-3"><Phone size={18} className="text-orange-300" /><span>+91 98765 43210</span></div>
+                <div className="flex items-center gap-3"><Phone size={18} className="text-orange-300" /><span>+91 93137 10465</span></div>
                 <div className="flex items-center gap-3"><Mail size={18} className="text-orange-300" /><span>info@travelvista.com</span></div>
                 <div className="flex items-center gap-3"><Headphones size={18} className="text-orange-300" /><span>24x7 Adventure Support</span></div>
               </div>

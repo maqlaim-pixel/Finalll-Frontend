@@ -325,8 +325,8 @@ export default function MICESupportPage() {
             <Link to="/contact" className="bg-sky-600 hover:bg-sky-700 text-white px-8 py-3.5 rounded-xl font-semibold flex items-center gap-2 transition-colors">
               <Send size={18} /> Request Quote
             </Link>
-            <a href="tel:+919876543210" className="bg-white/10 hover:bg-white/20 text-white px-8 py-3.5 rounded-xl font-semibold flex items-center gap-2 transition-colors">
-              <Phone size={18} /> +91 98765 43210
+            <a href="tel:+919313710465" className="bg-white/10 hover:bg-white/20 text-white px-8 py-3.5 rounded-xl font-semibold flex items-center gap-2 transition-colors">
+              <Phone size={18} /> +91 93137 10465
             </a>
           </div>
         </div>

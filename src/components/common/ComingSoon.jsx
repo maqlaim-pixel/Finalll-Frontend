@@ -54,7 +54,7 @@ export default function ComingSoon({
       {/* Contact info */}
       <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-navy-500">
         <span className="flex items-center gap-2">
-          <Phone size={14} className="text-sky-500" /> +91 98765 43210
+          <Phone size={14} className="text-sky-500" /> +91 93137 10465
         </span>
         <span className="flex items-center gap-2">
           <Mail size={14} className="text-sky-500" /> info@maqlaimtours.com

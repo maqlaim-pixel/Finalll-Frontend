@@ -73,6 +73,16 @@ import CorporateTravelPage from './pages/mice/CorporateTravelPage'
 import MICESupportPage from './pages/mice/MICESupportPage'
 import WeddingPage from './pages/wedding/WeddingPage'
 import RajasthanWeddingPage from './pages/wedding/RajasthanWeddingPage'
+import GoaWeddingPage from './pages/wedding/GoaWeddingPage'
+import UdaipurWeddingPage from './pages/wedding/UdaipurWeddingPage'
+import JaipurWeddingPage from './pages/wedding/JaipurWeddingPage'
+import JodhpurWeddingPage from './pages/wedding/JodhpurWeddingPage'
+import KeralaWeddingPage from './pages/wedding/KeralaWeddingPage'
+import MaharashtraWeddingPage from './pages/wedding/MaharashtraWeddingPage'
+import HimachalWeddingPage from './pages/wedding/HimachalWeddingPage'
+import KashmirWeddingPage from './pages/wedding/KashmirWeddingPage'
+import AyodhyaWeddingPage from './pages/wedding/AyodhyaWeddingPage'
+import VaranasiWeddingPage from './pages/wedding/VaranasiWeddingPage'
 import MedicalTourismPage from './pages/medical/MedicalTourismPage'
 import GujaratPage from './pages/gujarat/GujaratPage'
 import RajasthanPage from './pages/rajasthan/RajasthanPage'
@@ -271,6 +281,17 @@ export default function App() {
         <Route path="/mice/support/:serviceSlug" element={<MICESupportPage />} />
         <Route path="/destination-wedding" element={<WeddingPage />} />
         <Route path="/destination-weddings" element={<WeddingPage />} />
+        <Route path="/destination-weddings/india/rajasthan" element={<RajasthanWeddingPage />} />
+        <Route path="/destination-weddings/india/goa" element={<GoaWeddingPage />} />
+        <Route path="/destination-weddings/india/udaipur" element={<UdaipurWeddingPage />} />
+        <Route path="/destination-weddings/india/jaipur" element={<JaipurWeddingPage />} />
+        <Route path="/destination-weddings/india/jodhpur" element={<JodhpurWeddingPage />} />
+        <Route path="/destination-weddings/india/kerala" element={<KeralaWeddingPage />} />
+        <Route path="/destination-weddings/india/maharashtra" element={<MaharashtraWeddingPage />} />
+        <Route path="/destination-weddings/india/himachal" element={<HimachalWeddingPage />} />
+        <Route path="/destination-weddings/india/kashmir" element={<KashmirWeddingPage />} />
+        <Route path="/destination-weddings/india/ayodhya" element={<AyodhyaWeddingPage />} />
+        <Route path="/destination-weddings/india/varanasi" element={<VaranasiWeddingPage />} />
         <Route path="/destination-wedding/:destSlug" element={<WeddingPage />} />
         <Route path="/destination-weddings/:destSlug" element={<WeddingPage />} />
         <Route path="/weddings/rajasthan" element={<RajasthanWeddingPage />} />

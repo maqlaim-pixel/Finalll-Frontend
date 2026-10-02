@@ -18,6 +18,19 @@ test('known menu destinations without a matching page use Coming Soon', () => {
   assert.equal(isKnownMenuRoute('/medical-tourism/treatments/cardiac'), true)
 })
 
+test('implemented wedding destination routes are not sent to the Coming Soon fallback', () => {
+  assert.equal(isKnownMenuRoute('/destination-weddings/india/goa'), false)
+  assert.equal(isKnownMenuRoute('/destination-weddings/india/udaipur'), false)
+  assert.equal(isKnownMenuRoute('/destination-weddings/india/jaipur'), false)
+  assert.equal(isKnownMenuRoute('/destination-weddings/india/jodhpur'), false)
+  assert.equal(isKnownMenuRoute('/destination-weddings/india/kerala'), false)
+  assert.equal(isKnownMenuRoute('/destination-weddings/india/maharashtra'), false)
+  assert.equal(isKnownMenuRoute('/destination-weddings/india/himachal'), false)
+  assert.equal(isKnownMenuRoute('/destination-weddings/india/kashmir'), false)
+  assert.equal(isKnownMenuRoute('/destination-weddings/india/ayodhya'), false)
+  assert.equal(isKnownMenuRoute('/destination-weddings/india/varanasi'), false)
+})
+
 test('working destinations in navigation are not sent to Coming Soon', () => {
   assert.equal(isKnownMenuRoute('/adventure/trekking-packages'), false)
   assert.equal(isKnownMenuRoute('/packages/adventure/trekking'), false)
@@ -32,7 +45,7 @@ test('working destinations in navigation are not sent to Coming Soon', () => {
   assert.equal(isKnownMenuRoute('/international/uae/packages'), false)
   assert.equal(isKnownMenuRoute('/packages/family/getaways'), true)
   assert.equal(isKnownMenuRoute('/medical-tourism/india'), false)
-  assert.equal(isKnownMenuRoute('/medical-tourism/india/delhi'), false)
+  assert.equal(isKnownMenuRoute('/medical-tourism/india/delhi'), true)
   assert.equal(isKnownMenuRoute('/holidays/family/getaways'), false)
   assert.equal(isKnownMenuRoute('/holidays/adventure/trekking'), false)
   assert.equal(isKnownMenuRoute('/holidays/domestic-honeymoon'), false)
@@ -45,4 +58,5 @@ test('unknown paths are not classified as coming soon', () => {
   assert.equal(isKnownMenuRoute('/random-invalid-page-12345'), false)
   assert.equal(isKnownMenuRoute('/packages/unknown-made-up-route'), false)
   assert.equal(isKnownMenuRoute('/mice/unknown-made-up-route'), false)
+  assert.equal(isKnownMenuRoute('/destination-weddings/india/unknown-wedding-city'), false)
 })

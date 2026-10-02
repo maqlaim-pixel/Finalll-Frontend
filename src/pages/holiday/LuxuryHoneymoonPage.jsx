@@ -259,7 +259,7 @@ export default function LuxuryHoneymoonPage() {
               <h2 className="text-3xl font-display font-bold mb-4">Plan Your Dream Luxury Honeymoon</h2>
               <p className="text-amber-200 mb-8">Our luxury travel experts will craft the most exclusive honeymoon experience for you.</p>
               <div className="space-y-4">
-                <div className="flex items-center gap-3"><Phone size={18} className="text-amber-300" /><span>+91 98765 43210</span></div>
+                <div className="flex items-center gap-3"><Phone size={18} className="text-amber-300" /><span>+91 93137 10465</span></div>
                 <div className="flex items-center gap-3"><Mail size={18} className="text-amber-300" /><span>info@travelvista.com</span></div>
                 <div className="flex items-center gap-3"><Headphones size={18} className="text-amber-300" /><span>24x7 Concierge Service</span></div>
               </div>

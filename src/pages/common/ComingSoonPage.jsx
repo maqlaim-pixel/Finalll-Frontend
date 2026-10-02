@@ -242,30 +242,31 @@ function TravelIllustration() {
   </div>
 }
 
-export function ComingSoonPage({ pageName: suppliedPageName }) {
+export function ComingSoonPage({ pageName: suppliedPageName, compact = false }) {
   const location = useLocation()
   const pageName = suppliedPageName || formatPageName(location.pathname)
   const heading = `${pageName} - Coming Soon | MAQLAIM TOURS`
+  const Heading = compact ? 'h2' : 'h1'
   const description = 'This travel experience is currently being prepared. We’re working to bring you complete information, packages and travel details soon.'
 
   return <>
-    <SEOHead title={heading} description={`${pageName} is being prepared. Explore available MAQLAIM TOURS packages or contact our team.`} />
-    <section className="relative isolate flex min-h-[calc(100vh-9rem)] items-center overflow-hidden bg-[#eaf7ff] px-4 py-12 sm:px-8 lg:py-16" aria-labelledby="coming-soon-heading">
+    {!compact && <SEOHead title={heading} description={`${pageName} is being prepared. Explore available MAQLAIM TOURS packages or contact our team.`} />}
+    <section className={`relative isolate flex items-center overflow-hidden bg-[#eaf7ff] ${compact ? 'min-h-[280px] px-4 py-5 sm:min-h-[300px] sm:px-5' : 'min-h-[calc(100vh-9rem)] px-4 py-12 sm:px-8 lg:py-16'}`} aria-labelledby="coming-soon-heading">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.92),rgba(223,244,255,0.62)_55%,rgba(255,255,255,0.12))]" aria-hidden="true" />
-      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
-        <div className="order-2 text-center lg:order-1 lg:text-left">
-          <div className="mx-auto mb-5 inline-flex -rotate-2 items-center gap-2 rounded-lg border-[5px] border-[#854214] bg-gradient-to-b from-[#ffb42f] to-[#f1840c] px-5 py-2.5 text-sm font-extrabold tracking-[0.16em] text-[#192639] shadow-[0_8px_0_#6f3917,0_14px_28px_rgba(18,43,67,0.24)] sm:text-base lg:mx-0"><Construction size={20} aria-hidden="true" />COMING SOON</div>
-          <p className="mb-2 text-sm font-bold uppercase tracking-[0.22em] text-sky-800">{pageName}</p>
-          <h1 id="coming-soon-heading" className="font-display text-4xl font-bold leading-[1.05] text-navy-950 sm:text-5xl md:text-6xl"><span className="block">We’re Working</span><span className="mt-1 block text-orange-600">on This Page</span></h1>
-          <div className="mx-auto my-5 h-1 w-20 rounded-full bg-orange-500 lg:mx-0" />
-          <p className="mx-auto max-w-xl text-base leading-relaxed text-navy-800 sm:text-lg lg:mx-0">{description}</p>
-          <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap lg:justify-start">
+      <div className={`relative mx-auto grid w-full items-center ${compact ? 'max-w-4xl gap-3 sm:grid-cols-[1.2fr_0.8fr] sm:gap-4' : 'max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14'}`}>
+        <div className={`${compact ? 'text-left' : 'order-2 text-center lg:order-1 lg:text-left'}`}>
+          <div className={`inline-flex -rotate-2 items-center gap-2 rounded-lg border-[5px] border-[#854214] bg-gradient-to-b from-[#ffb42f] to-[#f1840c] font-extrabold tracking-[0.16em] text-[#192639] shadow-[0_8px_0_#6f3917,0_14px_28px_rgba(18,43,67,0.24)] ${compact ? 'mb-3 px-3 py-1.5 text-xs sm:text-sm' : 'mx-auto mb-5 px-5 py-2.5 text-sm sm:text-base lg:mx-0'}`}><Construction size={compact ? 16 : 20} aria-hidden="true" />COMING SOON</div>
+          <p className={`${compact ? 'mb-1 text-[10px] tracking-[0.16em]' : 'mb-2 text-sm tracking-[0.22em]'} font-bold uppercase text-sky-800`}>{pageName}</p>
+          <Heading id="coming-soon-heading" className={`font-display font-bold leading-[1.05] text-navy-950 ${compact ? 'text-2xl sm:text-3xl' : 'text-4xl sm:text-5xl md:text-6xl'}`}><span className="block">We’re Working</span><span className="mt-1 block text-orange-600">on This Page</span></Heading>
+          <div className={`${compact ? 'my-3' : 'my-5'} h-1 w-16 rounded-full bg-orange-500`} />
+          <p className={`leading-relaxed text-navy-800 ${compact ? 'text-xs sm:text-sm' : 'mx-auto max-w-xl text-base sm:text-lg lg:mx-0'}`}>{compact ? 'Our curated wedding packages are being prepared. Contact our wedding team for a personalized celebration plan.' : description}</p>
+          {!compact && <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap lg:justify-start">
             <Link to="/" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-sky-900/30 bg-white px-5 py-3 font-semibold text-navy-900 shadow-sm transition hover:bg-sky-50 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"><Home size={19} aria-hidden="true" />Back to Home</Link>
             <Link to="/packages" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-orange-500 px-5 py-3 font-bold text-white shadow-md transition hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"><Luggage size={19} aria-hidden="true" />Explore Available Packages</Link>
             <Link to="/contact" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-sky-900/30 bg-white px-5 py-3 font-semibold text-navy-900 shadow-sm transition hover:bg-sky-50 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"><Headset size={19} aria-hidden="true" />Contact Us</Link>
-          </div>
+          </div>}
         </div>
-        <div className="order-1 lg:order-2"><TravelIllustration /></div>
+        <div className={`${compact ? 'hidden sm:block' : 'order-1 lg:order-2'}`}><TravelIllustration /></div>
       </div>
     </section>
   </>

@@ -23,6 +23,9 @@ const menuRoutes = new Map()
 collectLinks(MAIN_NAV, menuRoutes)
 collectLinks(SECONDARY_NAV, menuRoutes)
 collectLinks(MEGA_MENU_MAP, menuRoutes)
+menuRoutes.set('/destination-weddings/india/jaisalmer', 'Jaisalmer Weddings')
+menuRoutes.set('/destination-weddings/india/pushkar', 'Pushkar Weddings')
+menuRoutes.set('/destination-weddings/india', 'Weddings in India')
 
 // App.jsx route patterns. This inventory is used only to distinguish links
 // that need the shared fallback from menu links handled by existing pages.
@@ -62,7 +65,11 @@ const APP_ROUTES = [
   '/mice', '/mice/destinations', '/mice/destinations/:destSlug', '/mice/corporate-travel',
   '/mice/corporate-travel/:serviceSlug', '/mice/support', '/mice/support/:serviceSlug',
   '/destination-wedding', '/destination-weddings', '/destination-wedding/:destSlug', '/destination-weddings/:destSlug',
+  '/destination-weddings/india/goa', '/destination-weddings/india/rajasthan', '/destination-weddings/india/udaipur',
+  '/destination-weddings/india/jaipur', '/destination-weddings/india/jodhpur', '/destination-weddings/india/kerala',
+  '/destination-weddings/india/maharashtra', '/destination-weddings/india/himachal', '/destination-weddings/india/kashmir', '/destination-weddings/india/ayodhya', '/destination-weddings/india/varanasi',
   '/weddings/rajasthan', '/medical-tourism', '/medical-tourism/:destSlug',
+
   ...['gujarat', 'rajasthan', 'maharashtra', 'goa', 'kerala', 'tamil-nadu', 'himachal-pradesh', 'uttarakhand',
     'karnataka', 'jammu-kashmir', 'uttar-pradesh', 'madhya-pradesh', 'west-bengal', 'andaman', 'north-east']
     .map(path => `/${path}`),
@@ -123,8 +130,7 @@ const HOLIDAY_CATEGORY_ROUTES = new Set([
 
 const AUDITED_UNFINISHED_WEDDING_ROUTES = new Set(
   [
-    ...['india/rajasthan', 'india/goa', 'india/udaipur', 'india/jaipur', 'india/jodhpur', 'india/kerala',
-      'india/maharashtra', 'india/himachal', 'india/kashmir', 'india/ayodhya', 'india/varanasi',
+    ...['india/rajasthan', 'india/jaisalmer', 'india/pushkar',
       'international/bali', 'international/thailand', 'international/dubai', 'international/maldives',
       'international/singapore', 'international/europe', 'international/sri-lanka', 'international/mauritius',
       'international/turkey', 'international/australia', 'international/usa', 'venues/beach', 'venues/palace',
@@ -201,7 +207,7 @@ export function getKnownMenuRouteName(pathname) {
 export function isKnownMenuRoute(pathname) {
   const path = normalizePath(pathname)
   if (!path || !menuRoutes.has(path)) return false
-  if (path === '/packages/family/getaways') return false
+  if (path === '/packages/family/getaways') return true
   if (AUDITED_UNFINISHED_MENU_ROUTES.has(path) || AUDITED_UNFINISHED_WEDDING_ROUTES.has(path)) return true
   if (path.startsWith('/medical-tourism/') && path.split('/').filter(Boolean).length > 2) return true
   if (path.startsWith('/international/') && !path.startsWith('/international/europe/') && !hasAppRoute(path)) return true

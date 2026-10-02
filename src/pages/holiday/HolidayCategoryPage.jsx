@@ -1129,7 +1129,7 @@ export default function HolidayCategoryPage() {
               <h2 className="text-3xl font-bold mb-2">Let's Plan Your <span className="text-yellow-400">Perfect Holiday!</span></h2>
               <p className="text-gray-300 mb-8">Our travel experts will help you choose the best destination and customize a holiday that is perfect for you.</p>
               <div className="space-y-4">
-                <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-yellow-400" /><span>+91 98765 43210</span></div>
+                <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-yellow-400" /><span>+91 93137 10465</span></div>
                 <div className="flex items-center gap-3"><Mail className="w-5 h-5 text-yellow-400" /><span>info@travelvista.com</span></div>
                 <div className="flex items-center gap-3"><Clock className="w-5 h-5 text-yellow-400" /><span>24x7 Customer Support</span></div>
               </div>

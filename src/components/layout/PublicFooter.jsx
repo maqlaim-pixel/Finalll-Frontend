@@ -53,8 +53,8 @@ export default function PublicFooter() {
             </div>
             <p className="text-navy-300 text-sm leading-relaxed mb-4">Your trusted travel partner for curated destinations, premium packages, and unforgettable experiences across India and the world.</p>
             <div className="space-y-2 text-sm text-navy-400">
-              <p className="flex items-center gap-2"><Phone size={14} /> +91 98765 43210</p>
-              <p className="flex items-center gap-2"><Mail size={14} /> hello@travelvista.com</p>
+              <p className="flex items-center gap-2"><Phone size={14} /> +91 93137 10465</p>
+              <p className="flex items-center gap-2"><Mail size={14} /> sales@maqlaimtours.com</p>
               <p className="flex items-center gap-2"><MapPin size={14} /> Mumbai, India</p>
             </div>
           </div>

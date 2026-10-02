@@ -3,6 +3,7 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { Search, Star, Clock, MapPin, Heart, SlidersHorizontal, Grid3X3, List, ChevronDown, ChevronUp, X } from 'lucide-react'
 import api from '../../services/api'
 import ComingSoon from '../../components/common/ComingSoon'
+import { isDestinationWeddingPackage } from '../../utils/weddingPackages'
 
 const SORT_OPTIONS = [
   { value: 'newest', label: 'Newest First' },
@@ -68,6 +69,7 @@ export default function PackagesPage() {
   const navigate = useNavigate()
   const destFilter = searchParams.get('destination') || ''
   const normalizedDestFilter = destFilter.trim().toLowerCase()
+  const weddingOnly = searchParams.get('packageType')?.trim().toLowerCase() === 'wedding'
 
   const [packages, setPackages] = useState([])
   const [loading, setLoading] = useState(true)
@@ -160,6 +162,18 @@ export default function PackagesPage() {
           return category === 'international' || (country && country !== 'india')
         }
 
+        if (weddingOnly) {
+          const requestedDestination = destFilter.trim()
+          const weddingDestinations = /^(jammu\s*(?:&|and)\s*kashmir|kashmir)$/i.test(requestedDestination)
+            ? ['Jammu & Kashmir', 'Jammu and Kashmir', 'Kashmir']
+            : /^(ayodhya|uttar\s*pradesh)$/i.test(requestedDestination)
+              ? ['Ayodhya', 'Uttar Pradesh']
+              : /^(varanasi|banaras|kashi|uttar\s*pradesh)$/i.test(requestedDestination)
+                ? ['Varanasi', 'Banaras', 'Kashi', 'Uttar Pradesh']
+                : destFilter
+          return String(pkg.status || '').toLowerCase() === 'published' &&
+            pkg.isActive !== false && isDestinationWeddingPackage(pkg, weddingDestinations)
+        }
         return destination === normalizedDestFilter || state === normalizedDestFilter
       })
     }
@@ -201,11 +215,13 @@ export default function PackagesPage() {
       })
     }
 
-    // Price slider range
-    result = result.filter(p => {
-      const price = p.startingPrice || 0
-      return price >= priceSliderRange[0] && price <= priceSliderRange[1]
-    })
+    // Wedding lead listings should show every matched package unless the user explicitly uses the price dropdown.
+    if (!weddingOnly) {
+      result = result.filter(p => {
+        const price = p.startingPrice || 0
+        return price >= priceSliderRange[0] && price <= priceSliderRange[1]
+      })
+    }
 
     // Sort
     switch (sortBy) {
@@ -217,7 +233,7 @@ export default function PackagesPage() {
     }
 
     return result
-  }, [packages, search, selectedTypes, selectedDests, priceFilter, priceSliderRange, sortBy, normalizedDestFilter])
+  }, [packages, search, selectedTypes, selectedDests, priceFilter, priceSliderRange, sortBy, normalizedDestFilter, weddingOnly, destFilter])
 
   const formatPrice = (p) => p ? `₹${Number(p).toLocaleString('en-IN')}` : ''
   const fallbackImg = 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600'
@@ -452,8 +468,17 @@ export default function PackagesPage() {
               </div>
             )}
 
+            {/* Empty wedding-category results use the site's existing Coming Soon experience. */}
+            {!loading && weddingOnly && filtered.length === 0 && (
+              <ComingSoon
+                categoryName={`${destFilter || 'Destination'} Wedding`}
+                description="Our destination wedding packages are being curated. Contact us for a personalized wedding plan."
+                icon="💍"
+              />
+            )}
+
             {/* Empty — No packages in DB at all */}
-            {!loading && packages.length === 0 && (
+            {!loading && !weddingOnly && packages.length === 0 && (
               <ComingSoon
                 categoryName="India"
                 description="We're curating amazing travel packages across India. Check back soon!"
@@ -462,7 +487,7 @@ export default function PackagesPage() {
             )}
 
             {/* Empty — Filters returned nothing */}
-            {!loading && packages.length > 0 && filtered.length === 0 && (
+            {!loading && !weddingOnly && packages.length > 0 && filtered.length === 0 && (
               <div className="text-center py-20 bg-white rounded-xl border border-gray-200">
                 <Search size={48} className="mx-auto text-gray-300 mb-4" />
                 <h3 className="text-xl font-semibold text-navy-700 mb-2">No packages found</h3>

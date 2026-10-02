@@ -389,7 +389,7 @@ export const PACKAGES_MENU = {
   contactBar: {
     title: 'NEED HELP CHOOSING?',
     subtitle: 'Our travel experts are here for you!',
-    phone: '+91 98765 43210',
+    phone: '+91 93137 10465',
     email: 'info@travelvista.com',
     hours: 'Mon - Sat: 9:00 AM - 7:00 PM',
     cta: { label: 'ENQUIRE NOW', href: '/contact' },

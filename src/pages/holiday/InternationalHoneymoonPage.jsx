@@ -261,7 +261,7 @@ export default function InternationalHoneymoonPage() {
               <h2 className="text-3xl font-display font-bold mb-4">Plan Your Dream International Honeymoon</h2>
               <p className="text-indigo-200 mb-8">Our travel experts will craft the perfect international honeymoon for your special start together.</p>
               <div className="space-y-4">
-                <div className="flex items-center gap-3"><Phone size={18} className="text-indigo-300" /><span>+91 98765 43210</span></div>
+                <div className="flex items-center gap-3"><Phone size={18} className="text-indigo-300" /><span>+91 93137 10465</span></div>
                 <div className="flex items-center gap-3"><Mail size={18} className="text-indigo-300" /><span>info@travelvista.com</span></div>
                 <div className="flex items-center gap-3"><Headphones size={18} className="text-indigo-300" /><span>24x7 Customer Support</span></div>
               </div>

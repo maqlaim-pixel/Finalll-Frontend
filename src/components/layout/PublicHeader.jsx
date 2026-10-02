@@ -68,8 +68,8 @@ export default function PublicHeader() {
       <div className="bg-navy-900 text-white text-xs hidden md:block">
         <div className="container-wide flex items-center justify-between h-8">
           <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1"><Phone size={12} /> +91 98765 43210</span>
-            <span className="flex items-center gap-1"><Mail size={12} /> hello@travelvista.com</span>
+            <span className="flex items-center gap-1"><Phone size={12} /> +91 93137 10465</span>
+            <span className="flex items-center gap-1"><Mail size={12} /> sales@maqlaimtours.com</span>
           </div>
           <div className="flex items-center gap-4">
             <a href="#" className="hover:text-gold-400 transition-colors">Facebook</a>

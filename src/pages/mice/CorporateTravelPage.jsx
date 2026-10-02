@@ -369,7 +369,7 @@ export default function CorporateTravelPage() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
             <div className="flex items-center gap-3 bg-white px-6 py-4 rounded-xl shadow-sm">
               <Phone size={20} className="text-sky-600" />
-              <div className="text-left"><p className="text-xs text-navy-500">Call Us</p><p className="font-semibold text-navy-900">+91 98765 43210</p></div>
+              <div className="text-left"><p className="text-xs text-navy-500">Call Us</p><p className="font-semibold text-navy-900">+91 93137 10465</p></div>
             </div>
             <div className="flex items-center gap-3 bg-white px-6 py-4 rounded-xl shadow-sm">
               <Mail size={20} className="text-sky-600" />

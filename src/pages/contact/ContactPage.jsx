@@ -18,14 +18,14 @@ export default function ContactPage() {
               <div className="bg-white rounded-xl border p-6">
                 <div className="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center mb-4"><Phone size={22} className="text-sky-600" /></div>
                 <h3 className="font-bold text-navy-900 mb-1">Phone</h3>
-                <p className="text-navy-600 text-sm">+91 98765 43210</p>
-                <p className="text-navy-600 text-sm">+91 22 4567 8901</p>
+                <p className="text-navy-600 text-sm">+91 93137 10465</p>
+                <p className="text-navy-600 text-sm">+91 93137 10465</p>
               </div>
               <div className="bg-white rounded-xl border p-6">
                 <div className="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center mb-4"><Mail size={22} className="text-sky-600" /></div>
                 <h3 className="font-bold text-navy-900 mb-1">Email</h3>
-                <p className="text-navy-600 text-sm">hello@travelvista.com</p>
-                <p className="text-navy-600 text-sm">bookings@travelvista.com</p>
+                <p className="text-navy-600 text-sm">sales@maqlaimtours.com</p>
+                <p className="text-navy-600 text-sm">sales@maqlaimtours.com</p>
               </div>
               <div className="bg-white rounded-xl border p-6">
                 <div className="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center mb-4"><MapPin size={22} className="text-sky-600" /></div>
@@ -55,7 +55,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-navy-700 mb-1.5">Phone</label>
-                      <input type="tel" placeholder="+91 98765 43210" className="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-sky-500 focus:outline-none" />
+                      <input type="tel" placeholder="+91 93137 10465" className="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-sky-500 focus:outline-none" />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-navy-700 mb-1.5">Subject</label>

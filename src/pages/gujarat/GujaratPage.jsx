@@ -247,14 +247,14 @@ export default function GujaratPage() {
                   <div className="bg-gold-100 p-3 rounded-xl"><Phone size={20} className="text-gold-600" /></div>
                   <div>
                     <p className="text-sm text-navy-500">Call Us</p>
-                    <p className="font-semibold text-navy-900">+91 98765 43210</p>
+                    <p className="font-semibold text-navy-900">+91 93137 10465</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="bg-gold-100 p-3 rounded-xl"><Mail size={20} className="text-gold-600" /></div>
                   <div>
                     <p className="text-sm text-navy-500">Email Us</p>
-                    <p className="font-semibold text-navy-900">hello@travelvista.com</p>
+                    <p className="font-semibold text-navy-900">Sales@maqlaimtours.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
