@@ -68,6 +68,7 @@ const APP_ROUTES = [
   '/destination-weddings/india/goa', '/destination-weddings/india/rajasthan', '/destination-weddings/india/udaipur',
   '/destination-weddings/india/jaipur', '/destination-weddings/india/jodhpur', '/destination-weddings/india/kerala',
   '/destination-weddings/india/maharashtra', '/destination-weddings/india/himachal', '/destination-weddings/india/kashmir', '/destination-weddings/india/ayodhya', '/destination-weddings/india/varanasi',
+  '/destination-weddings/international', '/destination-weddings/international/bali', '/destination-weddings/international/thailand', '/destination-weddings/international/dubai', '/destination-weddings/international/maldives', '/destination-weddings/international/singapore',
   '/weddings/rajasthan', '/medical-tourism', '/medical-tourism/:destSlug',
 
   ...['gujarat', 'rajasthan', 'maharashtra', 'goa', 'kerala', 'tamil-nadu', 'himachal-pradesh', 'uttarakhand',
@@ -131,8 +132,7 @@ const HOLIDAY_CATEGORY_ROUTES = new Set([
 const AUDITED_UNFINISHED_WEDDING_ROUTES = new Set(
   [
     ...['india/rajasthan', 'india/jaisalmer', 'india/pushkar',
-      'international/bali', 'international/thailand', 'international/dubai', 'international/maldives',
-      'international/singapore', 'international/europe', 'international/sri-lanka', 'international/mauritius',
+      'international/europe', 'international/sri-lanka', 'international/mauritius',
       'international/turkey', 'international/australia', 'international/usa', 'venues/beach', 'venues/palace',
       'venues/resort', 'venues/garden', 'venues/island', 'venues/fort', 'venues/backwater', 'venues/banquet',
       'venues/vineyard', 'venues/mountain', 'venues/yacht', 'themes/royal', 'themes/beach', 'themes/boho',

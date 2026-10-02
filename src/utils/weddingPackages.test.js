@@ -86,6 +86,78 @@ test('Varanasi wedding matching accepts Varanasi/Banaras or Uttar Pradesh struct
   assert.deepEqual(getPublishedDestinationWeddingPackages([varanasiWedding, lucknowTour], ['Varanasi', 'Banaras', 'Kashi', 'Uttar Pradesh']), [varanasiWedding])
 })
 
+test('Thailand wedding packages match Thailand as destination or country only with explicit wedding taxonomy', () => {
+  const thailandWedding = {
+    id: 12,
+    title: 'Island Celebration',
+    destination: 'Phuket',
+    country: 'Thailand',
+    category: 'Destination Wedding',
+    status: 'published',
+  }
+  const thailandHoliday = {
+    id: 13,
+    title: 'Thailand Tropical Escape',
+    destination: 'Thailand',
+    country: 'Thailand',
+    category: 'international',
+    status: 'published',
+  }
+
+  assert.equal(isDestinationWeddingPackage(thailandWedding, ['Thailand']), true)
+  assert.deepEqual(getPublishedDestinationWeddingPackages([thailandWedding, thailandHoliday], ['Thailand']), [thailandWedding])
+})
+
+test('Maldives wedding packages match country metadata while ordinary Maldives holidays remain excluded', () => {
+  const overwaterWedding = {
+    id: 14,
+    title: 'Overwater Villa Wedding Celebration',
+    destination: 'North Malé Atoll',
+    country: 'Maldives',
+    category: 'International Destination Wedding',
+    status: 'published',
+    isActive: true,
+  }
+  const maldivesHoliday = {
+    id: 15,
+    title: 'Maldives Luxury Resort Escape',
+    destination: 'Maldives',
+    country: 'Maldives',
+    category: 'international',
+    tags: 'Luxury, Beach, Honeymoon',
+    status: 'published',
+    isActive: true,
+  }
+
+  assert.equal(isDestinationWeddingPackage(overwaterWedding, ['Maldives']), true)
+  assert.deepEqual(getPublishedDestinationWeddingPackages([overwaterWedding, maldivesHoliday], ['Maldives']), [overwaterWedding])
+})
+
+test('Singapore wedding packages match country metadata while ordinary Singapore holidays remain excluded', () => {
+  const singaporeWedding = {
+    id: 16,
+    title: 'Marina Bay Wedding Celebration',
+    destination: 'Marina Bay',
+    country: 'Singapore',
+    category: 'International Destination Wedding',
+    status: 'published',
+    isActive: true,
+  }
+  const singaporeHoliday = {
+    id: 17,
+    title: 'Singapore City Highlights',
+    destination: 'Singapore',
+    country: 'Singapore',
+    category: 'international',
+    tags: 'City, Family, Shopping',
+    status: 'published',
+    isActive: true,
+  }
+
+  assert.equal(isDestinationWeddingPackage(singaporeWedding, ['Singapore']), true)
+  assert.deepEqual(getPublishedDestinationWeddingPackages([singaporeWedding, singaporeHoliday], ['Singapore']), [singaporeWedding])
+})
+
 test('published destination wedding results exclude drafts, inactive records, and ordinary destination tours', () => {
   const packages = [
     shimlaWedding,

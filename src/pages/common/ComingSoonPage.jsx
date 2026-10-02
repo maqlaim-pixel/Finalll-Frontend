@@ -127,6 +127,7 @@ const PAGE_NAMES = {
   '/destination-weddings/india/kashmir': 'Kashmir Weddings',
   '/destination-weddings/india/ayodhya': 'Ayodhya Weddings',
   '/destination-weddings/india/varanasi': 'Varanasi Weddings',
+  '/destination-weddings/international': 'International Weddings',
   '/destination-weddings/international/bali': 'Bali Weddings',
   '/destination-weddings/international/thailand': 'Thailand Weddings',
   '/destination-weddings/international/dubai': 'Dubai Weddings',

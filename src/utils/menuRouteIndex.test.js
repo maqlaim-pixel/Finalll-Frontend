@@ -29,6 +29,12 @@ test('implemented wedding destination routes are not sent to the Coming Soon fal
   assert.equal(isKnownMenuRoute('/destination-weddings/india/kashmir'), false)
   assert.equal(isKnownMenuRoute('/destination-weddings/india/ayodhya'), false)
   assert.equal(isKnownMenuRoute('/destination-weddings/india/varanasi'), false)
+  assert.equal(isKnownMenuRoute('/destination-weddings/international/bali'), false)
+  assert.equal(isKnownMenuRoute('/destination-weddings/international/thailand'), false)
+  assert.equal(isKnownMenuRoute('/destination-weddings/international/dubai'), false)
+  assert.equal(isKnownMenuRoute('/destination-weddings/international/maldives'), false)
+  assert.equal(isKnownMenuRoute('/destination-weddings/international/singapore'), false)
+  assert.equal(isKnownMenuRoute('/destination-weddings/international'), false)
 })
 
 test('working destinations in navigation are not sent to Coming Soon', () => {

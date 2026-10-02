@@ -83,6 +83,11 @@ import HimachalWeddingPage from './pages/wedding/HimachalWeddingPage'
 import KashmirWeddingPage from './pages/wedding/KashmirWeddingPage'
 import AyodhyaWeddingPage from './pages/wedding/AyodhyaWeddingPage'
 import VaranasiWeddingPage from './pages/wedding/VaranasiWeddingPage'
+import BaliWeddingPage from './pages/wedding/BaliWeddingPage'
+import ThailandWeddingPage from './pages/wedding/ThailandWeddingPage'
+import DubaiWeddingPage from './pages/wedding/DubaiWeddingPage'
+import MaldivesWeddingPage from './pages/wedding/MaldivesWeddingPage'
+import SingaporeWeddingPage from './pages/wedding/SingaporeWeddingPage'
 import MedicalTourismPage from './pages/medical/MedicalTourismPage'
 import GujaratPage from './pages/gujarat/GujaratPage'
 import RajasthanPage from './pages/rajasthan/RajasthanPage'
@@ -292,6 +297,12 @@ export default function App() {
         <Route path="/destination-weddings/india/kashmir" element={<KashmirWeddingPage />} />
         <Route path="/destination-weddings/india/ayodhya" element={<AyodhyaWeddingPage />} />
         <Route path="/destination-weddings/india/varanasi" element={<VaranasiWeddingPage />} />
+        <Route path="/destination-weddings/international" element={<ComingSoonPage pageName="International Weddings" />} />
+        <Route path="/destination-weddings/international/bali" element={<BaliWeddingPage />} />
+        <Route path="/destination-weddings/international/thailand" element={<ThailandWeddingPage />} />
+        <Route path="/destination-weddings/international/dubai" element={<DubaiWeddingPage />} />
+        <Route path="/destination-weddings/international/maldives" element={<MaldivesWeddingPage />} />
+        <Route path="/destination-weddings/international/singapore" element={<SingaporeWeddingPage />} />
         <Route path="/destination-wedding/:destSlug" element={<WeddingPage />} />
         <Route path="/destination-weddings/:destSlug" element={<WeddingPage />} />
         <Route path="/weddings/rajasthan" element={<RajasthanWeddingPage />} />
@@ -367,9 +378,7 @@ export default function App() {
       </Route>
       <Route path="/admin/*" element={<Navigate to="/admin" replace />} />
       <Route path="/account/*" element={<Navigate to="/account" replace />} />
-      <Route path="*" element={<PublicLayout />}>
-        <Route index element={<PublicRouteFallback />} />
-      </Route>
+      <Route path="*" element={<PublicLayout><PublicRouteFallback /></PublicLayout>} />
     </Routes>
   )
 }

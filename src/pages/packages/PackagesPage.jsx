@@ -170,7 +170,13 @@ export default function PackagesPage() {
               ? ['Ayodhya', 'Uttar Pradesh']
               : /^(varanasi|banaras|kashi|uttar\s*pradesh)$/i.test(requestedDestination)
                 ? ['Varanasi', 'Banaras', 'Kashi', 'Uttar Pradesh']
-                : destFilter
+                : /^bali$/i.test(requestedDestination)
+                  ? ['Bali']
+                  : /^maldives$/i.test(requestedDestination)
+                    ? ['Maldives']
+                    : /^singapore$/i.test(requestedDestination)
+                      ? ['Singapore']
+                      : destFilter
           return String(pkg.status || '').toLowerCase() === 'published' &&
             pkg.isActive !== false && isDestinationWeddingPackage(pkg, weddingDestinations)
         }

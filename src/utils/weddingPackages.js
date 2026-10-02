@@ -7,7 +7,7 @@ function metadataText(value) {
 export function isDestinationWeddingPackage(pkg, destinationNames) {
   if (!pkg || typeof pkg !== 'object') return false
   const destinations = Array.isArray(destinationNames) ? destinationNames : [destinationNames]
-  const placeMetadata = [pkg.state, pkg.destination, pkg.city].map(metadataText).join(' ')
+  const placeMetadata = [pkg.state, pkg.destination, pkg.city, pkg.country].map(metadataText).join(' ')
   const weddingMetadata = [pkg.category, pkg.subcategory, pkg.type, pkg.packageType, pkg.tags]
     .map(metadataText).join(' ')
   const normalizedPlace = ` ${placeMetadata.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()} `
