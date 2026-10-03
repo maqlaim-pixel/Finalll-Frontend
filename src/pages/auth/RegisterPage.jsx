@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { getLocalTravelReturnPath } from '../../hooks/useLocalTravelFlow'
 import { useAuth } from '../../context/AuthContext'
 import { Mail, Lock, User, Phone, Eye, EyeOff, UserPlus, Loader2 } from 'lucide-react'
 import { COUNTRY_CODES } from '../../utils/countryCodes'
@@ -14,7 +15,7 @@ export default function RegisterPage() {
   const { register, user, isAdmin } = useAuth()
   const navigate = useNavigate()
   const phoneDigits = COUNTRY_CODES.find(c => c.code === countryCode)?.digits ?? 15
-  useEffect(() => { if (user) navigate(isAdmin ? '/admin' : '/', { replace: true }) }, [user, isAdmin, navigate])
+  useEffect(() => { if (user) navigate(isAdmin ? '/admin' : (getLocalTravelReturnPath() || '/'), { replace: true }) }, [user, isAdmin, navigate])
   const handleSubmit = async event => {
     event.preventDefault()
     setError('')

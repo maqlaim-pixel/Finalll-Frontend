@@ -9,7 +9,8 @@ import {
 import SEOHead from '../components/common/SEOHead'
 import Breadcrumb from '../components/common/Breadcrumb'
 import api from '../services/api'
-import { useAuth } from '../context/AuthContext'
+import useLocalTravelFlow from '../hooks/useLocalTravelFlow'
+import LocalTravelAuthPrompt from '../components/common/LocalTravelAuthPrompt'
 
 const HERO_IMAGE = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2200&q=86'
 const VEHICLES = [
@@ -104,11 +105,10 @@ function VehicleDetailsModal({ vehicle, onClose, onSelect, triggerRef }) {
 }
 
 export default function CorporateTransportationPage() {
-  const { user } = useAuth()
+  const { form, setForm, user, authPromptOpen, setAuthPromptOpen, requireAuthentication, continueToAuth, clearDraft } = useLocalTravelFlow(EMPTY_FORM)
   const bookingRef = useRef(null)
   const travelTypeRef = useRef(null)
   const triggerRef = useRef(null)
-  const [form, setForm] = useState(EMPTY_FORM)
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('form')
   const [submitting, setSubmitting] = useState(false)
@@ -164,7 +164,9 @@ export default function CorporateTransportationPage() {
   }
   const handleSubmit = async event => {
     event.preventDefault()
-    if (submitting || !validate()) return
+    if (submitting) return
+    if (!user) { requireAuthentication(); return }
+    if (!validate()) return
     setSubmitting(true)
     setStatus('submitting')
     try {
@@ -175,13 +177,10 @@ export default function CorporateTransportationPage() {
         recommendation && `Passenger-based vehicle recommendation: ${recommendation.name}`,
         'Request type: Corporate transportation quote enquiry; not a confirmed booking.',
       ].filter(Boolean).join('\n')
-      await api.post('/leads/public/submit', {
-        name: form.name.trim() || user?.name || '', email: form.email.trim() || user?.email || '',
-        phone: form.phone.trim() || user?.phone || '',
-        destination: `${form.pickupLocation.trim()} to ${form.dropLocation.trim()}`,
-        travelDate: form.travelDate, travelers: Number(form.passengers),
-        leadType: 'corporate-transportation', sourceUrl: window.location.pathname, message: details,
+      await api.post('/local-travel/enquiries', {
+        serviceType: 'corporate-transportation', formData: form, sourceUrl: window.location.pathname,
       })
+      clearDraft()
       setStatus('success')
     } catch {
       setStatus('error')
@@ -228,5 +227,6 @@ export default function CorporateTransportationPage() {
       </aside>
     </div>
     {activeVehicle && <VehicleDetailsModal vehicle={activeVehicle} triggerRef={triggerRef} onClose={closeModal} onSelect={selectVehicle} />}
+    {authPromptOpen && <LocalTravelAuthPrompt onClose={() => setAuthPromptOpen(false)} onContinue={continueToAuth} />}
   </div>
 }

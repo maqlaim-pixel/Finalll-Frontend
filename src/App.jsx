@@ -148,6 +148,7 @@ import AdminBlogs from './pages/admin/AdminBlogs'
 import AdminBookings from './pages/admin/AdminBookings'
 import AdminLeads from './pages/admin/AdminLeads'
 import AdminClientInterests from './pages/admin/AdminClientInterests'
+import AdminTravelEnquiries from './pages/admin/AdminTravelEnquiries'
 import AdminReviews from './pages/admin/AdminReviews'
 import AdminApprovalCenter from './pages/admin/AdminApprovalCenter'
 import AdminSettings from './pages/admin/AdminSettings'
@@ -366,6 +367,8 @@ export default function App() {
         <Route path="blogs/edit/:id" element={<AdminBlogForm />} />
         <Route path="bookings" element={<AdminBookings />} />
         <Route path="leads" element={<AdminLeads />} />
+        <Route path="local-travel-enquiries" element={<AdminTravelEnquiries type="local" />} />
+        <Route path="contact-enquiries" element={<AdminTravelEnquiries type="contact" />} />
         <Route path="client-interests" element={<AdminClientInterests />} />
         <Route path="reviews" element={<AdminReviews />} />
         <Route path="approvals" element={<AdminApprovalCenter />} />

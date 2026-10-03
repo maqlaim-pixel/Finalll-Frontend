@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { getLocalTravelReturnPath } from '../../hooks/useLocalTravelFlow'
 import { useAuth } from '../../context/AuthContext'
 import { getOtpErrorMessage, isValidEmail } from '../../utils/otpErrors'
 
@@ -11,7 +12,7 @@ export default function LoginPage({ admin = false }) {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const [needsVerification, setNeedsVerification] = useState(false)
-  useEffect(() => { if (user) navigate(isAdmin ? '/admin' : '/', { replace: true }) }, [user, isAdmin, navigate])
+  useEffect(() => { if (user) navigate(isAdmin ? '/admin' : (getLocalTravelReturnPath() || '/'), { replace: true }) }, [user, isAdmin, navigate])
   const submit = async event => {
     event.preventDefault()
     if (!isValidEmail(email)) { setError('Please enter a valid email address'); return }

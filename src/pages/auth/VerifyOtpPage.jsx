@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import { getOtpErrorMessage } from '../../utils/otpErrors'
+import { clearLocalTravelReturnPath, getLocalTravelReturnPath } from '../../hooks/useLocalTravelFlow'
 
 function readChallenge() {
   try {
@@ -31,7 +32,9 @@ export default function VerifyOtpPage() {
     try {
       if (registration) await verifyRegistration(challenge.email, otp, challenge.transactionId)
       else await verifyLoginOtp({ email: challenge.email, otp, transactionId: challenge.transactionId })
-      navigate('/', { replace: true })
+      const returnPath = getLocalTravelReturnPath()
+      clearLocalTravelReturnPath()
+      navigate(returnPath || '/', { replace: true })
     } catch (err) { setError(getOtpErrorMessage(err)) }
     finally { inFlight.current = false; setBusy(false) }
   }

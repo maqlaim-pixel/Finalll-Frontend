@@ -8,7 +8,8 @@ import {
 import SEOHead from '../components/common/SEOHead'
 import Breadcrumb from '../components/common/Breadcrumb'
 import api from '../services/api'
-import { useAuth } from '../context/AuthContext'
+import useLocalTravelFlow from '../hooks/useLocalTravelFlow'
+import LocalTravelAuthPrompt from '../components/common/LocalTravelAuthPrompt'
 import { LOCAL_TRANSFER_VEHICLES as VEHICLES } from '../data/localTransferVehicles'
 import { resolveImageUrl } from '../utils/imageUtils'
 
@@ -137,17 +138,16 @@ function TourDetailsModal({ tour, onClose, onSelect }) {
 }
 
 export default function FullDayCityTourPage() {
-  const { user } = useAuth()
+  const { form, setForm, user, authPromptOpen, setAuthPromptOpen, requireAuthentication, continueToAuth, clearDraft } = useLocalTravelFlow(initialForm)
   const bookingRef = useRef(null)
   const cityFieldRef = useRef(null)
   const vehicleTriggerRef = useRef(null)
   const [packages, setPackages] = useState([])
   const [packagesLoaded, setPackagesLoaded] = useState(false)
-  const [selectedCity, setSelectedCity] = useState('Ahmedabad')
+  const [selectedCity, setSelectedCity] = useState(form.city || 'Ahmedabad')
   const [cityFilterTouched, setCityFilterTouched] = useState(false)
   const [selectedTour, setSelectedTour] = useState(null)
   const [activeTour, setActiveTour] = useState(null)
-  const [form, setForm] = useState(initialForm)
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('form')
   const [submitting, setSubmitting] = useState(false)
@@ -202,7 +202,9 @@ export default function FullDayCityTourPage() {
 
   const chooseTour = tour => {
     updateCity(tour.city)
-    setSelectedTour({ id: tour.id, name: tour.name, city: tour.city, duration: tour.duration })
+    const selected = { id: tour.id, name: tour.name, city: tour.city, duration: tour.duration }
+    setSelectedTour(selected)
+    setForm(previous => ({ ...previous, selectedTourId: String(tour.id || ''), selectedTourName: tour.name, selectedTourDuration: tour.duration }))
     setActiveTour(null)
     setStatus('form')
     requestAnimationFrame(() => {
@@ -238,7 +240,9 @@ export default function FullDayCityTourPage() {
 
   const handleSubmit = async event => {
     event.preventDefault()
-    if (submitting || !validate()) return
+    if (submitting) return
+    if (!user) { requireAuthentication(); return }
+    if (!validate()) return
     setSubmitting(true)
     setStatus('submitting')
     try {
@@ -260,17 +264,12 @@ export default function FullDayCityTourPage() {
         `Vehicle type: ${form.vehicleType}`,
         'Request type: Quote enquiry; not a confirmed booking.',
       ].filter(Boolean).join('\n')
-      await api.post('/leads/public/submit', {
-        name: form.name.trim() || user?.name || '',
-        email: form.email.trim() || user?.email || '',
-        phone: form.phone.trim() || user?.phone || '',
-        destination: form.city,
-        travelDate: form.tourDate,
-        travelers: Number(form.passengers),
-        leadType: 'full-day-city-tour',
+      await api.post('/local-travel/enquiries', {
+        serviceType: 'full-day-city-tour',
+        formData: { ...form, selectedTourId: selectedCityTour?.id ? String(selectedCityTour.id) : '', selectedTourName: selectedCityTour?.name || `${form.city} City Tour`, selectedTourDuration: selectedCityTour?.duration || 'Full day (itinerary to confirm)' },
         sourceUrl: window.location.pathname,
-        message: details,
       })
+      clearDraft()
       setStatus('success')
     } catch {
       setStatus('error')
@@ -335,5 +334,6 @@ export default function FullDayCityTourPage() {
 
     {activeTour?.vehicle && <div className="fixed inset-0 z-[100] flex items-center justify-center bg-navy-950/60 p-4" role="presentation" onMouseDown={event => { if (event.target === event.currentTarget) closeVehicleModal() }}><section role="dialog" aria-modal="true" aria-labelledby="city-tour-vehicle-modal-title" onKeyDown={event => { if (event.key === 'Escape') closeVehicleModal(); if (event.key === 'Tab') { const focusable = Array.from(event.currentTarget.querySelectorAll('button:not(:disabled), a[href], input:not(:disabled), select:not(:disabled), textarea:not(:disabled)')); const first = focusable[0]; const last = focusable[focusable.length - 1]; if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus() } else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus() } } }} className="relative w-full max-w-md rounded-2xl bg-white p-5 shadow-2xl"><button type="button" aria-label="Close vehicle details" autoFocus onClick={closeVehicleModal} className="absolute right-3 top-3 rounded p-2 text-navy-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-sky-500"><X size={19} /></button><img src={activeTour.vehicle.image} alt={`${activeTour.vehicle.name} vehicle`} className="h-40 w-full object-contain" /><h2 id="city-tour-vehicle-modal-title" className="font-display text-2xl font-bold text-navy-900">{activeTour.vehicle.name}</h2><div className="mt-3 flex flex-wrap gap-4 text-sm text-navy-700"><span className="flex items-center gap-1"><Users size={16} />1–{activeTour.vehicle.passengers} passengers</span><span className="flex items-center gap-1"><Luggage size={16} />{activeTour.vehicle.luggage} bags</span></div><ul className="mt-3 space-y-2">{activeTour.vehicle.features.map(feature => <li key={feature} className="flex gap-2 text-sm text-navy-700"><CheckCircle2 size={16} className="shrink-0 text-green-600" />{feature}</li>)}</ul><p className="mt-3 rounded-lg bg-gray-50 p-3 text-xs text-navy-600">Vehicle capacities are indicative. Availability and final fare are confirmed by our travel expert.</p>{Number(form.passengers) > activeTour.vehicle.passengers && <p className="mt-3 text-sm text-red-700" role="alert">This vehicle supports up to {activeTour.vehicle.passengers} passengers. Please choose a larger vehicle.</p>}<button type="button" disabled={Number(form.passengers) > activeTour.vehicle.passengers} onClick={() => chooseVehicle(activeTour.vehicle)} className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-gold-500 px-4 py-3 font-bold text-white hover:bg-gold-600 disabled:cursor-not-allowed disabled:opacity-50">Select Vehicle <ArrowRight size={17} /></button></section></div>}
     {activeTour && !activeTour.vehicle && <TourDetailsModal tour={activeTour} onClose={closeTourModal} onSelect={chooseTour} />}
+    {authPromptOpen && <LocalTravelAuthPrompt onClose={() => setAuthPromptOpen(false)} onContinue={continueToAuth} />}
   </div>
 }

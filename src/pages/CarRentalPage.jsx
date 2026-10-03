@@ -8,7 +8,8 @@ import {
 import SEOHead from '../components/common/SEOHead'
 import Breadcrumb from '../components/common/Breadcrumb'
 import api from '../services/api'
-import { useAuth } from '../context/AuthContext'
+import useLocalTravelFlow from '../hooks/useLocalTravelFlow'
+import LocalTravelAuthPrompt from '../components/common/LocalTravelAuthPrompt'
 import { CITY_LIST } from '../data/cityData'
 import { LOCAL_TRANSFER_VEHICLES } from '../data/localTransferVehicles'
 
@@ -127,13 +128,12 @@ function VehicleDetailsModal({ vehicle, onClose, onSelect, triggerRef }) {
 }
 
 export default function CarRentalPage() {
-  const { user } = useAuth()
+  const { form, setForm, user, authPromptOpen, setAuthPromptOpen, requireAuthentication, continueToAuth, clearDraft } = useLocalTravelFlow(initialForm)
   const bookingRef = useRef(null)
   const pickupCityRef = useRef(null)
   const vehicleTypeRef = useRef(null)
   const contactDetailsRef = useRef(null)
   const vehicleTriggerRef = useRef(null)
-  const [form, setForm] = useState(initialForm)
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('form')
   const [submitting, setSubmitting] = useState(false)
@@ -211,7 +211,9 @@ export default function CarRentalPage() {
 
   const handleSubmit = async event => {
     event.preventDefault()
-    if (submitting || !validate()) return
+    if (submitting) return
+    if (!user) { requireAuthentication(); return }
+    if (!validate()) return
     setSubmitting(true)
     setStatus('submitting')
     try {
@@ -227,16 +229,10 @@ export default function CarRentalPage() {
         'Request type: Quote enquiry; not a confirmed booking.',
         'City coverage, vehicle model, capacity, rental plan, driver arrangement and availability require confirmation by a travel expert.',
       ].filter(Boolean).join('\n')
-      await api.post('/leads/public/submit', {
-        name: form.name.trim() || user?.name || '',
-        email: form.email.trim() || user?.email || '',
-        phone: form.phone.trim() || user?.phone || '',
-        destination: form.pickupCity,
-        travelDate: form.pickupDate,
-        leadType: 'car-rental',
-        sourceUrl: window.location.pathname,
-        message: details,
+      await api.post('/local-travel/enquiries', {
+        serviceType: 'car-rental', formData: form, sourceUrl: window.location.pathname,
       })
+      clearDraft()
       setStatus('success')
     } catch {
       setStatus('error')
@@ -306,5 +302,6 @@ export default function CarRentalPage() {
     </div>
 
     {activeVehicle && <VehicleDetailsModal vehicle={activeVehicle} triggerRef={vehicleTriggerRef} onClose={closeVehicle} onSelect={chooseVehicle} />}
+    {authPromptOpen && <LocalTravelAuthPrompt onClose={() => setAuthPromptOpen(false)} onContinue={continueToAuth} />}
   </div>
 }

@@ -8,7 +8,8 @@ import {
 import SEOHead from '../components/common/SEOHead'
 import Breadcrumb from '../components/common/Breadcrumb'
 import api from '../services/api'
-import { useAuth } from '../context/AuthContext'
+import useLocalTravelFlow from '../hooks/useLocalTravelFlow'
+import LocalTravelAuthPrompt from '../components/common/LocalTravelAuthPrompt'
 import { LOCAL_TRANSFER_VEHICLES as VEHICLES } from '../data/localTransferVehicles'
 import { resolveImageUrl } from '../utils/imageUtils'
 
@@ -167,7 +168,7 @@ function VehicleDetailsModal({ vehicle, onClose, onSelect, triggerRef, passenger
 }
 
 export default function HalfDayCityTourPage() {
-  const { user } = useAuth()
+  const { form, setForm, user, authPromptOpen, setAuthPromptOpen, requireAuthentication, continueToAuth, clearDraft } = useLocalTravelFlow(emptyForm)
   const bookingRef = useRef(null)
   const cityFieldRef = useRef(null)
   const contactFieldRef = useRef(null)
@@ -176,11 +177,10 @@ export default function HalfDayCityTourPage() {
   const vehicleTriggerRef = useRef(null)
   const [packages, setPackages] = useState([])
   const [packagesLoaded, setPackagesLoaded] = useState(false)
-  const [selectedCity, setSelectedCity] = useState('Ahmedabad')
+  const [selectedCity, setSelectedCity] = useState(form.city || 'Ahmedabad')
   const [selectedTour, setSelectedTour] = useState(null)
   const [activeTour, setActiveTour] = useState(null)
   const [activeVehicle, setActiveVehicle] = useState(null)
-  const [form, setForm] = useState(emptyForm)
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('form')
   const [submitting, setSubmitting] = useState(false)
@@ -240,7 +240,9 @@ export default function HalfDayCityTourPage() {
 
   const chooseTour = (tour, focusContact = false) => {
     updateCity(tour.city)
-    setSelectedTour({ id: tour.id, name: tour.name, city: tour.city, duration: tour.duration })
+    const selected = { id: tour.id, name: tour.name, city: tour.city, duration: tour.duration }
+    setSelectedTour(selected)
+    setForm(previous => ({ ...previous, selectedTourId: String(tour.id || ''), selectedTourName: tour.name, selectedTourDuration: tour.duration }))
     setActiveTour(null)
     focusBooking(focusContact ? contactFieldRef : cityFieldRef)
   }
@@ -276,7 +278,9 @@ export default function HalfDayCityTourPage() {
 
   const handleSubmit = async event => {
     event.preventDefault()
-    if (submitting || !validate()) return
+    if (submitting) return
+    if (!user) { requireAuthentication(); return }
+    if (!validate()) return
     setSubmitting(true)
     setStatus('submitting')
     try {
@@ -298,17 +302,12 @@ export default function HalfDayCityTourPage() {
         'Time of day is a preference only. Exact schedule and availability will be confirmed by our travel expert.',
         'Request type: Quote enquiry; not a confirmed booking.',
       ].filter(Boolean).join('\n')
-      await api.post('/leads/public/submit', {
-        name: form.name.trim() || user?.name || '',
-        email: form.email.trim() || user?.email || '',
-        phone: form.phone.trim() || user?.phone || '',
-        destination: form.city,
-        travelDate: form.tourDate,
-        travelers: Number(form.passengers),
-        leadType: 'half-day-city-tour',
+      await api.post('/local-travel/enquiries', {
+        serviceType: 'half-day-city-tour',
+        formData: { ...form, selectedTourId: selected?.id ? String(selected.id) : '', selectedTourName: selected?.name || 'Please recommend a half day tour', selectedTourDuration: selected?.duration || 'Half day (confirm with travel expert)' },
         sourceUrl: window.location.pathname,
-        message: details,
       })
+      clearDraft()
       setStatus('success')
     } catch {
       setStatus('error')
@@ -374,5 +373,6 @@ export default function HalfDayCityTourPage() {
 
     {activeTour && <TourDetailsModal tour={activeTour} triggerRef={tourTriggerRef} onClose={closeTour} onSelect={chooseTour} onEnquire={tour => chooseTour(tour, true)} />}
     {activeVehicle && <VehicleDetailsModal vehicle={activeVehicle} triggerRef={vehicleTriggerRef} passengers={form.passengers} onClose={closeVehicle} onSelect={chooseVehicle} />}
+    {authPromptOpen && <LocalTravelAuthPrompt onClose={() => setAuthPromptOpen(false)} onContinue={continueToAuth} />}
   </div>
 }

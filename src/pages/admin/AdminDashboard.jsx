@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Package, MapPin, Compass, Hotel, FileText, BookMarked, MessageSquare, Star, Users, Eye, TrendingUp } from 'lucide-react'
+import { Package, MapPin, Compass, Hotel, FileText, BookMarked, MessageSquare, Star, Users, Eye, TrendingUp, CarFront, Mail } from 'lucide-react'
 import api from '../../services/api'
 
 export default function AdminDashboard() {
@@ -26,6 +26,8 @@ export default function AdminDashboard() {
     { label: 'Blogs', value: stats.totalBlogs || 0, icon: FileText, color: 'bg-rose-100 text-rose-600', link: '/admin/blogs' },
     { label: 'Bookings', value: stats.totalBookings || 0, icon: BookMarked, color: 'bg-cyan-100 text-cyan-600', link: '/admin/bookings' },
     { label: 'Leads', value: stats.totalLeads || 0, icon: MessageSquare, color: 'bg-orange-100 text-orange-600', link: '/admin/leads' },
+    { label: 'Local Travel Enquiries', value: stats.totalLocalTravelEnquiries || 0, pending: stats.newLocalTravelEnquiries || 0, icon: CarFront, color: 'bg-blue-100 text-blue-600', link: '/admin/local-travel-enquiries' },
+    { label: 'Contact Enquiries', value: stats.totalContactEnquiries || 0, pending: stats.newContactEnquiries || 0, icon: Mail, color: 'bg-teal-100 text-teal-600', link: '/admin/contact-enquiries' },
     { label: 'Reviews', value: stats.totalReviews || 0, icon: Star, color: 'bg-yellow-100 text-yellow-600', link: '/admin/reviews' },
   ] : []
 
@@ -78,6 +80,7 @@ export default function AdminDashboard() {
               </div>
               <p className="text-2xl font-bold text-navy-900">{kpi.value}</p>
               <p className="text-sm text-navy-500">{kpi.label}</p>
+              {kpi.pending > 0 && <p className="mt-1 text-xs font-medium text-amber-700">{kpi.pending} new</p>}
             </Link>
           )
         })}

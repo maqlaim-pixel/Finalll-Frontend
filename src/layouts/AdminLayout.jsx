@@ -30,6 +30,8 @@ const SIDEBAR_SECTIONS = [
       { label: 'Bookings', href: '/admin/bookings', icon: BookMarked },
       { label: 'Invoices', href: '/admin/invoices', icon: FileText },
       { label: 'Leads & Enquiries', href: '/admin/leads', icon: MessageSquare },
+      { label: 'Local Travel Enquiries', href: '/admin/local-travel-enquiries', icon: Compass },
+      { label: 'Contact Enquiries', href: '/admin/contact-enquiries', icon: MessageSquare },
       { label: 'Client Interests', href: '/admin/client-interests', icon: Heart },
       { label: 'Reviews', href: '/admin/reviews', icon: Star },
     ],

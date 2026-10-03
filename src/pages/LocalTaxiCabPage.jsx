@@ -8,7 +8,8 @@ import {
 import SEOHead from '../components/common/SEOHead'
 import Breadcrumb from '../components/common/Breadcrumb'
 import api from '../services/api'
-import { useAuth } from '../context/AuthContext'
+import useLocalTravelFlow from '../hooks/useLocalTravelFlow'
+import LocalTravelAuthPrompt from '../components/common/LocalTravelAuthPrompt'
 import { CITY_LIST } from '../data/cityData'
 import { LOCAL_TRANSFER_VEHICLES as VEHICLES } from '../data/localTransferVehicles'
 
@@ -91,13 +92,12 @@ function VehicleDetailsModal({ vehicle, passengers, onClose, onSelect, triggerRe
 }
 
 export default function LocalTaxiCabPage() {
-  const { user } = useAuth()
+  const { form, setForm, user, authPromptOpen, setAuthPromptOpen, requireAuthentication, continueToAuth, clearDraft } = useLocalTravelFlow(EMPTY_FORM)
   const bookingRef = useRef(null)
   const serviceRef = useRef(null)
   const pickupRef = useRef(null)
   const vehicleRef = useRef(null)
   const vehicleTriggerRef = useRef(null)
-  const [form, setForm] = useState(EMPTY_FORM)
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('form')
   const [submitting, setSubmitting] = useState(false)
@@ -157,7 +157,9 @@ export default function LocalTaxiCabPage() {
 
   const handleSubmit = async event => {
     event.preventDefault()
-    if (submitting || !validate()) return
+    if (submitting) return
+    if (!user) { requireAuthentication(); return }
+    if (!validate()) return
     setSubmitting(true)
     setStatus('submitting')
     try {
@@ -173,17 +175,10 @@ export default function LocalTaxiCabPage() {
         form.specialRequest.trim() && `Special request: ${form.specialRequest.trim()}`,
         'Request type: Quote enquiry; not a confirmed booking.',
       ].filter(Boolean).join('\n')
-      await api.post('/leads/public/submit', {
-        name: form.name.trim() || user?.name || '',
-        email: form.email.trim() || user?.email || '',
-        phone: form.phone.trim() || user?.phone || '',
-        destination: form.destination || form.dropLocation.trim() || form.pickupLocation.trim(),
-        travelDate: form.pickupDate,
-        travelers: Number(form.passengers),
-        leadType: 'local-taxi-cab',
-        sourceUrl: window.location.pathname,
-        message: details,
+      await api.post('/local-travel/enquiries', {
+        serviceType: 'local-taxi-cab', formData: form, sourceUrl: window.location.pathname,
       })
+      clearDraft()
       setStatus('success')
     } catch {
       setStatus('error')
@@ -258,5 +253,6 @@ export default function LocalTaxiCabPage() {
     </div>
 
     {activeVehicle && <VehicleDetailsModal vehicle={activeVehicle} passengers={form.passengers} triggerRef={vehicleTriggerRef} onClose={() => setActiveVehicle(null)} onSelect={selectVehicle} />}
+    {authPromptOpen && <LocalTravelAuthPrompt onClose={() => setAuthPromptOpen(false)} onContinue={continueToAuth} />}
   </div>
 }

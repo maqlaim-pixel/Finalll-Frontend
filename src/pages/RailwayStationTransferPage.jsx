@@ -8,7 +8,8 @@ import {
 import SEOHead from '../components/common/SEOHead'
 import Breadcrumb from '../components/common/Breadcrumb'
 import api from '../services/api'
-import { useAuth } from '../context/AuthContext'
+import useLocalTravelFlow from '../hooks/useLocalTravelFlow'
+import LocalTravelAuthPrompt from '../components/common/LocalTravelAuthPrompt'
 import { RAILWAY_TRANSFER_STATIONS } from '../data/railwayTransferStations'
 import { CITY_LIST, getCityData } from '../data/cityData'
 import { LOCAL_TRANSFER_VEHICLES as VEHICLES } from '../data/localTransferVehicles'
@@ -47,10 +48,9 @@ function Field({ id, label, error, children }) {
 }
 
 export default function RailwayStationTransferPage() {
-  const { user } = useAuth()
+  const { form, setForm, user, authPromptOpen, setAuthPromptOpen, requireAuthentication, continueToAuth, clearDraft } = useLocalTravelFlow(emptyForm)
   const bookingRef = useRef(null)
   const firstFieldRef = useRef(null)
-  const [form, setForm] = useState(emptyForm)
   const [errors, setErrors] = useState({})
   const [submitting, setSubmitting] = useState(false)
   const [status, setStatus] = useState('form')
@@ -123,7 +123,9 @@ export default function RailwayStationTransferPage() {
 
   const handleSubmit = async event => {
     event.preventDefault()
-    if (submitting || !validate()) return
+    if (submitting) return
+    if (!user) { requireAuthentication(); return }
+    if (!validate()) return
     setSubmitting(true)
     setStatus('submitting')
     try {
@@ -148,15 +150,10 @@ export default function RailwayStationTransferPage() {
         form.dropLocation && `Drop location: ${form.dropLocation}`,
         form.specialRequest && `Special request: ${form.specialRequest}`,
       ].filter(Boolean).join('\n')
-      await api.post('/leads/public/submit', {
-        name: form.name.trim() || user?.name || '',
-        email: form.email.trim() || user?.email || '',
-        phone: form.phone.trim() || user?.phone || '',
-        destination: `${station.city} — ${station.name} (${station.code})`,
-        travelDate: form.pickupDate, travelers: Number(form.passengers),
-        leadType: 'railway-station-transfer', sourceUrl: window.location.pathname,
-        message: details,
+      await api.post('/local-travel/enquiries', {
+        serviceType: 'railway-station-transfer', formData: form, sourceUrl: window.location.pathname,
       })
+      clearDraft()
       setStatus('success')
     } catch {
       setStatus('error')
@@ -254,5 +251,6 @@ export default function RailwayStationTransferPage() {
     </div>
 
     {selectedVehicle && <div className="fixed inset-0 z-[100] flex items-center justify-center bg-navy-950/60 p-4" role="presentation" onMouseDown={event => { if (event.target === event.currentTarget) setSelectedVehicle(null) }}><section role="dialog" aria-modal="true" aria-labelledby="railway-vehicle-modal-title" onKeyDown={event => { if (event.key === 'Escape') setSelectedVehicle(null) }} className="relative w-full max-w-md rounded-2xl bg-white p-5 shadow-2xl"><button type="button" aria-label="Close vehicle details" autoFocus onClick={() => setSelectedVehicle(null)} className="absolute right-3 top-3 rounded p-2 text-navy-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-sky-500"><X size={19} /></button><img src={selectedVehicle.image} alt={`${selectedVehicle.name} vehicle`} className="h-40 w-full object-contain" /><h2 id="railway-vehicle-modal-title" className="font-display text-2xl font-bold text-navy-900">{selectedVehicle.name}</h2><div className="mt-3 flex gap-4 text-sm text-navy-700"><span className="flex items-center gap-1"><Users size={16} />Up to {selectedVehicle.passengers} passengers</span><span className="flex items-center gap-1"><Luggage size={16} />{selectedVehicle.luggage} bags</span></div><ul className="mt-3 space-y-2">{selectedVehicle.features.map(feature => <li key={feature} className="flex gap-2 text-sm text-navy-700"><CheckCircle2 size={16} className="shrink-0 text-green-600" />{feature}</li>)}</ul><p className="mt-3 rounded-lg bg-gray-50 p-3 text-xs text-navy-600">Vehicle capacities are indicative and subject to confirmation when our travel expert responds to your quote request.</p>{Number(form.passengers) > selectedVehicle.passengers && <p className="mt-3 text-sm text-red-700" role="alert">This vehicle supports up to {selectedVehicle.passengers} passengers. Please choose a larger vehicle.</p>}<button type="button" disabled={Number(form.passengers) > selectedVehicle.passengers} onClick={() => chooseVehicle(selectedVehicle)} className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-gold-500 px-4 py-3 font-bold text-white hover:bg-gold-600 disabled:cursor-not-allowed disabled:opacity-50">Select Vehicle <ArrowRight size={17} /></button></section></div>}
+    {authPromptOpen && <LocalTravelAuthPrompt onClose={() => setAuthPromptOpen(false)} onContinue={continueToAuth} />}
   </div>
 }
