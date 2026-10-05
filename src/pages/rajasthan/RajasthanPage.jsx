@@ -7,10 +7,10 @@ import StatePackagesSection from '../../components/common/StatePackagesSection'
 import api from '../../services/api'
 
 const HERO_SLIDES = [
-  { image: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1400&h=600&fit=crop', title: 'Royal Rajasthan', subtitle: 'Forts • Palaces • Desert Adventures' },
-  { image: 'https://images.unsplash.com/photo-1506461883276-594a12b11cf3?w=1400&h=600&fit=crop', title: 'The Golden City', subtitle: 'Jaisalmer — where sandstone meets the sky' },
-  { image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1400&h=600&fit=crop', title: 'Jaipur — The Pink City', subtitle: 'Amber Fort, Hawa Mahal, and royal heritage' },
-  { image: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1400&h=600&fit=crop', title: 'Udaipur — City of Lakes', subtitle: 'Romance, royalty, and timeless beauty' },
+  { image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791191240/Royal_Cenotaphs.png', title: 'Royal Rajasthan', subtitle: 'Forts • Palaces • Desert Adventures' },
+  { image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791190767/Golden-Hour_Sandstone_Fort_Cityscape.png', title: 'The Golden City', subtitle: 'Jaisalmer — where sandstone meets the sky' },
+  { image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791191132/Royal_Rajasthan.png', title: 'Jaipur — The Pink City', subtitle: 'Amber Fort, Hawa Mahal, and royal heritage' },
+  { image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791193045/Udaipur_City_of_Lakes.png', title: 'Udaipur — City of Lakes', subtitle: 'Romance, royalty, and timeless beauty' },
 ]
 
 const WHY_RAJASTHAN = [
@@ -23,14 +23,14 @@ const WHY_RAJASTHAN = [
 ]
 
 const GALLERY_IMAGES = [
-  { url: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?w=400&h=300&fit=crop', alt: 'Amber Fort', location: 'Jaipur' },
-  { url: 'https://images.unsplash.com/photo-1506461883276-594a12b11cf3?w=400&h=300&fit=crop', alt: 'Jaisalmer Fort', location: 'Jaisalmer' },
-  { url: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=400&h=300&fit=crop', alt: 'Hawa Mahal', location: 'Jaipur' },
-  { url: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=400&h=300&fit=crop', alt: 'Lake Palace', location: 'Udaipur' },
-  { url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop', alt: 'Desert Safari', location: 'Thar Desert' },
-  { url: 'https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=400&h=300&fit=crop', alt: 'Ranthambore Tigers', location: 'Ranthambore' },
-  { url: 'https://images.unsplash.com/photo-1548013146-72479768bada?w=400&h=300&fit=crop', alt: 'Udaipur Lakes', location: 'Udaipur' },
-  { url: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=400&h=300&fit=crop', alt: 'Pushkar', location: 'Pushkar' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791193409/Amber_Fort_Jaipur.png', alt: 'Amber Fort', location: 'Jaipur' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791193691/Jaisalmer_Fort.png', alt: 'Jaisalmer Fort', location: 'Jaisalmer' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791193762/Hawa_Mahal_Terrace_in_Golden_Sunlight.png', alt: 'Hawa Mahal', location: 'Jaipur' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791193896/Udaipur_Lake_Palace_Reflections.png', alt: 'Lake Palace', location: 'Udaipur' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791194278/Desert_Safari.png', alt: 'Desert Safari', location: 'Thar Desert' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791194458/Ranthambore.png', alt: 'Ranthambore Tigers', location: 'Ranthambore' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791194679/Udaipur_Lakes.png', alt: 'Udaipur Lakes', location: 'Udaipur' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791194839/Pushkar.png', alt: 'Pushkar', location: 'Pushkar' },
 ]
 
 export default function RajasthanPage() {

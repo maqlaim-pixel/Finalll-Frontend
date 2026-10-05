@@ -23,14 +23,14 @@ const WHY_GOA = [
 ]
 
 const GALLERY_IMAGES = [
-  { url: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=400&h=300&fit=crop', alt: 'Baga Beach', location: 'North Goa' },
-  { url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop', alt: 'Palolem Beach', location: 'South Goa' },
-  { url: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop', alt: 'Basilica of Bom Jesus', location: 'Old Goa' },
-  { url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop', alt: 'Dudhsagar Falls', location: 'Goa Border' },
-  { url: 'https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=400&h=300&fit=crop', alt: 'Fort Aguada', location: 'Sinquerim' },
-  { url: 'https://images.unsplash.com/photo-1548013146-72479768bada?w=400&h=300&fit=crop', alt: 'Spice Plantation', location: 'Ponda' },
-  { url: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?w=400&h=300&fit=crop', alt: 'Anjuna Flea Market', location: 'Anjuna' },
-  { url: 'https://images.unsplash.com/photo-1590050752117-29885e590d8e?w=400&h=300&fit=crop', alt: 'Chapora Fort', location: 'Vagator' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791197413/Baga_Beach.png', alt: 'Baga Beach', location: 'North Goa' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791197413/Palolem_Beach.png', alt: 'Palolem Beach', location: 'South Goa' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791197411/Basilica_of_Bom_Jesus.png', alt: 'Basilica of Bom Jesus', location: 'Old Goa' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791197418/Dudhsagar_Falls.png', alt: 'Dudhsagar Falls', location: 'Goa Border' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791197408/Fort_Aguada.png', alt: 'Fort Aguada', location: 'Sinquerim' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791197410/Spice_Plantation.png', alt: 'Spice Plantation', location: 'Ponda' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791197409/Anjuna_Flea_Market.png', alt: 'Anjuna Flea Market', location: 'Anjuna' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791197404/Chapora_Fort.png', alt: 'Chapora Fort', location: 'Vagator' },
 ]
 
 export default function GoaPage() {

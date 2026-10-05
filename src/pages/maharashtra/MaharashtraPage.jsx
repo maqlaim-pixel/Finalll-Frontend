@@ -23,14 +23,14 @@ const WHY_MAHARASHTRA = [
 ]
 
 const GALLERY_IMAGES = [
-  { url: 'https://images.unsplash.com/photo-1566552881560-0be862a72f98?w=400&h=300&fit=crop', alt: 'Gateway of India', location: 'Mumbai' },
-  { url: 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=400&h=300&fit=crop', alt: 'Elephanta Caves', location: 'Mumbai' },
-  { url: 'https://images.unsplash.com/photo-1590050752117-29885e590d8e?w=400&h=300&fit=crop', alt: 'Ajanta Caves', location: 'Aurangabad' },
-  { url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop', alt: 'Lonavala Hills', location: 'Lonavala' },
-  { url: 'https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=400&h=300&fit=crop', alt: 'Tadoba Tigers', location: 'Tadoba' },
-  { url: 'https://images.unsplash.com/photo-1548013146-72479768bada?w=400&h=300&fit=crop', alt: 'Shirdi Temple', location: 'Shirdi' },
-  { url: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=400&h=300&fit=crop', alt: 'Alibaug Beach', location: 'Alibaug' },
-  { url: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?w=400&h=300&fit=crop', alt: 'Mahabaleshwar', location: 'Mahabaleshwar' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791195333/Gateway_of_India.png', alt: 'Gateway of India', location: 'Mumbai' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791195577/Elephanta_Caves.png', alt: 'Elephanta Caves', location: 'Mumbai' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791195585/Ajanta_Caves.png', alt: 'Ajanta Caves', location: 'Aurangabad' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791195720/Lonavala_Hills.png', alt: 'Lonavala Hills', location: 'Lonavala' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791195923/Tadoba_Tigers.png', alt: 'Tadoba Tigers', location: 'Tadoba' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791195928/Ornate_Sai_Baba_Temple_Shrine.png', alt: 'Shirdi Temple', location: 'Shirdi' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791196124/Alibaug_Beach.png', alt: 'Alibaug Beach', location: 'Alibaug' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791196142/Misty_Sunrise_Over_the_Ancient_Hill_Fortress.png', alt: 'Mahabaleshwar', location: 'Mahabaleshwar' },
 ]
 
 export default function MaharashtraPage() {
