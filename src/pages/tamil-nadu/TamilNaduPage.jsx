@@ -23,14 +23,14 @@ const WHY_TAMIL_NADU = [
 ]
 
 const GALLERY_IMAGES = [
-  { url: 'https://images.unsplash.com/photo-1582515009775-4a44eda7ef48?w=400&h=300&fit=crop', alt: 'Meenakshi Temple', location: 'Madurai' },
-  { url: 'https://images.unsplash.com/photo-1580687774146-06e21c6d77f9?w=400&h=300&fit=crop', alt: 'Marina Beach', location: 'Chennai' },
-  { url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop', alt: 'Ooty Tea Gardens', location: 'Ooty' },
-  { url: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop', alt: 'Rameswaram Bridge', location: 'Rameswaram' },
-  { url: 'https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=400&h=300&fit=crop', alt: 'Kodaikanal Lake', location: 'Kodaikanal' },
-  { url: 'https://images.unsplash.com/photo-1548013146-72479768bada?w=400&h=300&fit=crop', alt: 'Thanjavur Palace', location: 'Thanjavur' },
-  { url: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?w=400&h=300&fit=crop', alt: 'Mahabalipuram', location: 'Mahabalipuram' },
-  { url: 'https://images.unsplash.com/photo-1590050752117-29885e590d8e?w=400&h=300&fit=crop', alt: 'Coonoor View', location: 'Coonoor' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791287246/Meenakshi_Temple.png', alt: 'Meenakshi Temple', location: 'Madurai' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791287243/Marina_Beach.png', alt: 'Marina Beach', location: 'Chennai' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791287242/Ooty_Tea_Gardens.png', alt: 'Ooty Tea Gardens', location: 'Ooty' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791287244/Rameswaram_Bridge.png', alt: 'Rameswaram Bridge', location: 'Rameswaram' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791287243/Kodaikanal_Lake.png', alt: 'Kodaikanal Lake', location: 'Kodaikanal' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791287247/Thanjavur_Palace.png', alt: 'Thanjavur Palace', location: 'Thanjavur' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791287241/Mahabalipuram.png', alt: 'Mahabalipuram', location: 'Mahabalipuram' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791287242/Coonoor_View.png', alt: 'Coonoor View', location: 'Coonoor' },
 ]
 
 export default function TamilNaduPage() {
