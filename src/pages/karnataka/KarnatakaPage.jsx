@@ -23,14 +23,14 @@ const WHY_KARNATAKA = [
 ]
 
 const GALLERY_IMAGES = [
-  { url: 'https://images.unsplash.com/photo-1582515009775-4a44eda7ef48?w=400&h=300&fit=crop', alt: 'Hampi Ruins', location: 'Hampi' },
-  { url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop', alt: 'Coorg Coffee Plantation', location: 'Coorg' },
-  { url: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop', alt: 'Gokarna Beach', location: 'Gokarna' },
-  { url: 'https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=400&h=300&fit=crop', alt: 'Mysore Palace', location: 'Mysore' },
-  { url: 'https://images.unsplash.com/photo-1548013146-72479768bada?w=400&h=300&fit=crop', alt: 'Nandi Hills Sunrise', location: 'Nandi Hills' },
-  { url: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?w=400&h=300&fit=crop', alt: 'Badami Caves', location: 'Badami' },
-  { url: 'https://images.unsplash.com/photo-1590050752117-29885e590d8e?w=400&h=300&fit=crop', alt: 'Jog Falls', location: 'Shimoga' },
-  { url: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=400&h=300&fit=crop', alt: 'Bandipur Safari', location: 'Bandipur' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791283550/Hampi_Stone_Chariot_in_Golden_Light.png', alt: 'Hampi Ruins', location: 'Hampi' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791283672/Coorg_Coffee_Plantation.png', alt: 'Coorg Coffee Plantation', location: 'Coorg' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791283963/Gokarna_Beach.png', alt: 'Gokarna Beach', location: 'Gokarna' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791284024/Mysore_Palace.png', alt: 'Mysore Palace', location: 'Mysore' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791284727/Nandi_Hills_Sunrise.png', alt: 'Nandi Hills Sunrise', location: 'Nandi Hills' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791284791/Badami_Caves.png', alt: 'Badami Caves', location: 'Badami' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791284823/Jog_Falls.png', alt: 'Jog Falls', location: 'Shimoga' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791285001/Bandipur_Safari.png', alt: 'Bandipur Safari', location: 'Bandipur' },
 ]
 
 export default function KarnatakaPage() {

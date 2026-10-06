@@ -23,14 +23,14 @@ const WHY_KERALA = [
 ]
 
 const GALLERY_IMAGES = [
-  { url: 'https://images.unsplash.com/photo-1590050752117-29885e590d8e?w=400&h=300&fit=crop', alt: 'Alleppey Backwaters', location: 'Alleppey' },
-  { url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop', alt: 'Munnar Tea Gardens', location: 'Munnar' },
-  { url: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop', alt: 'Kovalam Beach', location: 'Kovalam' },
-  { url: 'https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=400&h=300&fit=crop', alt: 'Periyar Tigers', location: 'Thekkady' },
-  { url: 'https://images.unsplash.com/photo-1548013146-72479768bada?w=400&h=300&fit=crop', alt: 'Kochi Fort', location: 'Kochi' },
-  { url: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?w=400&h=300&fit=crop', alt: 'Wayanad Hills', location: 'Wayanad' },
-  { url: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=400&h=300&fit=crop', alt: 'Houseboat', location: 'Alleppey' },
-  { url: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=400&h=300&fit=crop', alt: 'Athirapally Falls', location: 'Thrissur' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791275202/Alleppey_Backwaters.png', alt: 'Alleppey Backwaters', location: 'Alleppey' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791275462/Munnar_Tea_Gardens.png', alt: 'Munnar Tea Gardens', location: 'Munnar' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791275545/Kovalam_Beach.png', alt: 'Kovalam Beach', location: 'Kovalam' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791275608/Periyar_Tigers.png', alt: 'Periyar Tigers', location: 'Thekkady' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791275261/kochi_fort.png', alt: 'Kochi Fort', location: 'Kochi' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791275265/Wayanad_Hills.png', alt: 'Wayanad Hills', location: 'Wayanad' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791275693/Kerala_Houseboat.png', alt: 'Houseboat', location: 'Alleppey' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791275268/Athirapally_Falls.png', alt: 'Athirapally Falls', location: 'Thrissur' },
 ]
 
 export default function KeralaPage() {
