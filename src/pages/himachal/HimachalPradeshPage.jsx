@@ -23,14 +23,14 @@ const WHY_HP = [
 ]
 
 const GALLERY_IMAGES = [
-  { url: 'https://images.unsplash.com/photo-1597075085698-6d3f2b002b0f?w=400&h=300&fit=crop', alt: 'Shimla Mall Road', location: 'Shimla' },
-  { url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop', alt: 'Rohtang Pass', location: 'Manali' },
-  { url: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop', alt: 'Paragliding in Bir', location: 'Bir Billing' },
-  { url: 'https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=400&h=300&fit=crop', alt: 'Dalhousie Snow', location: 'Dalhousie' },
-  { url: 'https://images.unsplash.com/photo-1548013146-72479768bada?w=400&h=300&fit=crop', alt: 'Dharamshala', location: 'McLeodganj' },
-  { url: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?w=400&h=300&fit=crop', alt: 'Spiti Valley', location: 'Spiti' },
-  { url: 'https://images.unsplash.com/photo-1590050752117-29885e590d8e?w=400&h=300&fit=crop', alt: 'Kasol Riverside', location: 'Kasol' },
-  { url: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=400&h=300&fit=crop', alt: 'Hadimba Temple', location: 'Manali' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791288839/Shimla_Mall_Road.png', alt: 'Shimla Mall Road', location: 'Shimla' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791288838/Rohtang_Pass.png', alt: 'Rohtang Pass', location: 'Manali' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791288837/Paragliding_in_Bir.png', alt: 'Paragliding in Bir', location: 'Bir Billing' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791288837/Dalhousie_Snow.png', alt: 'Dalhousie Snow', location: 'Dalhousie' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791288846/Dharamshala.png', alt: 'Dharamshala', location: 'McLeodganj' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791288835/Spiti_Valley.png', alt: 'Spiti Valley', location: 'Spiti' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791288841/Kasol_Riverside.png', alt: 'Kasol Riverside', location: 'Kasol' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791288834/hadimba_temple.png', alt: 'Hadimba Temple', location: 'Manali' },
 ]
 
 export default function HimachalPradeshPage() {
