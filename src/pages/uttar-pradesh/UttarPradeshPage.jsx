@@ -23,14 +23,14 @@ const WHY_UP = [
 ]
 
 const GALLERY_IMAGES = [
-  { url: 'https://images.unsplash.com/photo-1582515009775-4a44eda7ef48?w=400&h=300&fit=crop', alt: 'Taj Mahal Sunrise', location: 'Agra' },
-  { url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop', alt: 'Varanasi Ghats', location: 'Varanasi' },
-  { url: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop', alt: 'Ganga Aarti', location: 'Varanasi' },
-  { url: 'https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=400&h=300&fit=crop', alt: 'Agra Fort', location: 'Agra' },
-  { url: 'https://images.unsplash.com/photo-1548013146-72479768bada?w=400&h=300&fit=crop', alt: 'Lucknow Imambara', location: 'Lucknow' },
-  { url: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?w=400&h=300&fit=crop', alt: 'Fatehpur Sikri', location: 'Agra' },
-  { url: 'https://images.unsplash.com/photo-1590050752117-29885e590d8e?w=400&h=300&fit=crop', alt: 'Mathura Temple', location: 'Mathura' },
-  { url: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=400&h=300&fit=crop', alt: 'Vrindavan', location: 'Vrindavan' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791370723/Taj_Mahal_Reflections_at_Sunrise.png', alt: 'Taj Mahal Sunrise', location: 'Agra' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791370731/Varanasi_Ghats.png', alt: 'Varanasi Ghats', location: 'Varanasi' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791370727/Ganga_Aarti.png', alt: 'Ganga Aarti', location: 'Varanasi' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791370724/Agra_Fort.png', alt: 'Agra Fort', location: 'Agra' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791370720/Lucknow_Imambara.png', alt: 'Lucknow Imambara', location: 'Lucknow' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791370721/Fatehpur_Sikri.png', alt: 'Fatehpur Sikri', location: 'Agra' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791373152/Mathura_Temple.png', alt: 'Mathura Temple', location: 'Mathura' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791370722/Vrindavan.png', alt: 'Vrindavan', location: 'Vrindavan' },
 ]
 
 export default function UttarPradeshPage() {
