@@ -23,14 +23,14 @@ const WHY_UK = [
 ]
 
 const GALLERY_IMAGES = [
-  { url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop', alt: 'Kedarnath Temple', location: 'Kedarnath' },
-  { url: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop', alt: 'Nainital Lake', location: 'Nainital' },
-  { url: 'https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=400&h=300&fit=crop', alt: 'Rishikesh Ganga Aarti', location: 'Rishikesh' },
-  { url: 'https://images.unsplash.com/photo-1548013146-72479768bada?w=400&h=300&fit=crop', alt: 'Mussoorie View', location: 'Mussoorie' },
-  { url: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?w=400&h=300&fit=crop', alt: 'Valley of Flowers', location: 'Chamoli' },
-  { url: 'https://images.unsplash.com/photo-1590050752117-29885e590d8e?w=400&h=300&fit=crop', alt: 'River Rafting', location: 'Rishikesh' },
-  { url: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=400&h=300&fit=crop', alt: 'Lansdowne', location: 'Lansdowne' },
-  { url: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=400&h=300&fit=crop', alt: 'Auli Skiing', location: 'Auli' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791352659/Kedarnath_Temple.png', alt: 'Kedarnath Temple', location: 'Kedarnath' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791352649/Nainital_Lake.png', alt: 'Nainital Lake', location: 'Nainital' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791352645/Rishikesh_Ganga_Aarti.png', alt: 'Rishikesh Ganga Aarti', location: 'Rishikesh' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791352644/Mussoorie_View.png', alt: 'Mussoorie View', location: 'Mussoorie' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791352647/Valley_of_Flowers.png', alt: 'Valley of Flowers', location: 'Chamoli' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791352645/River_Rafting.png', alt: 'River Rafting', location: 'Rishikesh' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791352648/Lansdowne.png', alt: 'Lansdowne', location: 'Lansdowne' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791352646/Auli_Skiing.png', alt: 'Auli Skiing', location: 'Auli' },
 ]
 
 export default function UttarakhandPage() {

@@ -23,14 +23,14 @@ const WHY_JK = [
 ]
 
 const GALLERY_IMAGES = [
-  { url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop', alt: 'Dal Lake', location: 'Srinagar' },
-  { url: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop', alt: 'Gulmarg Snow', location: 'Gulmarg' },
-  { url: 'https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=400&h=300&fit=crop', alt: 'Pahalgam Valley', location: 'Pahalgam' },
-  { url: 'https://images.unsplash.com/photo-1548013146-72479768bada?w=400&h=300&fit=crop', alt: 'Sonmarg', location: 'Sonmarg' },
-  { url: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?w=400&h=300&fit=crop', alt: 'Gondola Ride', location: 'Gulmarg' },
-  { url: 'https://images.unsplash.com/photo-1590050752117-29885e590d8e?w=400&h=300&fit=crop', alt: 'Shikara Ride', location: 'Dal Lake' },
-  { url: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=400&h=300&fit=crop', alt: 'Yusmarg', location: 'Yusmarg' },
-  { url: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=400&h=300&fit=crop', alt: 'Betaab Valley', location: 'Pahalgam' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791361449/Dal_Lake.png', alt: 'Dal Lake', location: 'Srinagar' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791361449/Gulmarg_Snow.png', alt: 'Gulmarg Snow', location: 'Gulmarg' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791361454/Pahalgam_Valley.png', alt: 'Pahalgam Valley', location: 'Pahalgam' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791361752/Sonmarg.png', alt: 'Sonmarg', location: 'Sonmarg' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791361772/Gondola_Ride.png', alt: 'Gondola Ride', location: 'Gulmarg' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791361825/Shikara_Ride.png', alt: 'Shikara Ride', location: 'Dal Lake' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791361453/Yusmarg.png', alt: 'Yusmarg', location: 'Yusmarg' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791361453/Betaab_Valley.png', alt: 'Betaab Valley', location: 'Pahalgam' },
 ]
 
 export default function JammuKashmirPage() {
