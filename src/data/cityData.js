@@ -23,7 +23,7 @@ const CITIES = {
         area: 'Adalaj',
         image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791462150/Adalaj_Stepwell.png'
       },
-      { name: 'Sabarmati Ashram', desc: 'The historic ashram of Mahatma Gandhi, a symbol of freedom struggle.', area: 'Sabarmati', image: `${U}/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop` },
+      { name: 'Sabarmati Ashram', desc: 'The historic ashram of Mahatma Gandhi, a symbol of freedom struggle.', area: 'Sabarmati', image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791462436/Sabarmati_Ashram.png' },
       { name: 'Akshardham Temple', desc: 'A stunning temple known for its intricate carvings and spiritual aura.', area: 'Gandhinagar Highway', image: `${U}/photo-1544551763-46a013bb70d5?w=300&h=200&fit=crop` },
       { name: 'Jama Masjid', desc: 'An architectural marvel built in 1424, showcasing Indo-Islamic design.', area: 'Kalupur', image: `${U}/photo-1514222134-b57cbb8ce073?w=300&h=200&fit=crop` },
       { name: 'Kankaria Lake', desc: 'A scenic lakefront with entertainment, zoo and boating experiences.', area: 'Kankaria', image: `${U}/photo-1548013146-72479768bada?w=300&h=200&fit=crop` },
