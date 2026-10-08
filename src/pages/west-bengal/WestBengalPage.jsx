@@ -23,14 +23,14 @@ const WHY_WB = [
 ]
 
 const GALLERY_IMAGES = [
-  { url: 'https://images.unsplash.com/photo-1582515009775-4a44eda7ef48?w=400&h=300&fit=crop', alt: 'Victoria Memorial', location: 'Kolkata' },
-  { url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop', alt: 'Darjeeling Tea Garden', location: 'Darjeeling' },
-  { url: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop', alt: 'Sundarbans', location: 'Sundarbans' },
-  { url: 'https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=400&h=300&fit=crop', alt: 'Howrah Bridge', location: 'Kolkata' },
-  { url: 'https://images.unsplash.com/photo-1548013146-72479768bada?w=400&h=300&fit=crop', alt: 'Kalimpong', location: 'Kalimpong' },
-  { url: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?w=400&h=300&fit=crop', alt: 'Toy Train', location: 'Darjeeling' },
-  { url: 'https://images.unsplash.com/photo-1590050752117-29885e590d8e?w=400&h=300&fit=crop', alt: 'Shantiniketan', location: 'Bolpur' },
-  { url: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=400&h=300&fit=crop', alt: 'Dooars Forest', location: 'Dooars' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791461342/Victoria_Memorial.png', alt: 'Victoria Memorial', location: 'Kolkata' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791461342/Darjeeling_Tea_Garden.png', alt: 'Darjeeling Tea Garden', location: 'Darjeeling' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791461341/Sundarbans.png', alt: 'Sundarbans', location: 'Sundarbans' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791461341/Howrah_Bridge.png', alt: 'Howrah Bridge', location: 'Kolkata' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791461340/Kalimpong.png', alt: 'Kalimpong', location: 'Kalimpong' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791461341/Toy_Train.png', alt: 'Toy Train', location: 'Darjeeling' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791461341/Shantiniketan.png', alt: 'Shantiniketan', location: 'Bolpur' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791461341/Dooars_Forest.png', alt: 'Dooars Forest', location: 'Dooars' },
 ]
 
 export default function WestBengalPage() {

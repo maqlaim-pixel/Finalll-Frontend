@@ -23,14 +23,14 @@ const WHY_MP = [
 ]
 
 const GALLERY_IMAGES = [
-  { url: 'https://images.unsplash.com/photo-1582515009775-4a44eda7ef48?w=400&h=300&fit=crop', alt: 'Khajuraho Temples', location: 'Khajuraho' },
-  { url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop', alt: 'Bandhavgarh Tiger', location: 'Bandhavgarh' },
-  { url: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop', alt: 'Gwalior Fort', location: 'Gwalior' },
-  { url: 'https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=400&h=300&fit=crop', alt: 'Sanchi Stupa', location: 'Sanchi' },
-  { url: 'https://images.unsplash.com/photo-1548013146-72479768bada?w=400&h=300&fit=crop', alt: 'Orchha Palace', location: 'Orchha' },
-  { url: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?w=400&h=300&fit=crop', alt: 'Pachmarhi Hills', location: 'Pachmarhi' },
-  { url: 'https://images.unsplash.com/photo-1590050752117-29885e590d8e?w=400&h=300&fit=crop', alt: 'Mandu Ruins', location: 'Mandu' },
-  { url: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=400&h=300&fit=crop', alt: 'Omkareshwar', location: 'Omkareshwar' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791461463/Khajuraho_Temples.png', alt: 'Khajuraho Temples', location: 'Khajuraho' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791461462/Bandhavgarh_Tiger.png', alt: 'Bandhavgarh Tiger', location: 'Bandhavgarh' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791461462/Gwalior_Fort.png', alt: 'Gwalior Fort', location: 'Gwalior' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791461462/Sanchi_Stupa.png', alt: 'Sanchi Stupa', location: 'Sanchi' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791461461/Orchha_Palace.png', alt: 'Orchha Palace', location: 'Orchha' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791461462/Pachmarhi_Hills.png', alt: 'Pachmarhi Hills', location: 'Pachmarhi' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791461461/Mandu_Ruins.png', alt: 'Mandu Ruins', location: 'Mandu' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791461461/Omkareshwar.png', alt: 'Omkareshwar', location: 'Omkareshwar' },
 ]
 
 export default function MadhyaPradeshPage() {
