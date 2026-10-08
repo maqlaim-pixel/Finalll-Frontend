@@ -16,7 +16,13 @@ const CITIES = {
       { icon: '\u{1F35C}', label: 'Food Capital of Gujarat' },
     ],
     attractions: [
-      { name: 'Adalaj Stepwell', desc: 'A magnificent example of intricate architecture and Rajasthani influence.', area: 'Adalaj', image: `${U}/photo-1580687774146-06e21c6d77f9?w=300&h=200&fit=crop` },
+      // { name: 'Adalaj Stepwell', desc: 'A magnificent example of intricate architecture and Rajasthani influence.', area: 'Adalaj', image: `${U}/photo-1580687774146-06e21c6d77f9?w=300&h=200&fit=crop` },
+      {
+        name: 'Adalaj Stepwell',
+        desc: 'A magnificent example of intricate architecture and Rajasthani influence.',
+        area: 'Adalaj',
+        image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791462150/Adalaj_Stepwell.png'
+      },
       { name: 'Sabarmati Ashram', desc: 'The historic ashram of Mahatma Gandhi, a symbol of freedom struggle.', area: 'Sabarmati', image: `${U}/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop` },
       { name: 'Akshardham Temple', desc: 'A stunning temple known for its intricate carvings and spiritual aura.', area: 'Gandhinagar Highway', image: `${U}/photo-1544551763-46a013bb70d5?w=300&h=200&fit=crop` },
       { name: 'Jama Masjid', desc: 'An architectural marvel built in 1424, showcasing Indo-Islamic design.', area: 'Kalupur', image: `${U}/photo-1514222134-b57cbb8ce073?w=300&h=200&fit=crop` },
