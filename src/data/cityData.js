@@ -8,7 +8,7 @@ const CITIES = {
     name: 'Ahmedabad', state: 'Gujarat', stateSlug: 'gujarat',
     tagline: 'Where Tradition Meets Modernity',
     description: 'Ahmedabad, the largest city in Gujarat, is a vibrant blend of rich heritage, culture, history, shopping, food and modern lifestyle. A UNESCO World Heritage City and the first Indian city to be inscribed as a World Heritage Site.',
-    heroImage: `https://images.unsplash.com/photo-1582515009775-4a44eda7ef48?w=1400&h=600&fit=crop`,
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791802026/Ahmedabad_Riverfront_Skyline_Reflections.png',
     badges: [
       { icon: '\u{1F3DB}\uFE0F', label: 'UNESCO World Heritage City' },
       { icon: '\u{1F570}\uFE0F', label: 'Founded in 1411 AD' },
@@ -62,7 +62,7 @@ const CITIES = {
     name: 'Surat', state: 'Gujarat', stateSlug: 'gujarat',
     tagline: 'The Diamond City of India',
     description: 'Surat is a port city and commercial hub known for its diamond cutting and polishing industry, textile market, and rich history. One of the fastest growing cities in India.',
-    heroImage: `https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&h=600&fit=crop`,
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791802218/Surat_Diamond_Bourse.png',
     badges: [
       { icon: '\u{1F48E}', label: 'Diamond City of India' },
       { icon: '\u{1F3A8}', label: 'Silk & Textile Hub' },
@@ -109,7 +109,7 @@ const CITIES = {
     name: 'Vadodara', state: 'Gujarat', stateSlug: 'gujarat',
     tagline: 'Cultural Capital of Gujarat',
     description: 'Vadodara is known for its rich cultural heritage, magnificent palaces, art galleries and the famous Laxmi Vilas Palace. A hub of art, culture and education.',
-    heroImage: `https://res.cloudinary.com/goqz2x1l/image/upload/v1791546412/Vadodara.png`,
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791802318/Baroda.png',
     badges: [
       { icon: '\u{1F3F0}', label: 'Cultural Capital' },
       { icon: '\u{1F3DB}\uFE0F', label: 'Laxmi Vilas Palace' },
@@ -156,7 +156,7 @@ const CITIES = {
     name: 'Rajkot', state: 'Gujarat', stateSlug: 'gujarat',
     tagline: 'Rangilu Rajkot — The Vibrant City',
     description: 'Rajkot is a lively city known for its gold jewelry, wrist watches, embroidery machines and the childhood home of Mahatma Gandhi.',
-    heroImage: `https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&h=600&fit=crop`,
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791802774/Kaba_Gandhi_s_Delo_Heritage_Entrance_Rajkot.png',
     badges: [
       { icon: '\u2728', label: 'Rangilu (Vibrant) City' },
       { icon: '\u2696\uFE0F', label: 'Gold & Jewelry Hub' },
@@ -203,7 +203,7 @@ const CITIES = {
     name: 'Gandhinagar', state: 'Gujarat', stateSlug: 'gujarat',
     tagline: 'The Green City — Capital of Gujarat',
     description: 'Gandhinagar is the planned capital city of Gujarat, known for its organized layout, lush greenery and the magnificent Akshardham Temple.',
-    heroImage: `https://images.unsplash.com/photo-1582515009775-4a44eda7ef48?w=1400&h=600&fit=crop`,
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791802774/Gift_City.png',
     badges: [
       { icon: '\u{1F333}', label: 'Planned Green City' },
       { icon: '\u{1F3F0}', label: 'State Capital' },
@@ -250,7 +250,7 @@ const CITIES = {
     name: 'Jaipur', state: 'Rajasthan', stateSlug: 'rajasthan',
     tagline: 'The Pink City — Royal Rajasthan',
     description: 'Jaipur is the capital of Rajasthan, known for its iconic pink buildings, magnificent forts and palaces. A UNESCO World Heritage City and gateway to Rajasthan\'s royal heritage.',
-    heroImage: `https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1400&h=600&fit=crop`,
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791803087/Sunlit_Jaipur_Palace_Courtyard.png',
     badges: [
       { icon: '\u{1F3F0}', label: 'UNESCO Heritage City' },
       { icon: '\u{1F451}', label: 'Royal Pink City' },
@@ -297,7 +297,7 @@ const CITIES = {
     name: 'Udaipur', state: 'Rajasthan', stateSlug: 'rajasthan',
     tagline: 'The City of Lakes — Venice of the East',
     description: 'Udaipur is known for its picturesque lakes, royal palaces and stunning landscapes. One of the most romantic cities in India and a top wedding destination.',
-    heroImage: `https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&h=600&fit=crop`,
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791803190/Udaipur_Palace_Ghats_Reflected_on_a_Quiet_Lake.png',
     badges: [
       { icon: '\u{1F6F6}', label: 'City of Lakes' },
       { icon: '\u{1F3F0}', label: 'Lake Palace Hotel' },
@@ -344,7 +344,7 @@ const CITIES = {
     name: 'Jodhpur', state: 'Rajasthan', stateSlug: 'rajasthan',
     tagline: 'The Blue City — Sun City of Rajasthan',
     description: 'Jodhpur is known for its blue-painted houses, magnificent Mehrangarh Fort and the stark beauty of the Thar Desert. The gateway to Rajasthan.',
-    heroImage: `https://images.unsplash.com/photo-1548013146-72479768bada?w=1400&h=600&fit=crop`,
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791803415/Panoramic_Blue_City_Rooftops.png',
     badges: [
       { icon: '\u{1F535}', label: 'The Blue City' },
       { icon: '\u2600\uFE0F', label: 'Sun City' },
@@ -391,7 +391,7 @@ const CITIES = {
     name: 'Mumbai', state: 'Maharashtra', stateSlug: 'maharashtra',
     tagline: 'The City of Dreams — Financial Capital of India',
     description: 'Mumbai is India\'s largest city and financial capital, known for Bollywood, colonial architecture, vibrant nightlife and the Gateway of India.',
-    heroImage: `https://images.unsplash.com/photo-1529253873976-e1d329372604?w=1400&h=600&fit=crop`,
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791801829/The_City_of_Dreams_Financial_Capital_of_India.png',
     badges: [
       { icon: '\u{1F3AC}', label: 'Bollywood City' },
       { icon: '\u{1F3EF}', label: 'Gateway of India' },
@@ -406,7 +406,7 @@ const CITIES = {
       { name: 'Juhu Beach', desc: 'Famous beach with street food, cricket and sunset views.', area: 'Juhu', image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791801054/Juhu_Beach.png' },
       { name: 'Siddhivinayak Temple', desc: 'Famous Ganesh temple visited by Bollywood celebrities.', area: 'Prabhadevi', image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791801054/Siddhivinayak_Temple.png' },
     ],
-    featuredImage: `${U}/photo-1529253873976-e1d329372604?w=800&h=500&fit=crop`,
+    featuredImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791801517/Bollywood_Heritage_Tour.png',
     featuredTitle: 'Bollywood & Heritage Tour',
     featuredDesc: 'Experience the magic of Bollywood and explore Mumbai\'s colonial heritage and vibrant culture.',
     featuredCta: 'Explore Mumbai',
@@ -438,7 +438,7 @@ const CITIES = {
     name: 'Pune', state: 'Maharashtra', stateSlug: 'maharashtra',
     tagline: 'Oxford of the East — Queen of the Deccan',
     description: 'Pune is Maharashtra\'s cultural capital and India\'s education hub, known for its universities, pleasant weather and rich Maratha heritage.',
-    heroImage: `https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=1400&h=600&fit=crop`,
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791803582/Pune_Reflective_Tropical_Temple_Pond.png',
     badges: [
       { icon: '\u{1F393}', label: 'Oxford of the East' },
       { icon: '\u26F0\uFE0F', label: 'Queen of the Deccan' },
@@ -446,12 +446,12 @@ const CITIES = {
       { icon: '\u{1F33F}', label: 'Pleasant Weather' },
     ],
     attractions: [
-      { name: 'Shaniwar Wada', desc: 'Historic fortification and seat of Peshwa rulers.', area: 'Shaniwar Peth', image: `${U}/photo-1514222134-b57cbb8ce073?w=300&h=200&fit=crop` },
-      { name: 'Aga Khan Palace', desc: 'Historic palace where Mahatma Gandhi was imprisoned.', area: 'Kalyani Nagar', image: `${U}/photo-1544551763-46a013bb70d5?w=300&h=200&fit=crop` },
-      { name: 'Sinhagad Fort', desc: 'Popular hill fort with trekking and historic battle site.', area: 'Sinhagad', image: `${U}/photo-1548013146-72479768bada?w=300&h=200&fit=crop` },
-      { name: 'Dagdusheth Halwai Temple', desc: 'Famous Ganesh temple with gold-plated idol.', area: 'Budhwar Peth', image: `${U}/photo-1590050752117-29885e590d8e?w=300&h=200&fit=crop` },
-      { name: 'Osho Ashram', desc: 'International meditation center in Koregaon Park.', area: 'Koregaon Park', image: `${U}/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop` },
-      { name: 'Pataleshwar Cave Temple', desc: 'Rock-cut cave temple from the 8th century.', area: 'Jangli Maharaj Road', image: `${U}/photo-1477587458883-47145ed94245?w=300&h=200&fit=crop` },
+      { name: 'Shaniwar Wada', desc: 'Historic fortification and seat of Peshwa rulers.', area: 'Shaniwar Peth', image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791806889/Shaniwar_Wada.png' },
+      { name: 'Aga Khan Palace', desc: 'Historic palace where Mahatma Gandhi was imprisoned.', area: 'Kalyani Nagar', image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791806890/Aga_Khan_Palace.png' },
+      { name: 'Sinhagad Fort', desc: 'Popular hill fort with trekking and historic battle site.', area: 'Sinhagad', image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791806891/Sinhagad_Fort.png' },
+      { name: 'Dagdusheth Halwai Temple', desc: 'Famous Ganesh temple with gold-plated idol.', area: 'Budhwar Peth', image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791806892/Dagdusheth_Halwai_Temple.png' },
+      { name: 'Osho Ashram', desc: 'International meditation center in Koregaon Park.', area: 'Koregaon Park', image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791806892/Osho_Ashram.png' },
+      { name: 'Pataleshwar Cave Temple', desc: 'Rock-cut cave temple from the 8th century.', area: 'Jangli Maharaj Road', image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791806888/Pataleshwar_Cave_Temple.png' },
     ],
     featuredImage: `${U}/photo-1514222134-b57cbb8ce073?w=800&h=500&fit=crop`,
     featuredTitle: 'Heritage & Education Hub',
@@ -485,7 +485,7 @@ const CITIES = {
     name: 'Goa', state: 'Goa', stateSlug: 'goa',
     tagline: 'Beach Paradise — Sun, Sand & Portuguese Heritage',
     description: 'Goa is India\'s smallest state but biggest party destination, known for its pristine beaches, Portuguese churches, vibrant nightlife and spice plantations.',
-    heroImage: `https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1400&h=600&fit=crop`,
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791804027/Goa_Beach.png',
     badges: [
       { icon: '\u{1F3D6}\uFE0F', label: 'Beach Paradise' },
       { icon: '\u26EA', label: 'Portuguese Churches' },
@@ -532,7 +532,7 @@ const CITIES = {
     name: 'Bangalore', state: 'Karnataka', stateSlug: 'karnataka',
     tagline: 'Silicon Valley of India — Garden City',
     description: 'Bangalore is India\'s IT capital and a vibrant cosmopolitan city known for its pleasant climate, craft beer scene, parks and startup culture.',
-    heroImage: `https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1400&h=600&fit=crop`,
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791804028/Bangalore.png',
     badges: [
       { icon: '\u{1F4BB}', label: 'Silicon Valley of India' },
       { icon: '\u{1F33F}', label: 'Garden City' },
@@ -1338,7 +1338,7 @@ const CITIES = {
     name: 'Chennai', state: 'Tamil Nadu', stateSlug: 'tamil-nadu',
     tagline: 'Gateway to South India — Detroit of India',
     description: 'Chennai is the cultural capital of South India, known for classical dance, temples, auto industry and the longest urban beach in the world.',
-    heroImage: `https://images.unsplash.com/photo-1582515009775-4a44eda7ef48?w=1400&h=600&fit=crop`,
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1791804117/Chennai_Central_Station_Forecourt_Panorama.png',
     badges: [
       { icon: '\u{1F3AD}', label: 'Cultural Capital' },
       { icon: '\u{1F3D6}\uFE0F', label: 'Marina Beach' },
