@@ -10,15 +10,17 @@
     "test": "node --test src/utils/authSession.test.js src/utils/heritageDestinations.test.js src/utils/indiaExperiences.test.js"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
+    "axios": "^1.7.2",
+    "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
+    "lucide-react": "^0.378.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.23.0",
-    "axios": "^1.7.2",
     "react-hook-form": "^7.51.3",
     "react-hot-toast": "^2.4.1",
-    "lucide-react": "^0.378.0",
-    "clsx": "^2.1.1",
-    "date-fns": "^3.6.0"
+    "react-router-dom": "^6.23.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.1",
