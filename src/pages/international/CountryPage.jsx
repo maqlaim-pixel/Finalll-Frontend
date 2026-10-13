@@ -18,8 +18,8 @@ const COUNTRIES = {
     tagline: 'City of Gold & Modern Wonders',
     description: 'From the towering Burj Khalifa to the golden sands of the desert, the UAE offers a perfect blend of luxury, adventure, culture and world-class shopping.',
     heroImages: [
-      'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1400&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1518684079-3c830dcef090?w=1400&h=600&fit=crop',
+      'https://res.cloudinary.com/goqz2x1l/image/upload/v1791889730/UAE_Fortress_Courtyard_Beneath_Modern_Towers.png',
+      'https://res.cloudinary.com/goqz2x1l/image/upload/v1791889970/Dubai_s_Oasis_Resort_Panorama.png',
       'https://images.unsplash.com/photo-1580674285054-bed31e145f59?w=1400&h=600&fit=crop',
     ],
     heroTitle: 'Discover the United Arab Emirates',
