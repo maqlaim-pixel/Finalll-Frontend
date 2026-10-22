@@ -236,12 +236,12 @@ const COUNTRIES = {
       { icon: '🎭', title: 'Balinese Culture', desc: 'Traditional dance, ceremonies & art villages' },
     ],
     destinations: [
-      { name: 'Ubud', image: 'https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?w=400&h=300&fit=crop', desc: 'Art, culture, rice terraces and spiritual heart of Bali' },
-      { name: 'Seminyak', image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&h=300&fit=crop', desc: 'Trendy beach clubs, boutiques and sunset bars' },
-      { name: 'Kuta', image: 'https://images.unsplash.com/photo-1573790387438-4b9fa79c2885?w=400&h=300&fit=crop', desc: 'Famous surf beach with vibrant nightlife' },
-      { name: 'Nusa Dua', image: 'https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?w=400&h=300&fit=crop', desc: 'Luxury resort area with pristine beaches' },
-      { name: 'Uluwatu', image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&h=300&fit=crop', desc: 'Clifftop temple and world-class surfing' },
-      { name: 'Gili Islands', image: 'https://images.unsplash.com/photo-1573790387438-4b9fa79c2885?w=400&h=300&fit=crop', desc: 'Three tiny islands with no cars and crystal waters' },
+      { name: 'Ubud', image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1792660330/Ubud.png', desc: 'Art, culture, rice terraces and spiritual heart of Bali' },
+      { name: 'Seminyak', image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1792660330/Seminyak.png', desc: 'Trendy beach clubs, boutiques and sunset bars' },
+      { name: 'Kuta', image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1792660330/Kuta.png', desc: 'Famous surf beach with vibrant nightlife' },
+      { name: 'Nusa Dua', image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1792660330/Nusa_Dua.png', desc: 'Luxury resort area with pristine beaches' },
+      { name: 'Uluwatu', image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1792660330/Uluwatu.png', desc: 'Clifftop temple and world-class surfing' },
+      { name: 'Gili Islands', image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1792660330/Gili_Islands.png', desc: 'Three tiny islands with no cars and crystal waters' },
     ],
     gallery: [
       { url: 'https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?w=400&h=300&fit=crop', alt: 'Rice Terraces', location: 'Ubud' },
