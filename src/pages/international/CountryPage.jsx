@@ -244,9 +244,9 @@ const COUNTRIES = {
       { name: 'Gili Islands', image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1792660330/Gili_Islands.png', desc: 'Three tiny islands with no cars and crystal waters' },
     ],
     gallery: [
-      { url: 'https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?w=400&h=300&fit=crop', alt: 'Rice Terraces', location: 'Ubud' },
+      { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1792660330/Ubud.png', alt: 'Rice Terraces', location: 'Ubud' },
       { url: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&h=300&fit=crop', alt: 'Tanah Lot Temple', location: 'Bali' },
-      { url: 'https://images.unsplash.com/photo-1573790387438-4b9fa79c2885?w=400&h=300&fit=crop', alt: 'Uluwatu Beach', location: 'Uluwatu' },
+      { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1792660330/Uluwatu.png', alt: 'Uluwatu Beach', location: 'Uluwatu' },
     ],
     stats: { destinations: '35+', packages: '50+', travelers: '22,000+', rating: '4.8' },
   },
