@@ -259,9 +259,9 @@ const COUNTRIES = {
     tagline: 'Timeless Charm',
     description: 'Vietnam captivates with its dramatic landscapes, rich history, incredible street food, and warm hospitality. From Ha Long Bay to Ho Chi Minh City, every moment is an adventure.',
     heroImages: [
-      'https://images.unsplash.com/photo-1528127269322-539801943592?w=1400&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1557750255-c7607237c52e?w=1400&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1400&h=600&fit=crop',
+      'https://res.cloudinary.com/goqz2x1l/image/upload/v1792746439/Emerald_Jungle_Waterfall_Paradise.png',
+      'https://res.cloudinary.com/goqz2x1l/image/upload/v1792746439/Golden_Bridge_Through_Mountain_Paradise.png',
+      'https://res.cloudinary.com/goqz2x1l/image/upload/v1792746439/Panoramic_Turquoise_Karst_Seascape.png',
     ],
     heroTitle: 'Discover Vietnam',
     heroSubtitle: 'History • Food • Nature • Adventure',
@@ -284,8 +284,8 @@ const COUNTRIES = {
     ],
     gallery: [
       { url: 'https://images.unsplash.com/photo-1528127269322-539801943592?w=400&h=300&fit=crop', alt: 'Ha Long Bay', location: 'Quang Ninh' },
-      { url: 'https://images.unsplash.com/photo-1557750255-c7607237c52e?w=400&h=300&fit=crop', alt: 'Hanoi Old Quarter', location: 'Hanoi' },
-      { url: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=400&h=300&fit=crop', alt: 'Hoi An Lanterns', location: 'Hoi An' },
+      { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1792737268/Hanoi.png', alt: 'Hanoi Old Quarter', location: 'Hanoi' },
+      { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1792737268/Hoi_An.png', alt: 'Hoi An Lanterns', location: 'Hoi An' },
     ],
     stats: { destinations: '25+', packages: '40+', travelers: '15,000+', rating: '4.7' },
   },
