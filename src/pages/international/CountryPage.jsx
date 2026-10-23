@@ -275,12 +275,12 @@ const COUNTRIES = {
       { icon: '🏛️', title: 'Rich History', desc: 'War museums, ancient temples & colonial architecture' },
     ],
     destinations: [
-      { name: 'Ha Long Bay', image: 'https://images.unsplash.com/photo-1528127269322-539801943592?w=400&h=300&fit=crop', desc: 'Thousands of limestone islands rising from emerald waters' },
-      { name: 'Hanoi', image: 'https://images.unsplash.com/photo-1557750255-c7607237c52e?w=400&h=300&fit=crop', desc: 'Ancient capital with Old Quarter, lakes & street food' },
-      { name: 'Hoi An', image: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=400&h=300&fit=crop', desc: 'Charming ancient town with lanterns & tailor shops' },
-      { name: 'Ho Chi Minh City', image: 'https://images.unsplash.com/photo-1528127269322-539801943592?w=400&h=300&fit=crop', desc: 'Bustling metropolis with war history and modern vibes' },
-      { name: 'Da Nang', image: 'https://images.unsplash.com/photo-1557750255-c7607237c52e?w=400&h=300&fit=crop', desc: 'Coastal city with Golden Bridge and beautiful beaches' },
-      { name: 'Phu Quoc', image: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=400&h=300&fit=crop', desc: 'Pearl Island with stunning beaches and pepper farms' },
+      { name: 'Ha Long Bay', image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1792737268/Ha_Long_Bay.png', desc: 'Thousands of limestone islands rising from emerald waters' },
+      { name: 'Hanoi', image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1792737268/Hanoi.png', desc: 'Ancient capital with Old Quarter, lakes & street food' },
+      { name: 'Hoi An', image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1792737268/Hoi_An.png', desc: 'Charming ancient town with lanterns & tailor shops' },
+      { name: 'Ho Chi Minh City', image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1792737267/Ho_Chi_Minh_City.png', desc: 'Bustling metropolis with war history and modern vibes' },
+      { name: 'Da Nang', image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1792737267/Da_Nang.png', desc: 'Coastal city with Golden Bridge and beautiful beaches' },
+      { name: 'Phu Quoc', image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1792737267/Phu_Quoc.png', desc: 'Pearl Island with stunning beaches and pepper farms' },
     ],
     gallery: [
       { url: 'https://images.unsplash.com/photo-1528127269322-539801943592?w=400&h=300&fit=crop', alt: 'Ha Long Bay', location: 'Quang Ninh' },
