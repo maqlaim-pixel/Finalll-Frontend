@@ -376,9 +376,9 @@ const COUNTRIES = {
     tagline: 'Pearl of the Indian Ocean',
     description: 'Sri Lanka packs incredible diversity into a small island — ancient cities, lush tea plantations, pristine beaches, and abundant wildlife.',
     heroImages: [
-      'https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?w=1400&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1400&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1568702846914-96b305d2ead1?w=1400&h=600&fit=crop',
+      'https://res.cloudinary.com/goqz2x1l/image/upload/v1793783843/Panoramic_Turquoise_Crescent_Bay.png',
+      'https://res.cloudinary.com/goqz2x1l/image/upload/v1793783843/Sigiriya_Rock_Fortress_Panorama.png',
+      'https://res.cloudinary.com/goqz2x1l/image/upload/v1793783843/Elephant_Wading_Through_a_Tropical_River.png',
     ],
     heroTitle: 'Discover Sri Lanka',
     heroSubtitle: 'Temples • Tea • Safari • Beaches',
