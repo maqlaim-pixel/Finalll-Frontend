@@ -13,7 +13,7 @@ const COUNTRIES = {
     name: 'Dubai',
     fullName: 'United Arab Emirates',
     emoji: '🇦🇪',
-    heroImage: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1400&h=500&fit=crop',
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1793861733/Dubai_Skyline_at_Twilight.png',
     tagline: 'City of Gold & Modern Wonders',
     matchKeywords: ['dubai', 'uae', 'united arab', 'abu dhabi', 'sharjah'],
   },

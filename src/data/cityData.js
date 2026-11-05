@@ -583,7 +583,7 @@ const CITIES = {
     name: 'Dubai', state: 'United Arab Emirates', stateSlug: 'uae', country: true,
     tagline: 'City of Gold — Where Innovation Meets Luxury',
     description: 'Dubai is a city of superlatives — the tallest building, the largest mall, the most luxurious hotel. A global hub for tourism, business, and entertainment that never stops amazing visitors.',
-    heroImage: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1400&h=600&fit=crop',
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1793861733/Dubai_Skyline_at_Twilight.png',
     badges: [
       { icon: '🏗️', label: 'Burj Khalifa — Tallest Building' },
       { icon: '🏝️', label: 'Palm Jumeirah' },
@@ -598,7 +598,7 @@ const CITIES = {
       { name: 'Desert Safari', desc: 'Thrilling dune bashing, camel rides and BBQ dinner.', area: 'Al Lahbab', image: 'https://images.unsplash.com/photo-1580674285054-bed31e145f59?w=300&h=200&fit=crop' },
       { name: 'Gold Souk', desc: 'Traditional market with over 300 gold retailers.', area: 'Deira', image: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?w=300&h=200&fit=crop' },
     ],
-    featuredImage: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&h=500&fit=crop',
+    featuredImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1793861733/Dubai_Skyline_at_Twilight.png',
     featuredTitle: 'Dubai Experience',
     featuredDesc: 'From the heights of Burj Khalifa to the depths of Dubai Aquarium — experience the city of superlatives.',
     featuredCta: 'Explore Dubai',
@@ -630,7 +630,7 @@ const CITIES = {
     name: 'Bangkok', state: 'Thailand', stateSlug: 'thailand', country: true,
     tagline: 'City of Angels — Temples, Street Food & Nightlife',
     description: 'Bangkok is Thailand\'s vibrant capital — a city of golden temples, floating markets, legendary street food, and electric nightlife. A perfect blend of tradition and modernity.',
-    heroImage: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1400&h=600&fit=crop',
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1793861737/Wat_Arun_at_Blue_Hour.png',
     badges: [
       { icon: '🛕', label: 'Grand Palace & Wat Arun' },
       { icon: '🍜', label: 'Street Food Capital' },
@@ -677,7 +677,7 @@ const CITIES = {
     name: 'Singapore City', state: 'Singapore', stateSlug: 'singapore', country: true,
     tagline: 'The Lion City — Gardens, Food & Futuristic Skyline',
     description: 'Singapore is a ultra-modern city-state known for its futuristic skyline, lush gardens, world-class hawker food, and multicultural heritage. Clean, efficient and endlessly fascinating.',
-    heroImage: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=1400&h=600&fit=crop',
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1793862181/Lakeside_Pagoda_Amidst_Mountain_Gardens.png',
     badges: [
       { icon: '🌿', label: 'Gardens by the Bay' },
       { icon: '🏙️', label: 'Marina Bay Sands' },
@@ -723,7 +723,7 @@ const CITIES = {
     name: 'Kuala Lumpur', state: 'Malaysia', stateSlug: 'malaysia', country: true,
     tagline: 'The Garden City — Petronas Towers & Cultural Fusion',
     description: 'Kuala Lumpur is Malaysia\'s dynamic capital, famous for the iconic Petronas Twin Towers, diverse food scene, vibrant markets, and a unique blend of Malay, Chinese, and Indian cultures.',
-    heroImage: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1400&h=600&fit=crop',
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1793862924/Kuala_Lumpur_Skyline_at_Dusk.png',
     badges: [
       { icon: '🗼', label: 'Petronas Twin Towers' },
       { icon: '🍜', label: 'Multi-Cuisine Food' },
@@ -770,7 +770,7 @@ const CITIES = {
     name: 'Malé', state: 'Maldives', stateSlug: 'maldives', country: true,
     tagline: 'The Vibrant Capital of the Maldives',
     description: 'Malé is the densely populated capital of the Maldives — a colorful island city with local markets, mosques, and the gateway to the stunning Maldivian atolls and resorts.',
-    heroImage: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=1400&h=600&fit=crop',
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1793862979/Tropical_Marina_Promenade_and_Palm_Villas.png',
     badges: [
       { icon: '🏝️', label: 'Gateway to Maldives' },
       { icon: '🕌', label: 'Hukuru Miskiiy Mosque' },
@@ -817,7 +817,7 @@ const CITIES = {
     name: 'Bali', state: 'Indonesia', stateSlug: 'indonesia', country: true,
     tagline: 'Island of Gods — Temples, Rice Terraces & Surf',
     description: 'Bali is Indonesia\'s most famous island, known for its ancient temples, lush rice terraces, world-class surfing, yoga retreats, and deeply spiritual Balinese culture.',
-    heroImage: 'https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?w=1400&h=600&fit=crop',
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1793863099/Golden_Hour_Temple_Cliffs_by_the_Sea.png',
     badges: [
       { icon: '🛕', label: 'Sacred Temples' },
       { icon: '🌾', label: 'Rice Terraces' },
@@ -864,7 +864,7 @@ const CITIES = {
     name: 'Ho Chi Minh City', state: 'Vietnam', stateSlug: 'vietnam', country: true,
     tagline: 'Saigon — The Beating Heart of Vietnam',
     description: 'Ho Chi Minh City (Saigon) is Vietnam\'s largest city — a dynamic metropolis with French colonial architecture, wartime history, incredible street food, and bustling markets.',
-    heroImage: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1400&h=600&fit=crop',
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1793863170/Riverfront_Monument_Park_Panorama.png',
     badges: [
       { icon: '🏛️', label: 'French Colonial Heritage' },
       { icon: '🍜', label: 'Pho & Street Food' },
@@ -911,7 +911,7 @@ const CITIES = {
     name: 'Hanoi', state: 'Vietnam', stateSlug: 'vietnam', country: true,
     tagline: 'The Ancient Capital — Old Quarter & Timeless Charm',
     description: 'Hanoi is Vietnam\'s elegant capital with a 1000-year history — ancient temples, a charming Old Quarter, legendary street food, and the stunning Hoan Kiem Lake at its heart.',
-    heroImage: 'https://images.unsplash.com/photo-1557750255-c7607237c52e?w=1400&h=600&fit=crop',
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1793863246/Vibrant_Venetian_Canal_Promenade.png',
     badges: [
       { icon: '🏮', label: '1000-Year Old City' },
       { icon: '🍜', label: 'Pho Birthplace' },
@@ -958,7 +958,7 @@ const CITIES = {
     name: 'Tokyo', state: 'Japan', stateSlug: 'japan', country: true,
     tagline: 'The Electric City — Where Tradition Meets the Future',
     description: 'Tokyo is Japan\'s sprawling capital, a mesmerizing blend of ultra-modern technology and ancient tradition — neon-lit streets, serene temples, world-class cuisine, and cherry blossoms.',
-    heroImage: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1400&h=600&fit=crop',
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1793863386/Tokyo_Station_Plaza_Panorama.png',
     badges: [
       { icon: '🗼', label: 'Tokyo Tower & Skytree' },
       { icon: '🌸', label: 'Cherry Blossoms' },
@@ -1005,7 +1005,7 @@ const CITIES = {
     name: 'Seoul', state: 'South Korea', stateSlug: 'south-korea', country: true,
     tagline: 'The Dynamic Capital — K-Culture & Ancient Palaces',
     description: 'Seoul is South Korea\'s vibrant capital — a city of ancient palaces, K-pop culture, cutting-edge technology, incredible food, and 24-hour energy that never sleeps.',
-    heroImage: 'https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?w=1400&h=600&fit=crop',
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1793863488/Dusk_Skyline_and_Rainbow_Bridges.png',
     badges: [
       { icon: '🏯', label: 'Ancient Palaces' },
       { icon: '🎵', label: 'K-Pop & K-Drama' },
@@ -1052,7 +1052,7 @@ const CITIES = {
     name: 'Beijing', state: 'China', stateSlug: 'china', country: true,
     tagline: 'Imperial Capital — The Great Wall & Forbidden City',
     description: 'Beijing is China\'s historic capital, home to the Great Wall, the Forbidden City, ancient temples, and a fascinating blend of imperial heritage and modern Chinese culture.',
-    heroImage: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=1400&h=600&fit=crop',
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1793863577/Great_Wall_at_Sunset_Across_Misty_Mountains.png',
     badges: [
       { icon: '🏯', label: 'Forbidden City' },
       { icon: '🧱', label: 'The Great Wall' },
@@ -1099,7 +1099,7 @@ const CITIES = {
     name: 'Colombo', state: 'Sri Lanka', stateSlug: 'sri-lanka', country: true,
     tagline: 'The Pearl Capital — Where East Meets West',
     description: 'Colombo is Sri Lanka\'s commercial capital — a vibrant city with colonial architecture, Buddhist temples, bustling markets, and the gateway to the island nation\'s incredible diversity.',
-    heroImage: 'https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?w=1400&h=600&fit=crop',
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1793863643/Tea_Train_Through_Emerald_Hills.png',
     badges: [
       { icon: '🕌', label: 'Gangaramaya Temple' },
       { icon: '🏖️', label: 'Galle Face Beach' },
@@ -1146,7 +1146,7 @@ const CITIES = {
     name: 'Kathmandu', state: 'Nepal', stateSlug: 'nepal', country: true,
     tagline: 'The Valley of Temples — Gateway to the Himalayas',
     description: 'Kathmandu is Nepal\'s cultural heart — a city of ancient temples, vibrant bazaars, and the gateway to the mighty Himalayas. A UNESCO World Heritage city with spiritual energy.',
-    heroImage: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1400&h=600&fit=crop',
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1793863714/Himalayan_Monastery_and_Snowy_Peaks.png',
     badges: [
       { icon: '⛰️', label: 'Gateway to Himalayas' },
       { icon: '🛕', label: 'UNESCO Heritage Sites' },
@@ -1193,7 +1193,7 @@ const CITIES = {
     name: 'Zurich', state: 'Switzerland', stateSlug: 'switzerland', country: true,
     tagline: 'The Financial Capital — Lake, Mountains & Chocolate',
     description: 'Zurich is Switzerland\'s largest city and financial hub — a beautiful blend of medieval old town, pristine lake, snow-capped Alps views, and world-class quality of life.',
-    heroImage: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=1400&h=600&fit=crop',
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1793865985/Zurich_at_Blue_Hour__Reflections_and_Spires.png',
     badges: [
       { icon: '🏔️', label: 'Alps Views' },
       { icon: '🧀', label: 'Swiss Chocolate' },
@@ -1240,7 +1240,7 @@ const CITIES = {
     name: 'London', state: 'United Kingdom', stateSlug: 'europe', country: true,
     tagline: 'The Royal Capital — History, Culture & Global Icon',
     description: 'London is the UK\'s majestic capital — a global city of royal palaces, world-class museums, iconic red buses, and a cultural scene that spans centuries of history.',
-    heroImage: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1400&h=600&fit=crop',
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1793865985/Tower_of_London_by_the_Thames.png',
     badges: [
       { icon: '🏰', label: 'Buckingham Palace' },
       { icon: '🎡', label: 'London Eye' },
@@ -1287,7 +1287,7 @@ const CITIES = {
     name: 'New York City', state: 'United States of America', stateSlug: 'usa', country: true,
     tagline: 'The City That Never Sleeps — Broadway, Skyscrapers & Dreams',
     description: 'New York City is the world\'s most iconic metropolis — Times Square, Central Park, Broadway, the Statue of Liberty, and a melting pot of cultures, food, and energy.',
-    heroImage: 'https://images.unsplash.com/photo-1485738422979-f5c462d49f04?w=1400&h=600&fit=crop',
+    heroImage: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1793866202/Brooklyn_Bridge_at_Blue_Hour.png',
     badges: [
       { icon: '🗽', label: 'Statue of Liberty' },
       { icon: '🌳', label: 'Central Park' },

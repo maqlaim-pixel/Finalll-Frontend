@@ -22,7 +22,7 @@ const CATEGORIES = {
       { icon: '🏆', title: 'Award Winning', desc: 'Destinations that have won global travel awards' },
     ],
     destinations: [
-      { name: 'Dubai, UAE', image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&h=300&fit=crop', country: 'uae', desc: 'Futuristic skyline, luxury shopping and desert adventures', tags: ['City', 'Luxury', 'Shopping'], rating: 4.8, price: '₹45,000' },
+      { name: 'Dubai, UAE', image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1793861733/Dubai_Skyline_at_Twilight.png', country: 'uae', desc: 'Futuristic skyline, luxury shopping and desert adventures', tags: ['City', 'Luxury', 'Shopping'], rating: 4.8, price: '₹45,000' },
       { name: 'Bangkok, Thailand', image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&h=300&fit=crop', country: 'thailand', desc: 'Golden temples, street food and vibrant nightlife', tags: ['Culture', 'Food', 'Nightlife'], rating: 4.7, price: '₹35,000' },
       { name: 'Singapore', image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=400&h=300&fit=crop', country: 'singapore', desc: 'Gardens, hawker food and futuristic architecture', tags: ['City', 'Family', 'Food'], rating: 4.8, price: '₹55,000' },
       { name: 'Bali, Indonesia', image: 'https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?w=400&h=300&fit=crop', country: 'indonesia', desc: 'Sacred temples, rice terraces and surf beaches', tags: ['Beach', 'Culture', 'Wellness'], rating: 4.8, price: '₹40,000' },

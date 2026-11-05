@@ -7,12 +7,12 @@ const HERO_SLIDES = [
   { image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1400&h=600&fit=crop', title: 'Explore the World', subtitle: 'From dazzling Dubai to tropical Bali — discover amazing international destinations' },
   { image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1400&h=600&fit=crop', title: 'Thailand Paradise', subtitle: 'Golden temples, crystal waters, and vibrant street life await you' },
   { image: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1400&h=600&fit=crop', title: 'European Dream', subtitle: 'Romantic Paris, historic Rome, and the stunning Swiss Alps' },
-  { image: 'https://images.unsplash.com/photo-1534430480872-3498386e7856?w=1400&h=600&fit=crop', title: 'Dubai Luxury', subtitle: 'Experience world-class shopping, architecture, and desert adventures' },
+  { image: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1793861733/Dubai_Skyline_at_Twilight.png', title: 'Dubai Luxury', subtitle: 'Experience world-class shopping, architecture, and desert adventures' },
   { image: 'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=1400&h=600&fit=crop', title: 'Maldives Bliss', subtitle: 'Pristine beaches, overwater villas, and turquoise lagoons' },
 ]
 
 const GALLERY_IMAGES = [
-  { url: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&h=300&fit=crop', alt: 'Dubai Skyline', location: 'Dubai, UAE' },
+  { url: 'https://res.cloudinary.com/goqz2x1l/image/upload/v1793861733/Dubai_Skyline_at_Twilight.png', alt: 'Dubai Skyline', location: 'Dubai, UAE' },
   { url: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&h=300&fit=crop', alt: 'Thai Temple', location: 'Bangkok, Thailand' },
   { url: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400&h=300&fit=crop', alt: 'Eiffel Tower', location: 'Paris, France' },
   { url: 'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=400&h=300&fit=crop', alt: 'Maldives Beach', location: 'Malé, Maldives' },
