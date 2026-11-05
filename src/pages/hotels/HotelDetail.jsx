@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { MapPin, Star, Check, Wifi, Car, UtensilsCrossed, Dumbbell, Waves, Camera } from 'lucide-react'
+import SEOHead from '../../components/common/SEOHead'
 
 const HOTEL = {
   name: 'The Grand Palace Resort',
@@ -20,6 +21,14 @@ const HOTEL = {
 export default function HotelDetail() {
   return (
     <div className="bg-gray-50">
+      {/* This detail view still renders a sample property for every slug, so it is
+          kept out of Google's index until each hotel has real published content. */}
+      <SEOHead
+        title={`${HOTEL.name} | Maqlaim Tours`}
+        description={HOTEL.description}
+        image={HOTEL.image}
+        noindex
+      />
       <section className="relative h-[45vh] min-h-[350px]">
         <img src={HOTEL.image} alt={HOTEL.name} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />

@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "vite build",
+    "build": "vite build && node scripts/prerender.mjs",
     "preview": "vite preview",
+    "seo:check": "node scripts/seo-check.mjs",
     "test": "node --test src/utils/authSession.test.js src/utils/heritageDestinations.test.js src/utils/indiaExperiences.test.js"
   },
   "dependencies": {

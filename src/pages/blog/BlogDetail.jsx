@@ -1,62 +1,80 @@
-import { useParams } from 'react-router-dom'
-import { Link } from 'react-router-dom'
-import { Calendar, User, Clock, ArrowLeft, Share2, Tag } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { useParams, Link } from 'react-router-dom'
+import { Calendar, User, Clock, ArrowLeft, Share2 } from 'lucide-react'
+import api from '../../services/api'
+import SEOHead from '../../components/common/SEOHead'
+import { NotFoundPage } from '../common/ComingSoonPage'
+import { articleSchema } from '../../seo/schema'
 
-const POST = {
-  title: '10 Best Places to Visit in Rajasthan',
-  category: 'Destinations',
-  author: 'Priya Sharma',
-  date: 'Jan 15, 2025',
-  readTime: '8 min read',
-  image: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1200',
-  content: `
-Rajasthan, the land of kings, is one of India's most enchanting destinations. From the pink hues of Jaipur to the golden sands of Jaisalmer, every city tells a story of royal grandeur.
-
-## 1. Jaipur — The Pink City
-Jaipur, the capital of Rajasthan, is famous for its magnificent palaces and vibrant bazaars. Don't miss the Amber Fort, Hawa Mahal, and City Palace. The Nahargarh Fort sunset is breathtaking.
-
-## 2. Udaipur — City of Lakes
-Often called the Venice of the East, Udaipur's Lake Pichola and Jag Mandir are postcard-perfect. The City Palace is a masterpiece of Rajasthani architecture.
-
-## 3. Jodhpur — The Blue City
-Mehrangarh Fort towers over the blue-painted old city. The Sardar Market and Jaswant Thada are must-visits.
-
-## 4. Jaisalmer — The Golden City
-Jaisalmer Fort is a living fort with shops, hotels, and homes. The Thar Desert safari and Sam Sand Dunes are unforgettable experiences.
-
-## 5. Pushkar
-The sacred Pushkar Lake and Brahma Temple attract pilgrims from across India. The annual Pushkar Camel Fair is spectacular.
-
-## 6. Ranthambore
-One of India's best tiger reserves, Ranthambore offers thrilling wildlife safaris amid ancient ruins.
-
-## 7. Mount Abu
-Rajasthan's only hill station, home to the exquisite Dilwara Jain Temples and serene Nakki Lake.
-
-## 8. Chittorgarh
-The massive Chittorgarh Fort is a UNESCO World Heritage Site with stories of Rajput valor.
-
-## 9. Bundi
-An offbeat gem with ornate stepwells, palaces, and the Taragarh Fort.
-
-## 10. Bikaner
-Famous for its camel festival, Junagarh Fort, and the unique Karni Mata Temple (Rat Temple).
-  `,
+const formatDate = (value) => {
+  if (!value) return ''
+  const date = new Date(value)
+  if (Number.isNaN(date.getTime())) return ''
+  return date.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })
 }
 
 export default function BlogDetail() {
+  const { slug } = useParams()
+  const [post, setPost] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [notFound, setNotFound] = useState(false)
+
+  useEffect(() => {
+    let mounted = true
+    setLoading(true)
+    setNotFound(false)
+    setPost(null)
+    api.get(`/blogs/slug/${slug}`)
+      .then((response) => {
+        if (mounted) setPost(response.data)
+      })
+      .catch(() => {
+        if (mounted) setNotFound(true)
+      })
+      .finally(() => {
+        if (mounted) setLoading(false)
+      })
+    return () => { mounted = false }
+  }, [slug])
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="animate-spin w-10 h-10 border-4 border-sky-500 border-t-transparent rounded-full" />
+      </div>
+    )
+  }
+
+  if (notFound || !post) return <NotFoundPage />
+
+  const published = formatDate(post.publishedAt || post.createdAt)
+  const updated = formatDate(post.updatedAt)
+
   return (
     <div className="bg-gray-50">
+      <SEOHead
+        title={post.seoTitle || `${post.title} | Maqlaim Tours Travel Blog`}
+        description={post.seoDescription || post.excerpt || post.description || `Read ${post.title} on the Maqlaim Tours travel blog.`}
+        image={post.ogImage || post.image}
+        type="article"
+        publishedTime={post.publishedAt || post.createdAt}
+        modifiedTime={post.updatedAt}
+        jsonLd={articleSchema(post, `/blog/${post.slug || slug}`)}
+      />
       <section className="relative h-[40vh] min-h-[300px]">
-        <img src={POST.image} alt={POST.title} className="w-full h-full object-cover" />
+        {post.image ? (
+          <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-navy-900 to-sky-900" />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <div className="absolute bottom-0 container-wide py-10">
-          <span className="badge-blue mb-3 inline-block">{POST.category}</span>
-          <h1 className="text-3xl md:text-4xl font-display font-bold text-white mb-3">{POST.title}</h1>
+          {post.category && <span className="badge-blue mb-3 inline-block">{post.category}</span>}
+          <h1 className="text-3xl md:text-4xl font-display font-bold text-white mb-3">{post.title}</h1>
           <div className="flex items-center gap-4 text-sm text-white/80">
-            <span className="flex items-center gap-1"><User size={14} /> {POST.author}</span>
-            <span className="flex items-center gap-1"><Calendar size={14} /> {POST.date}</span>
-            <span className="flex items-center gap-1"><Clock size={14} /> {POST.readTime}</span>
+            {post.author && <span className="flex items-center gap-1"><User size={14} /> {post.author}</span>}
+            {published && <span className="flex items-center gap-1"><Calendar size={14} /> {published}</span>}
+            {post.readTime && <span className="flex items-center gap-1"><Clock size={14} /> {post.readTime}</span>}
           </div>
         </div>
       </section>
@@ -68,12 +86,17 @@ export default function BlogDetail() {
           </Link>
           <article className="bg-white rounded-xl border p-8">
             <div className="prose prose-lg max-w-none">
-              {POST.content.split('\n').map((line, i) => {
-                if (line.startsWith('## ')) return <h2 key={i} className="text-2xl font-display font-bold text-navy-900 mt-8 mb-3">{line.replace('## ', '')}</h2>
-                if (line.trim() === '') return <br key={i} />
-                return <p key={i} className="text-navy-600 leading-relaxed mb-4">{line}</p>
+              {String(post.content || post.excerpt || '').split('\n').map((line, i) => {
+                const text = line.trim()
+                if (!text) return null
+                if (text.startsWith('## ')) return <h2 key={i} className="text-2xl font-display font-bold text-navy-900 mt-8 mb-3">{text.replace('## ', '')}</h2>
+                if (/^\d+\.\s/.test(text)) return <h2 key={i} className="text-2xl font-display font-bold text-navy-900 mt-8 mb-3">{text.replace(/^\d+\.\s/, '')}</h2>
+                return <p key={i} className="text-navy-600 leading-relaxed mb-4">{text}</p>
               })}
             </div>
+            {updated && updated !== published && (
+              <p className="mt-8 border-t pt-4 text-xs text-navy-400">Last updated {updated}</p>
+            )}
           </article>
 
           <div className="mt-8 flex gap-4">

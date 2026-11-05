@@ -251,7 +251,7 @@ export function ComingSoonPage({ pageName: suppliedPageName, compact = false }) 
   const description = 'This travel experience is currently being prepared. We’re working to bring you complete information, packages and travel details soon.'
 
   return <>
-    {!compact && <SEOHead title={heading} description={`${pageName} is being prepared. Explore available MAQLAIM TOURS packages or contact our team.`} />}
+    {!compact && <SEOHead title={heading} description={`${pageName} is being prepared. Explore available MAQLAIM TOURS packages or contact our team.`} noindex />}
     <section className={`relative isolate flex items-center overflow-hidden bg-[#eaf7ff] ${compact ? 'min-h-[280px] px-4 py-5 sm:min-h-[300px] sm:px-5' : 'min-h-[calc(100vh-9rem)] px-4 py-12 sm:px-8 lg:py-16'}`} aria-labelledby="coming-soon-heading">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.92),rgba(223,244,255,0.62)_55%,rgba(255,255,255,0.12))]" aria-hidden="true" />
       <div className={`relative mx-auto grid w-full items-center ${compact ? 'max-w-4xl gap-3 sm:grid-cols-[1.2fr_0.8fr] sm:gap-4' : 'max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14'}`}>
@@ -275,7 +275,7 @@ export function ComingSoonPage({ pageName: suppliedPageName, compact = false }) 
 
 export function NotFoundPage() {
   return <>
-    <SEOHead title="Page Not Found | MAQLAIM TOURS" description="The page you’re looking for doesn’t exist. Explore MAQLAIM TOURS destinations and packages." />
+    <SEOHead title="Page Not Found | MAQLAIM TOURS" description="The page you’re looking for doesn’t exist. Explore MAQLAIM TOURS destinations and packages." noindex />
     <section className="flex min-h-[calc(100vh-9rem)] items-center justify-center bg-slate-50 px-4 py-16" aria-labelledby="not-found-heading">
       <div className="w-full max-w-xl rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm sm:p-12">
         <p className="font-display text-7xl font-bold text-orange-500">404</p>

@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Private and transactional areas
+Disallow: /admin
+Disallow: /admin/
+Disallow: /account
+Disallow: /account/
+Disallow: /login
+Disallow: /admin/login
+Disallow: /register
+Disallow: /verify-otp
+Disallow: /forgot-password
+Disallow: /api/
+
+Sitemap: https://www.maqlaimtours.com/sitemap.xml

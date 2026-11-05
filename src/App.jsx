@@ -1,6 +1,9 @@
-import VerifyOtpPage from './pages/auth/VerifyOtpPage'
+import { lazy, Suspense } from 'react'
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { useAuth } from './context/AuthContext'
+
+// Auth
+const VerifyOtpPage = lazy(() => import('./pages/auth/VerifyOtpPage'))
 
 // Layouts
 import PublicLayout from './layouts/PublicLayout'
@@ -9,154 +12,162 @@ import AdminLayout from './layouts/AdminLayout'
 
 // Public Pages
 import HomePage from './pages/home/HomePage'
-import DestinationsPage from './pages/destinations/DestinationsPage'
-import DestinationDetail from './pages/destinations/DestinationDetail'
-import PackagesPage from './pages/packages/PackagesPage'
-import PackageDetail from './pages/packages/PackageDetail'
-import TrekkingPackagesPage from './pages/adventure/TrekkingPackagesPage'
-import HotelsPage from './pages/hotels/HotelsPage'
-import HotelDetail from './pages/hotels/HotelDetail'
-import ActivitiesPage from './pages/activities/ActivitiesPage'
-import ActivityDetail from './pages/activities/ActivityDetail'
-import BlogPage from './pages/blog/BlogPage'
-import BlogDetail from './pages/blog/BlogDetail'
-import TravelTipsPage from './pages/TravelTipsPage'
-import BestTimeToVisitPage from './pages/BestTimeToVisitPage'
-import TravelCostPage from './pages/TravelCostPage'
-import VisaInformationPage from './pages/VisaInformationPage'
-import OffersPage from './pages/offers/OffersPage'
-import AboutPage from './pages/about/AboutPage'
-import ContactPage from './pages/contact/ContactPage'
-import PlanTripPage from './pages/home/PlanTripPage'
-import MenuLandingPage from './pages/menu/MenuLandingPage'
-import IndiaPage from './pages/india/IndiaPage'
-import PopularDestinationsPage from './pages/india/PopularDestinationsPage'
-import HeritageDestinationsPage from './pages/india/HeritageDestinationsPage'
-import ReligiousDestinationsPage from './pages/india/ReligiousDestinationsPage'
-import HillStationsPage from './pages/india/HillStationsPage'
-import BeachesPage from './pages/india/BeachesPage'
-import WildlifeDestinationsPage from './pages/india/WildlifeDestinationsPage'
-import NationalParksPage from './pages/india/NationalParksPage'
-import WeekendGetawaysPage from './pages/india/WeekendGetawaysPage'
-import OffbeatDestinationsPage from './pages/india/OffbeatDestinationsPage'
-import FamousDestinationsPage from './pages/india/FamousDestinationsPage'
-import AllIndiaDestinationsPage from './pages/india/AllIndiaDestinationsPage'
-import IndiaExperiencesPage from './pages/india/IndiaExperiencesPage'
-import GirNationalParkPage from './pages/india/GirNationalParkPage'
-import RanthamboreNationalParkPage from './pages/india/RanthamboreNationalParkPage'
-import BandhavgarhNationalParkPage from './pages/india/BandhavgarhNationalParkPage'
-import PenchNationalParkPage from './pages/india/PenchNationalParkPage'
-import JimCorbettNationalParkPage from './pages/india/JimCorbettNationalParkPage'
-import SundarbansNationalParkPage from './pages/india/SundarbansNationalParkPage'
-import KazirangaNationalParkPage from './pages/india/KazirangaNationalParkPage'
-import HowToReachPage from './pages/india/HowToReachPage'
-import PackingGuidesPage from './pages/PackingGuidesPage'
-import InternationalPage from './pages/international/InternationalPage'
-import CountryPage from './pages/international/CountryPage'
-import InternationalDestPage from './pages/international/InternationalDestPage'
-import InternationalPlacesPage from './pages/international/InternationalPlacesPage'
-import InternationalActivitiesPage from './pages/international/InternationalActivitiesPage'
-import InternationalCitiesPage from './pages/international/InternationalCitiesPage'
-import HolidayPage from './pages/holiday/HolidayPage'
-import HolidayCategoryPage from './pages/holiday/HolidayCategoryPage'
-import DomesticHoneymoonPage from './pages/holiday/DomesticHoneymoonPage'
-import InternationalHoneymoonPage from './pages/holiday/InternationalHoneymoonPage'
-import BeachHoneymoonPage from './pages/holiday/BeachHoneymoonPage'
-import HillStationHoneymoonPage from './pages/holiday/HillStationHoneymoonPage'
-import LuxuryHoneymoonPage from './pages/holiday/LuxuryHoneymoonPage'
-import AdventureHoneymoonPage from './pages/holiday/AdventureHoneymoonPage'
-import BudgetHoneymoonPage from './pages/holiday/BudgetHoneymoonPage'
-import HoneymoonPackagesPage from './pages/holiday/HoneymoonPackagesPage'
-import MICEPage from './pages/mice/MICEPage'
-import MICEDestinationPage from './pages/mice/MICEDestinationPage'
-import CorporateTravelPage from './pages/mice/CorporateTravelPage'
-import MICESupportPage from './pages/mice/MICESupportPage'
-import WeddingPage from './pages/wedding/WeddingPage'
-import RajasthanWeddingPage from './pages/wedding/RajasthanWeddingPage'
-import GoaWeddingPage from './pages/wedding/GoaWeddingPage'
-import UdaipurWeddingPage from './pages/wedding/UdaipurWeddingPage'
-import JaipurWeddingPage from './pages/wedding/JaipurWeddingPage'
-import JodhpurWeddingPage from './pages/wedding/JodhpurWeddingPage'
-import KeralaWeddingPage from './pages/wedding/KeralaWeddingPage'
-import MaharashtraWeddingPage from './pages/wedding/MaharashtraWeddingPage'
-import HimachalWeddingPage from './pages/wedding/HimachalWeddingPage'
-import KashmirWeddingPage from './pages/wedding/KashmirWeddingPage'
-import AyodhyaWeddingPage from './pages/wedding/AyodhyaWeddingPage'
-import VaranasiWeddingPage from './pages/wedding/VaranasiWeddingPage'
-import BaliWeddingPage from './pages/wedding/BaliWeddingPage'
-import ThailandWeddingPage from './pages/wedding/ThailandWeddingPage'
-import DubaiWeddingPage from './pages/wedding/DubaiWeddingPage'
-import MaldivesWeddingPage from './pages/wedding/MaldivesWeddingPage'
-import SingaporeWeddingPage from './pages/wedding/SingaporeWeddingPage'
-import MedicalTourismPage from './pages/medical/MedicalTourismPage'
-import GujaratPage from './pages/gujarat/GujaratPage'
-import RajasthanPage from './pages/rajasthan/RajasthanPage'
-import MaharashtraPage from './pages/maharashtra/MaharashtraPage'
-import GoaPage from './pages/goa/GoaPage'
-import KeralaPage from './pages/kerala/KeralaPage'
-import TamilNaduPage from './pages/tamil-nadu/TamilNaduPage'
-import HimachalPradeshPage from './pages/himachal/HimachalPradeshPage'
-import UttarakhandPage from './pages/uttarakhand/UttarakhandPage'
-import KarnatakaPage from './pages/karnataka/KarnatakaPage'
-import JammuKashmirPage from './pages/jammu-kashmir/JammuKashmirPage'
-import UttarPradeshPage from './pages/uttar-pradesh/UttarPradeshPage'
-import MadhyaPradeshPage from './pages/madhya-pradesh/MadhyaPradeshPage'
-import WestBengalPage from './pages/west-bengal/WestBengalPage'
-import AndamanPage from './pages/andaman/AndamanPage'
-import NorthEastPage from './pages/north-east/NorthEastPage'
-import CityDetail from './pages/cities/CityDetail'
-import InternationalCityDetail from './pages/cities/InternationalCityDetail'
-import InternationalPackagesPage from './pages/international/InternationalPackagesPage'
-import LocalTravelServicePage from './pages/LocalTravelServicePage'
-import AirportTransferPage from './pages/AirportTransferPage'
-import RailwayStationTransferPage from './pages/RailwayStationTransferPage'
-import FullDayCityTourPage from './pages/FullDayCityTourPage'
-import HalfDayCityTourPage from './pages/HalfDayCityTourPage'
-import OutstationCabPage from './pages/OutstationCabPage'
-import CarRentalPage from './pages/CarRentalPage'
-import LocalTaxiCabPage from './pages/LocalTaxiCabPage'
-import CorporateTransportationPage from './pages/CorporateTransportationPage'
-import AllTravelGuidesPage from './pages/AllTravelGuidesPage'
+const DestinationsPage = lazy(() => import('./pages/destinations/DestinationsPage'))
+const DestinationDetail = lazy(() => import('./pages/destinations/DestinationDetail'))
+const PackagesPage = lazy(() => import('./pages/packages/PackagesPage'))
+const PackageDetail = lazy(() => import('./pages/packages/PackageDetail'))
+const TrekkingPackagesPage = lazy(() => import('./pages/adventure/TrekkingPackagesPage'))
+const HotelsPage = lazy(() => import('./pages/hotels/HotelsPage'))
+const HotelDetail = lazy(() => import('./pages/hotels/HotelDetail'))
+const ActivitiesPage = lazy(() => import('./pages/activities/ActivitiesPage'))
+const ActivityDetail = lazy(() => import('./pages/activities/ActivityDetail'))
+const BlogPage = lazy(() => import('./pages/blog/BlogPage'))
+const BlogDetail = lazy(() => import('./pages/blog/BlogDetail'))
+const TravelTipsPage = lazy(() => import('./pages/TravelTipsPage'))
+const BestTimeToVisitPage = lazy(() => import('./pages/BestTimeToVisitPage'))
+const TravelCostPage = lazy(() => import('./pages/TravelCostPage'))
+const VisaInformationPage = lazy(() => import('./pages/VisaInformationPage'))
+const OffersPage = lazy(() => import('./pages/offers/OffersPage'))
+const AboutPage = lazy(() => import('./pages/about/AboutPage'))
+const ContactPage = lazy(() => import('./pages/contact/ContactPage'))
+const PlanTripPage = lazy(() => import('./pages/home/PlanTripPage'))
+const MenuLandingPage = lazy(() => import('./pages/menu/MenuLandingPage'))
+const IndiaPage = lazy(() => import('./pages/india/IndiaPage'))
+const PopularDestinationsPage = lazy(() => import('./pages/india/PopularDestinationsPage'))
+const HeritageDestinationsPage = lazy(() => import('./pages/india/HeritageDestinationsPage'))
+const ReligiousDestinationsPage = lazy(() => import('./pages/india/ReligiousDestinationsPage'))
+const HillStationsPage = lazy(() => import('./pages/india/HillStationsPage'))
+const BeachesPage = lazy(() => import('./pages/india/BeachesPage'))
+const WildlifeDestinationsPage = lazy(() => import('./pages/india/WildlifeDestinationsPage'))
+const NationalParksPage = lazy(() => import('./pages/india/NationalParksPage'))
+const WeekendGetawaysPage = lazy(() => import('./pages/india/WeekendGetawaysPage'))
+const OffbeatDestinationsPage = lazy(() => import('./pages/india/OffbeatDestinationsPage'))
+const FamousDestinationsPage = lazy(() => import('./pages/india/FamousDestinationsPage'))
+const AllIndiaDestinationsPage = lazy(() => import('./pages/india/AllIndiaDestinationsPage'))
+const IndiaExperiencesPage = lazy(() => import('./pages/india/IndiaExperiencesPage'))
+const GirNationalParkPage = lazy(() => import('./pages/india/GirNationalParkPage'))
+const RanthamboreNationalParkPage = lazy(() => import('./pages/india/RanthamboreNationalParkPage'))
+const BandhavgarhNationalParkPage = lazy(() => import('./pages/india/BandhavgarhNationalParkPage'))
+const PenchNationalParkPage = lazy(() => import('./pages/india/PenchNationalParkPage'))
+const JimCorbettNationalParkPage = lazy(() => import('./pages/india/JimCorbettNationalParkPage'))
+const SundarbansNationalParkPage = lazy(() => import('./pages/india/SundarbansNationalParkPage'))
+const KazirangaNationalParkPage = lazy(() => import('./pages/india/KazirangaNationalParkPage'))
+const HowToReachPage = lazy(() => import('./pages/india/HowToReachPage'))
+const PackingGuidesPage = lazy(() => import('./pages/PackingGuidesPage'))
+const InternationalPage = lazy(() => import('./pages/international/InternationalPage'))
+const CountryPage = lazy(() => import('./pages/international/CountryPage'))
+const InternationalDestPage = lazy(() => import('./pages/international/InternationalDestPage'))
+const InternationalPlacesPage = lazy(() => import('./pages/international/InternationalPlacesPage'))
+const InternationalActivitiesPage = lazy(() => import('./pages/international/InternationalActivitiesPage'))
+const InternationalCitiesPage = lazy(() => import('./pages/international/InternationalCitiesPage'))
+const HolidayPage = lazy(() => import('./pages/holiday/HolidayPage'))
+const HolidayCategoryPage = lazy(() => import('./pages/holiday/HolidayCategoryPage'))
+const DomesticHoneymoonPage = lazy(() => import('./pages/holiday/DomesticHoneymoonPage'))
+const InternationalHoneymoonPage = lazy(() => import('./pages/holiday/InternationalHoneymoonPage'))
+const BeachHoneymoonPage = lazy(() => import('./pages/holiday/BeachHoneymoonPage'))
+const HillStationHoneymoonPage = lazy(() => import('./pages/holiday/HillStationHoneymoonPage'))
+const LuxuryHoneymoonPage = lazy(() => import('./pages/holiday/LuxuryHoneymoonPage'))
+const AdventureHoneymoonPage = lazy(() => import('./pages/holiday/AdventureHoneymoonPage'))
+const BudgetHoneymoonPage = lazy(() => import('./pages/holiday/BudgetHoneymoonPage'))
+const HoneymoonPackagesPage = lazy(() => import('./pages/holiday/HoneymoonPackagesPage'))
+const MICEPage = lazy(() => import('./pages/mice/MICEPage'))
+const MICEDestinationPage = lazy(() => import('./pages/mice/MICEDestinationPage'))
+const CorporateTravelPage = lazy(() => import('./pages/mice/CorporateTravelPage'))
+const MICESupportPage = lazy(() => import('./pages/mice/MICESupportPage'))
+const WeddingPage = lazy(() => import('./pages/wedding/WeddingPage'))
+const RajasthanWeddingPage = lazy(() => import('./pages/wedding/RajasthanWeddingPage'))
+const GoaWeddingPage = lazy(() => import('./pages/wedding/GoaWeddingPage'))
+const UdaipurWeddingPage = lazy(() => import('./pages/wedding/UdaipurWeddingPage'))
+const JaipurWeddingPage = lazy(() => import('./pages/wedding/JaipurWeddingPage'))
+const JodhpurWeddingPage = lazy(() => import('./pages/wedding/JodhpurWeddingPage'))
+const KeralaWeddingPage = lazy(() => import('./pages/wedding/KeralaWeddingPage'))
+const MaharashtraWeddingPage = lazy(() => import('./pages/wedding/MaharashtraWeddingPage'))
+const HimachalWeddingPage = lazy(() => import('./pages/wedding/HimachalWeddingPage'))
+const KashmirWeddingPage = lazy(() => import('./pages/wedding/KashmirWeddingPage'))
+const AyodhyaWeddingPage = lazy(() => import('./pages/wedding/AyodhyaWeddingPage'))
+const VaranasiWeddingPage = lazy(() => import('./pages/wedding/VaranasiWeddingPage'))
+const BaliWeddingPage = lazy(() => import('./pages/wedding/BaliWeddingPage'))
+const ThailandWeddingPage = lazy(() => import('./pages/wedding/ThailandWeddingPage'))
+const DubaiWeddingPage = lazy(() => import('./pages/wedding/DubaiWeddingPage'))
+const MaldivesWeddingPage = lazy(() => import('./pages/wedding/MaldivesWeddingPage'))
+const SingaporeWeddingPage = lazy(() => import('./pages/wedding/SingaporeWeddingPage'))
+const MedicalTourismPage = lazy(() => import('./pages/medical/MedicalTourismPage'))
+const GujaratPage = lazy(() => import('./pages/gujarat/GujaratPage'))
+const RajasthanPage = lazy(() => import('./pages/rajasthan/RajasthanPage'))
+const MaharashtraPage = lazy(() => import('./pages/maharashtra/MaharashtraPage'))
+const GoaPage = lazy(() => import('./pages/goa/GoaPage'))
+const KeralaPage = lazy(() => import('./pages/kerala/KeralaPage'))
+const TamilNaduPage = lazy(() => import('./pages/tamil-nadu/TamilNaduPage'))
+const HimachalPradeshPage = lazy(() => import('./pages/himachal/HimachalPradeshPage'))
+const UttarakhandPage = lazy(() => import('./pages/uttarakhand/UttarakhandPage'))
+const KarnatakaPage = lazy(() => import('./pages/karnataka/KarnatakaPage'))
+const JammuKashmirPage = lazy(() => import('./pages/jammu-kashmir/JammuKashmirPage'))
+const UttarPradeshPage = lazy(() => import('./pages/uttar-pradesh/UttarPradeshPage'))
+const MadhyaPradeshPage = lazy(() => import('./pages/madhya-pradesh/MadhyaPradeshPage'))
+const WestBengalPage = lazy(() => import('./pages/west-bengal/WestBengalPage'))
+const AndamanPage = lazy(() => import('./pages/andaman/AndamanPage'))
+const NorthEastPage = lazy(() => import('./pages/north-east/NorthEastPage'))
+const CityDetail = lazy(() => import('./pages/cities/CityDetail'))
+const InternationalCityDetail = lazy(() => import('./pages/cities/InternationalCityDetail'))
+const InternationalPackagesPage = lazy(() => import('./pages/international/InternationalPackagesPage'))
+const LocalTravelServicePage = lazy(() => import('./pages/LocalTravelServicePage'))
+const AirportTransferPage = lazy(() => import('./pages/AirportTransferPage'))
+const RailwayStationTransferPage = lazy(() => import('./pages/RailwayStationTransferPage'))
+const FullDayCityTourPage = lazy(() => import('./pages/FullDayCityTourPage'))
+const HalfDayCityTourPage = lazy(() => import('./pages/HalfDayCityTourPage'))
+const OutstationCabPage = lazy(() => import('./pages/OutstationCabPage'))
+const CarRentalPage = lazy(() => import('./pages/CarRentalPage'))
+const LocalTaxiCabPage = lazy(() => import('./pages/LocalTaxiCabPage'))
+const CorporateTransportationPage = lazy(() => import('./pages/CorporateTransportationPage'))
+const AllTravelGuidesPage = lazy(() => import('./pages/AllTravelGuidesPage'))
 import { ComingSoonPage, NotFoundPage } from './pages/common/ComingSoonPage'
 import { isKnownMenuRoute } from './utils/menuRouteIndex'
 
 // Auth Pages
-import LoginPage from './pages/auth/LoginPage'
-import RegisterPage from './pages/auth/RegisterPage'
-import ForgotPasswordPage from './pages/auth/ForgotPasswordPage'
+const LoginPage = lazy(() => import('./pages/auth/LoginPage'))
+const RegisterPage = lazy(() => import('./pages/auth/RegisterPage'))
+const ForgotPasswordPage = lazy(() => import('./pages/auth/ForgotPasswordPage'))
 
-// Customer Pages
-import CustomerDashboard from './pages/customer/CustomerDashboard'
-import MyBookings from './pages/customer/MyBookings'
-import Wishlist from './pages/customer/Wishlist'
-import ProfilePage from './pages/customer/ProfilePage'
-import CustomerReviews from './pages/customer/CustomerReviews'
-import MyEnquiries from './pages/customer/MyEnquiries'
-import MyInvoices from './pages/customer/MyInvoices'
-import InvoiceDetail from './pages/invoices/InvoiceDetail'
+// Customer Pages — lazy-loaded so they never ship in the public bundle.
+const CustomerDashboard = lazy(() => import('./pages/customer/CustomerDashboard'))
+const MyBookings = lazy(() => import('./pages/customer/MyBookings'))
+const Wishlist = lazy(() => import('./pages/customer/Wishlist'))
+const ProfilePage = lazy(() => import('./pages/customer/ProfilePage'))
+const CustomerReviews = lazy(() => import('./pages/customer/CustomerReviews'))
+const MyEnquiries = lazy(() => import('./pages/customer/MyEnquiries'))
+const MyInvoices = lazy(() => import('./pages/customer/MyInvoices'))
+const InvoiceDetail = lazy(() => import('./pages/invoices/InvoiceDetail'))
 
-import AdminInvoices from './pages/admin/AdminInvoices'
-import InvoiceForm from './pages/admin/InvoiceForm'
+const AdminInvoices = lazy(() => import('./pages/admin/AdminInvoices'))
+const InvoiceForm = lazy(() => import('./pages/admin/InvoiceForm'))
 
-// Admin Pages
-import AdminDashboard from './pages/admin/AdminDashboard'
-import AdminDestinations from './pages/admin/AdminDestinations'
-import AdminPackages from './pages/admin/AdminPackages'
-import AdminHotels from './pages/admin/AdminHotels'
-import AdminActivities from './pages/admin/AdminActivities'
-import AdminBlogs from './pages/admin/AdminBlogs'
-import AdminBookings from './pages/admin/AdminBookings'
-import AdminLeads from './pages/admin/AdminLeads'
-import AdminClientInterests from './pages/admin/AdminClientInterests'
-import AdminTravelEnquiries from './pages/admin/AdminTravelEnquiries'
-import AdminReviews from './pages/admin/AdminReviews'
-import AdminApprovalCenter from './pages/admin/AdminApprovalCenter'
-import AdminSettings from './pages/admin/AdminSettings'
-import AdminPackageForm from './pages/admin/packages/AdminPackageForm'
-import AdminDestinationForm from './pages/admin/AdminDestinationForm'
-import AdminHotelForm from './pages/admin/AdminHotelForm'
-import AdminActivityForm from './pages/admin/AdminActivityForm'
-import AdminBlogForm from './pages/admin/AdminBlogForm'
+// Admin Pages — lazy-loaded so they never ship in the public bundle.
+const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'))
+const AdminDestinations = lazy(() => import('./pages/admin/AdminDestinations'))
+const AdminPackages = lazy(() => import('./pages/admin/AdminPackages'))
+const AdminHotels = lazy(() => import('./pages/admin/AdminHotels'))
+const AdminActivities = lazy(() => import('./pages/admin/AdminActivities'))
+const AdminBlogs = lazy(() => import('./pages/admin/AdminBlogs'))
+const AdminBookings = lazy(() => import('./pages/admin/AdminBookings'))
+const AdminLeads = lazy(() => import('./pages/admin/AdminLeads'))
+const AdminClientInterests = lazy(() => import('./pages/admin/AdminClientInterests'))
+const AdminTravelEnquiries = lazy(() => import('./pages/admin/AdminTravelEnquiries'))
+const AdminReviews = lazy(() => import('./pages/admin/AdminReviews'))
+const AdminApprovalCenter = lazy(() => import('./pages/admin/AdminApprovalCenter'))
+const AdminSettings = lazy(() => import('./pages/admin/AdminSettings'))
+const AdminPackageForm = lazy(() => import('./pages/admin/packages/AdminPackageForm'))
+const AdminDestinationForm = lazy(() => import('./pages/admin/AdminDestinationForm'))
+const AdminHotelForm = lazy(() => import('./pages/admin/AdminHotelForm'))
+const AdminActivityForm = lazy(() => import('./pages/admin/AdminActivityForm'))
+const AdminBlogForm = lazy(() => import('./pages/admin/AdminBlogForm'))
+
+function RouteFallback() {
+  return (
+    <div className="flex min-h-[40vh] items-center justify-center">
+      <div className="h-10 w-10 animate-spin rounded-full border-4 border-sky-600 border-t-transparent" />
+    </div>
+  )
+}
 
 function ProtectedRoute({ children, requireAdmin = false }) {
   const { user, loading } = useAuth()
@@ -335,7 +346,7 @@ export default function App() {
       </Route>
 
       {/* ── Customer Routes ────────────────────────────────────── */}
-      <Route element={<ProtectedRoute><CustomerLayout /></ProtectedRoute>}>
+      <Route element={<ProtectedRoute><Suspense fallback={<RouteFallback />}><CustomerLayout /></Suspense></ProtectedRoute>}>
         <Route path="/account" element={<CustomerDashboard />} />
         <Route path="/account/profile" element={<ProfilePage />} />
         <Route path="/account/bookings" element={<MyBookings />} />
@@ -348,7 +359,7 @@ export default function App() {
       </Route>
 
       {/* ── Admin Routes ───────────────────────────────────────── */}
-      <Route path="/admin" element={<ProtectedRoute requireAdmin><AdminLayout /></ProtectedRoute>}>
+      <Route path="/admin" element={<ProtectedRoute requireAdmin><Suspense fallback={<RouteFallback />}><AdminLayout /></Suspense></ProtectedRoute>}>
         <Route index element={<AdminDashboard />} />
         <Route path="destinations" element={<AdminDestinations />} />
         <Route path="destinations/new" element={<AdminDestinationForm />} />

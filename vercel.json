@@ -1,8 +1,77 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/holiday", "destination": "/holidays", "permanent": true },
+    { "source": "/destination-wedding", "destination": "/destination-weddings", "permanent": true },
+    { "source": "/destination-wedding/:destSlug", "destination": "/destination-weddings/:destSlug", "permanent": true },
+    { "source": "/weddings/rajasthan", "destination": "/destination-weddings/india/rajasthan", "permanent": true },
+    { "source": "/guides/best-time", "destination": "/travel-guide/best-time-to-visit", "permanent": true },
+    { "source": "/india/things-to-do", "destination": "/india/experiences", "permanent": true },
+    { "source": "/packages/adventure/trekking", "destination": "/adventure/trekking-packages", "permanent": true },
+    { "source": "/india/national-parks/kaziranga", "destination": "/india/national-parks/kaziranga-national-park", "permanent": true },
+    { "source": "/india/national-parks/sundarbans", "destination": "/india/national-parks/sundarbans-national-park", "permanent": true },
+    { "source": "/india/national-parks/ranthambore", "destination": "/india/national-parks/ranthambore-national-park", "permanent": true },
+    { "source": "/india/national-parks/bandhavgarh", "destination": "/india/national-parks/bandhavgarh-national-park", "permanent": true },
+    { "source": "/india/national-parks/pench", "destination": "/india/national-parks/pench-national-park", "permanent": true },
+    { "source": "/india/national-parks/jim-corbett", "destination": "/india/national-parks/jim-corbett-national-park", "permanent": true }
+  ],
   "rewrites": [
+    { "source": "/sitemap.xml", "destination": "/api/sitemap" },
+
+    { "source": "/packages/:slug", "destination": "/index.html" },
+    { "source": "/destinations/:slug", "destination": "/index.html" },
+    { "source": "/hotels/:slug", "destination": "/index.html" },
+    { "source": "/activities/:slug", "destination": "/index.html" },
+    { "source": "/blog/:slug", "destination": "/index.html" },
+
+    { "source": "/travel-guide/travel-cost/:destinationSlug", "destination": "/index.html" },
+    { "source": "/travel-guide/visa-information/:countrySlug", "destination": "/index.html" },
+    { "source": "/travel-guide/best-time-to-visit/:season", "destination": "/index.html" },
+    { "source": "/travel-guide/packing-guides/:slug", "destination": "/index.html" },
+    { "source": "/local-travel/:service", "destination": "/index.html" },
+
+    { "source": "/india/national-parks/:destinationSlug/how-to-reach", "destination": "/index.html" },
+    { "source": "/india/experiences/:categorySlug", "destination": "/index.html" },
+    { "source": "/india/things-to-do/:categorySlug", "destination": "/index.html" },
+    { "source": "/india/:stateSlug/:citySlug", "destination": "/index.html" },
+    { "source": "/india/:destSlug", "destination": "/index.html" },
+
+    { "source": "/international/destinations/:catSlug", "destination": "/index.html" },
+    { "source": "/international/places/:placeSlug", "destination": "/index.html" },
+    { "source": "/international/things-to-do/:actSlug", "destination": "/index.html" },
+    { "source": "/international/:countrySlug/packages", "destination": "/index.html" },
+    { "source": "/international/:countrySlug/:citySlug", "destination": "/index.html" },
+    { "source": "/international/:destSlug", "destination": "/index.html" },
+
+    { "source": "/holidays/:typeSlug/:subSlug", "destination": "/index.html" },
+    { "source": "/holidays/:typeSlug", "destination": "/index.html" },
+
+    { "source": "/mice/destinations/:destSlug", "destination": "/index.html" },
+    { "source": "/mice/corporate-travel/:serviceSlug", "destination": "/index.html" },
+    { "source": "/mice/support/:serviceSlug", "destination": "/index.html" },
+
+    { "source": "/destination-weddings/:destSlug", "destination": "/index.html" },
+    { "source": "/medical-tourism/:destSlug", "destination": "/index.html" },
+    { "source": "/holiday/:destSlug", "destination": "/index.html" },
+
+    { "source": "/login", "destination": "/index.html" },
+    { "source": "/admin/login", "destination": "/index.html" },
+    { "source": "/register", "destination": "/index.html" },
+    { "source": "/verify-otp", "destination": "/index.html" },
+    { "source": "/forgot-password", "destination": "/index.html" },
+    { "source": "/account/:path*", "destination": "/index.html" },
+    { "source": "/admin/:path*", "destination": "/index.html" },
+    { "source": "/admin", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "headers": [{ "key": "X-Content-Type-Options", "value": "nosniff" }]
     }
   ]
 }

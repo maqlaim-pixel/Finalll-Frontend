@@ -6,8 +6,10 @@ import { MapPin, Star, Check, X as XIcon, Clock, ChevronDown, ChevronUp, Loader2
 import api from '../../services/api'
 import { useAuth } from '../../context/AuthContext'
 import EnquiryModal from '../../components/enquiry/EnquiryModal'
+import SEOHead from '../../components/common/SEOHead'
+import { touristTripSchema } from '../../seo/schema'
 
-const WHATSAPP_NUMBER = '919876543210'
+const WHATSAPP_NUMBER = '919313710465'
 const MAX_REVIEW_IMAGES = 2
 
 export default function PackageDetail() {
@@ -240,6 +242,11 @@ export default function PackageDetail() {
   if (error || !pkg) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <SEOHead
+          title="Package Not Found | Maqlaim Tours"
+          description="The tour package you are looking for is not available. Browse Maqlaim Tours packages for India and international destinations."
+          noindex
+        />
         <div className="text-center">
           <h2 className="text-2xl font-bold text-navy-900 mb-2">Package Not Found</h2>
           <p className="text-navy-500 mb-4">{error || 'The package you are looking for does not exist.'}</p>
@@ -257,6 +264,16 @@ export default function PackageDetail() {
 
   return (
     <div className="bg-gray-50">
+      <SEOHead
+        title={pkg.seoTitle || `${pkg.title}${pkg.durationDays ? ` ${pkg.durationDays}D/${pkg.durationNights ?? Math.max(0, pkg.durationDays - 1)}N` : ''} Tour Package | Maqlaim Tours`}
+        description={pkg.seoDescription || pkg.shortDescription || pkg.description || `Book the ${pkg.title} tour package with Maqlaim Tours.`}
+        keywords={pkg.seoKeywords}
+        url={pkg.canonicalUrl || undefined}
+        image={pkg.ogImage || pkg.coverImage || pkg.image}
+        type="product"
+        noindex={pkg.noIndex === true}
+        jsonLd={touristTripSchema(pkg, `/packages/${pkg.slug || slug}`)}
+      />
       {/* Hero */}
       <section className="relative h-[45vh] min-h-[350px]">
         <img src={pkg.coverImage || 'https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1200'} alt={pkg.title} className="w-full h-full object-cover" />

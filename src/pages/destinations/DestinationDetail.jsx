@@ -3,6 +3,8 @@ import { Link, useParams } from 'react-router-dom'
 import { Search, Star, Clock, MapPin, ChevronLeft, ChevronRight, Phone, Mail, Send, ArrowRight, Heart, Shield, Award, Calendar, Thermometer, Plane, Train, Languages, Camera, Music, Mountain, Sparkles, Car, Globe, Navigation } from 'lucide-react'
 import api from '../../services/api'
 import { parseImageList, resolveImageUrl } from '../../utils/imageUtils'
+import SEOHead from '../../components/common/SEOHead'
+import { faqSchema } from '../../seo/schema'
 
 const DEFAULT_HERO_IMAGE = 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1400&h=600&fit=crop'
 
@@ -64,6 +66,11 @@ export default function DestinationDetail() {
 
   if (!dest) return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <SEOHead
+        title="Destination Not Found | Maqlaim Tours"
+        description="The destination you are looking for is not available. Explore Maqlaim Tours destinations in India and abroad."
+        noindex
+      />
       <div className="text-center">
         <h1 className="text-3xl font-bold text-navy-900 mb-4">Destination Not Found</h1>
         <Link to="/destinations" className="text-sky-600 hover:underline">Browse All Destinations →</Link>
@@ -96,8 +103,19 @@ export default function DestinationDetail() {
   if (dest.showPackages) tabs.push({ key: 'packages', label: 'Packages' })
   if (dest.showHighlights && highlights.length > 0) tabs.push({ key: 'highlights', label: 'Highlights' })
 
+  const faqs = parseJson(dest.faqs).filter(faq => faq && (faq.question || faq.q) && (faq.answer || faq.a || faq.description))
+
   return (
     <div className="bg-gray-50 min-h-screen">
+      <SEOHead
+        title={dest.seoTitle || `${dest.name} Tour Packages & Travel Guide | Maqlaim Tours`}
+        description={dest.seoDescription || dest.shortDescription || dest.description || `Explore ${dest.name} with Maqlaim Tours, including attractions, travel information and available tour packages.`}
+        keywords={dest.seoKeywords}
+        url={dest.canonicalUrl || undefined}
+        image={dest.ogImage || dest.image || heroImages[0]}
+        noindex={dest.noIndex === true}
+        jsonLd={faqs.length ? [faqSchema(faqs)] : undefined}
+      />
       {/* ═══ HERO CAROUSEL ═══ */}
       <section className="relative h-[400px] md:h-[500px] overflow-hidden bg-navy-900">
         {heroImages.length > 0 ? heroImages.map((img, i) => (

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import api from '../../services/api'
 import { useAuth } from '../../context/AuthContext'
+import { trackEvent } from '../../utils/analytics'
 import { X, Calendar, Users, MessageSquare, Loader2, CheckCircle, PartyPopper } from 'lucide-react'
 
 export default function EnquiryModal({ packageData, isOpen, onClose }) {
@@ -44,6 +45,11 @@ export default function EnquiryModal({ packageData, isOpen, onClose }) {
         travelers: form.travelers,
         budget: form.budget,
         message: form.message,
+      })
+      trackEvent('package_enquiry', {
+        package_id: packageData.id,
+        package_name: packageData.title,
+        destination: packageData.destination || packageData.state || '',
       })
       setResult({
         success: true,

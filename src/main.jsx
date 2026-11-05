@@ -5,7 +5,11 @@ import { Toaster } from 'react-hot-toast'
 import { AuthProvider } from './context/AuthContext'
 import App from './App'
 import ScrollToTop from './components/common/ScrollToTop'
+import SeoRouteWatcher from './seo/SeoRouteWatcher'
+import { initAnalytics } from './utils/analytics'
 import './index.css'
+
+initAnalytics()
 
 if (import.meta.env.DEV) {
   console.log('[TravelVista LOCAL RUNTIME]')
@@ -44,6 +48,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <AuthProvider>
         <ScrollToTop />
         <App />
+        <SeoRouteWatcher />
         <Toaster position="top-right" toastOptions={{ duration: 3000, style: { borderRadius: '10px', padding: '16px' } }} />
       </AuthProvider>
     </BrowserRouter>

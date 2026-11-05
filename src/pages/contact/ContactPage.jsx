@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Mail, Phone, MapPin, Send, Clock, MessageSquare, Loader2, CheckCircle2 } from 'lucide-react'
 import api from '../../services/api'
+import { trackEvent } from '../../utils/analytics'
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: 'General Enquiry', message: '' })
@@ -16,6 +17,7 @@ export default function ContactPage() {
     try {
       await api.post('/contact-enquiries', form)
       setSuccess(true)
+      trackEvent('contact_form_submit', { subject: form.subject })
       setForm({ name: '', email: '', phone: '', subject: 'General Enquiry', message: '' })
     } catch (requestError) {
       setError(requestError.response?.data?.error || 'Unable to send your message right now. Please try again.')
